@@ -19,6 +19,7 @@
       * [1 install rancher](devops/docker/rancher/1-install-rancher.md)
   * [kubernetes](devops/kubernetes/README.md)
     * [1、kubernetes Install](devops/kubernetes/1kubernetes-install.md)
+  * [nginx](devops/nginx/README.md)
 * [documents](documents/README.md)
   * [common](documents/common/README.md)
     * [浅谈并发与并行](documents/common/concurrency-and-parallellism.md)
