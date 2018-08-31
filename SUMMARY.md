@@ -10,6 +10,7 @@
 * [devops](devops/README.md)
   * [git](devops/git/git.md)
     * [修改git已提交的用户信息](devops/git/修改git已提交的用户信息.md)
+    * [同时提交代码到多个远程仓库](devops/git/同时提交代码到多个远程仓库.md)
   * [npm](devops/npm/README.md)
     * [npm常用命令](devops/npm/npm常用命令.md)
   * [docker](devops/docker/README.md)
