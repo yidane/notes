@@ -12,6 +12,6 @@
 * [DevOps](DevOps/README.md)
   * [Docker](DevOps/Docker/README.md)
   * [Git](DevOps/Git/README.md)
-  * Kubernetes
+  * [Kubernetes](DevOps/Kubernetes/README.md)
 * [文档](文档/README.md)
 
