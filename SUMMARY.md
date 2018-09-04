@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [简介](README.md)
 * [Catalog](/SUMMARY.md#summary)
 * [database](database/README.md)
   * [oracle](database/Oracle/README.md)
