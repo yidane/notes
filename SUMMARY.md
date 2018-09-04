@@ -9,6 +9,7 @@
     * [MySql](数据库/RDBMS/MySQL/README.md)
     * [SQL Server](数据库/RDBMS/SQL Server/README.md)
     * [Oracle](数据库/RDBMS/Oracle/README.md)
+    * 数据库原理
 * [DevOps](DevOps/README.md)
   * [Git](DevOps/Git/README.md)
     * [修改已提交的用户信息](DevOps/Git/修改已提交的用户信息.md)
