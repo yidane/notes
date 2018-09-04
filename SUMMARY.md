@@ -14,6 +14,6 @@
   * [Git](DevOps/Git/README.md)
   * [Kubernetes](DevOps/Kubernetes/README.md)
   * [NGINX](DevOps/NGINX/README.md)
-  * NPM
+  * [NPM](DevOps/NPM/README.md)
 * [文档](文档/README.md)
 
