@@ -394,3 +394,103 @@ array mergeSort(array a)
 * 安全管理器（Security Manager）：用于对用户的验证和授权。
 * 客户端管理器（Client manager）：用于管理客户端连接。
 * ……
+工具：
+
+* 备份管理器（Backup manager）：用于保存和恢复数据。
+* 复原管理器（Recovery manager）：用于崩溃后重启数据库到一个一致状态。
+* 监控管理器（Monitor manager）：用于记录数据库活动信息和提供监控数据库的工具。
+* Administration管理器（Administration manager）：用于保存元数据（比如表的名称和结构），提供管理数据库、模式、表空间的工具。【译者注：好吧，我真的不知道Administration manager该翻译成什么，有知道的麻烦告知，不胜感激……】
+* ……
+
+查询管理器：
+
+* 查询解析器（Query parser）：用于检查查询是否合法
+* 查询重写器（Query rewriter）：用于预优化查询
+* 查询优化器（Query optimizer）：用于优化查询
+* 查询执行器（Query executor）：用于编译和执行查询
+
+数据管理器：
+
+* 事务管理器（Transaction manager）：用于处理事务
+* 缓存管理器（Cache manager）：数据被使用之前置于内存，或者数据写入磁盘之前置于内存
+* 数据访问管理器（Data access manager）：访问磁盘中的数据
+
+在本文剩余部分，我会集中探讨数据库如何通过如下进程管理SQL查询的：
+
+* 客户端管理器
+* 查询管理器
+* 数据管理器（含复原管理器）
+
+## 客户端管理器
+
+![](/assets/7cc829d3jw1f3drdtyhwtj20g606imxv.jpg)
+
+客户端管理器是处理客户端通信的。客户端可以是一个（网站）服务器或者一个最终用户或最终应用。客户端管理器通过一系列知名的API（JDBC, ODBC, OLE-DB …）提供不同的方式来访问数据库。
+
+客户端管理器也提供专有的数据库访问API。
+
+当你连接到数据库时：
+
+* 管理器首先检查你的验证信息（用户名和密码），然后检查你是否有访问数据库的授权。这些权限由DBA分配。
+* 然后，管理器检查是否有空闲进程（或线程）来处理你对查询。
+* 管理器还会检查数据库是否负载很重。
+* 管理器可能会等待一会儿来获取需要的资源。如果等待时间达到超时时间，它会关闭连接并给出一个可读的错误信息。
+* 然后管理器会把你的查询送给查询管理器来处理。
+* 因为查询处理进程不是『不全则无』的，一旦它从查询管理器得到数据，它会把部分结果保存到一个缓冲区并且开始给你发送。
+* 如果遇到问题，管理器关闭连接，向你发送可读的解释信息，然后释放资源。
+
+## 查询管理器
+
+![](/assets/7cc829d3jw1f3drdudpcuj20fy0630tf.jpg)
+
+这部分是数据库的威力所在，在这部分里，一个写得糟糕的查询可以转换成一个快速执行的代码，代码执行的结果被送到客户端管理器。这个多步骤操作过程如下：
+
+* 查询首先被解析并判断是否合法
+* 然后被重写，去除了无用的操作并且加入预优化部分
+* 接着被优化以便提升性能，并被转换为可执行代码和数据访问计划。
+* 然后计划被编译
+* 最后，被执行
+
+这里我不会过多探讨最后两步，因为它们不太重要。
+
+看完这部分后，如果你需要更深入的知识，我建议你阅读：
+
+* 关于成本优化的初步研究论文\(1979\)：[关系型数据库系统存取路径选择](http://www.cs.berkeley.edu/~brewer/cs262/3-selinger79.pdf)。这个篇文章只有12页，而且具备计算机一般水平就能理解。
+* 非常好、非常深入的 DB2 9.X 如何优化查询的[介绍](http://infolab.stanford.edu/~hyunjung/cs346/db2-talk.pdf)
+* 非常好的PostgreSQL如何优化查询的[介绍](http://momjian.us/main/writings/pgsql/optimizer.pdf)。这是一篇最通俗易懂的文档，因为它讲的是『我们来看看在这种情况下，PostgreSQL给出了什么样的查询计划』，而不是『我们来看看PostgreSQL用的什么算法』。
+* 官方[SQLite优化文档](https://www.sqlite.org/optoverview.html)。『易于』阅读，因为SQLite用的是简单规则。再者，这是唯一真正解释SQLite如何工作的官方文档。
+* 非常好的SQL Server 2005 如何优化查询的[介绍](https://blogs.msdn.com/cfs-filesystemfile.ashx/__key/communityserver-components-postattachments/00-08-50-84-93/QPTalk.pdf)
+* Oracle 12c 优化[白皮书](http://www.oracle.com/technetwork/database/bi-datawarehousing/twp-optimizer-with-oracledb-12c-1963236.pdf)
+* 2篇查询优化的教程，[第一篇](http://codex.cs.yale.edu/avi/db-book/db6/slide-dir/PPT-dir/ch12.ppt)[第二篇](http://codex.cs.yale.edu/avi/db-book/db6/slide-dir/PPT-dir/ch13.ppt)
+  。教程来自《数据库系统概念》的作者，很好的读物，集中讨论磁盘I/O，但是要求具有很好的计算机科学水平。
+* 另一个[原理教程](https://www.informatik.hu-berlin.de/de/forschung/gebiete/wbi/teaching/archive/sose05/dbs2/slides/09_joins.pdf)，这篇教程我觉得更易懂，不过它仅关注联接运算符（join operators）和磁盘I/O。
+
+### 查询解析器
+
+每一条SQL语句都要送到解析器来检查语法，如果你的查询有错，解析器将拒绝该查询。比如，如果你写成”SLECT …” 而不是 “SELECT …”，那就没有下文了。
+
+但这还不算完，解析器还会检查关键字是否使用正确的顺序，比如 WHERE 写在 SELECT 之前会被拒绝。
+
+然后，解析器要分析查询中的表和字段，使用数据库元数据来检查：
+
+* 表是否存在
+* 表的字段是否存在
+* 对某类型字段的 运算 是否 可能（比如，你不能将整数和字符串进行比较，你不能对一个整数使用 substring\(\) 函数）
+
+接着，解析器检查在查询中你是否有权限来读取（或写入）表。再强调一次：这些权限由DBA分配。
+
+在解析过程中，SQL 查询被转换为内部表示（通常是一个树）。
+
+如果一切正常，内部表示被送到查询重写器。
+
+### 查询重写器
+
+在这一步，我们已经有了查询的内部表示，重写器的目标是：
+
+* 预优化查询
+* 避免不必要的运算
+* 帮助优化器找到合理的最佳解决方案
+
+重写器按照一系列已知的规则对查询执行检测。如果查询匹配一种模式的规则，查询就会按照这条规则来重写。下面是（可选）规则的非详尽的列表：
+
+* 视图合并：如果你在查询中使用视图，视图就会转换为它的 SQL 代码。
