@@ -12,7 +12,7 @@
 * [DevOps](DevOps/README.md)
   * [Docker](DevOps/Docker/README.md)
   * [Git](DevOps/Git/README.md)
-    * [修改已提交的用户信息](DevOps/Git/xiu-gai-yi-ti-jiao-de-yong-hu-xin-xi.md)
+    * [修改已提交的用户信息](DevOps/Git/修改已提交的用户信息.md)
   * [Kubernetes](DevOps/Kubernetes/README.md)
   * [NGINX](DevOps/NGINX/README.md)
   * [NPM](DevOps/NPM/README.md)
