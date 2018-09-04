@@ -13,7 +13,7 @@
   * [Docker](DevOps/Docker/README.md)
   * [Git](DevOps/Git/README.md)
     * [修改已提交的用户信息](DevOps/Git/修改已提交的用户信息.md)
-    * 同时提交代码到多个远程仓库
+    * [同时提交代码到多个远程仓库](DevOps/Git/同时提交代码到多个远程仓库.md)
   * [Kubernetes](DevOps/Kubernetes/README.md)
   * [NGINX](DevOps/NGINX/README.md)
   * [NPM](DevOps/NPM/README.md)
