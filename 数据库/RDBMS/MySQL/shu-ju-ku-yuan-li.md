@@ -593,3 +593,202 @@ and MAILS.mail LIKE 'christophe%';
 [PostgreSQL](http://www.postgresql.org/docs/9.4/static/row-estimation-examples.html)
 
 。
+### 查询优化器
+
+所有的现代数据库都在用基于成本的优化（即CBO）来优化查询。道理是针对每个运算设置一个成本，通过应用成本最低廉的一系列运算，来找到最佳的降低查询成本的方法。
+
+为了理解成本优化器的原理，我觉得最好用个例子来『感受』一下这个任务背后的复杂性。这里我将给出联接 2 个表的 3 个方法，我们很快就能看到即便一个简单的联接查询对于优化器来说都是个噩梦。之后，我们会了解真正的优化器是怎么做的。
+
+对于这些联接操作，我会专注于它们的时间复杂度，但是，数据库优化器计算的是它们的 CPU 成本、磁盘 I/O 成本、和内存需求。时间复杂度和 CPU 成本的区别是，时间成本是个近似值（给我这样的懒家伙准备的）。而 CPU 成本，我这里包括了所有的运算，比如：加法、条件判断、乘法、迭代……还有呢：
+
+* 每一个高级代码运算都要特定数量的低级 CPU 运算。
+* 对于 Intel Core i7、Intel Pentium 4、AMD Opteron…等，（就 CPU 周期而言）CPU 的运算成本是不同的，也就是说它取决于 CPU 的架构。
+
+使用时间复杂度就容易多了（至少对我来说），用它我也能了解到 CBO 的概念。由于磁盘 I/O 是个重要的概念，我偶尔也会提到它。请牢记，大多数时候瓶颈在于磁盘 I/O 而不是 CPU 使用。
+
+#### 索引
+
+在研究 B+树的时候我们谈到了索引，要记住一点，索引都是已经排了序的。
+
+仅供参考：还有其他类型的索引，比如位图索引，在 CPU、磁盘I/O、和内存方面与B+树索引的成本并不相同。
+
+另外，很多现代数据库为了改善执行计划的成本，可以仅为当前查询动态地生成临时索引。
+
+#### 存取路径
+
+#### 在应用联接运算符（join operators）之前，你首先需要获得数据。以下就是获得数据的方法。
+
+注：由于所有存取路径的真正问题是磁盘 I/O，我不会过多探讨时间复杂度。
+
+【译者注：[四种类型的Oracle索引扫描介绍](http://soft.chinabyte.com/database/16/11806516.shtml)  】
+
+##### 全扫描
+
+如果你读过执行计划，一定看到过『全扫描』（或只是『扫描』）一词。简单的说全扫描就是数据库完整的读一个表或索引。就磁盘 I/O 而言，很明显全表扫描的成本比索引全扫描要高昂。
+
+##### 范围扫描
+
+其他类型的扫描有索引范围扫描，比如当你使用谓词 ” WHERE AGE &gt; 20 AND AGE &lt; 40 ” 的时候它就会发生。
+
+当然，你需要在 AGE 字段上有索引才能用到索引范围扫描。
+
+在第一部分我们已经知道，范围查询的时间成本大约是 log\(N\)+M，这里 N 是索引的数据量，M 是范围内估测的行数。多亏有了统计我们才能知道 N 和 M 的值（注： M 是谓词 “ AGE &gt; 20 AND AGE &lt;40 ” 的选择率）。另外范围扫描时，你不需要读取整个索引，因此在磁盘 I/O 方面没有全扫描那么昂贵。
+
+##### 唯一扫描
+
+如果你只需要从索引中取一个值你可以用唯一扫描。
+
+##### 根据 ROW ID 存取
+
+多数情况下，如果数据库使用索引，它就必须查找与索引相关的行，这样就会用到根据 ROW ID 存取的方式。
+
+例如，假如你运行：
+
+```
+SELECT LASTNAME, FIRSTNAME from PERSON WHERE AGE = 28
+```
+
+如果 person 表的 age 列有索引，优化器会使用索引找到所有年龄为 28 的人，然后它会去表中读取相关的行，这是因为索引中只有 age 的信息而你要的是姓和名。
+
+但是，假如你换个做法：
+
+```
+SELECT TYPE_PERSON.CATEGORY from PERSON ,TYPE_PERSON
+WHERE PERSON.AGE = TYPE_PERSON.AGE
+```
+
+PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根据行ID 存取，因为你并没有要求这个表内的信息。
+
+虽然这个方法在少量存取时表现很好，这个运算的真正问题其实是磁盘 I/O。假如需要大量的根据行ID存取，数据库也许会选择全扫描。
+
+##### 其它路径
+
+我没有列举所有的存取路径，如果你感兴趣可以读一读
+
+[Oracle文档](https://docs.oracle.com/database/121/TGSQL/tgsql_optop.htm)
+
+。其它数据库里也许叫法不同但背后的概念是一样的。
+
+#### 联接运算符
+
+那么，我们知道如何获取数据了，那现在就把它们联接起来！
+
+我要展现的是3个个常用联接运算符：合并联接（Merge join），哈希联接（Hash Join）和嵌套循环联接（Nested Loop Join）。但是在此之前，我需要引入新词汇了：内关系和外关系（ inner relation and outer relation） 【译者注： “内关系和外关系” 这个说法来源不明，跟查询的“
+
+[内联接（INNER JOIN）](http://baike.baidu.com/view/672349.htm)
+
+、
+
+[外联接（OUTER JOIN）](http://baike.baidu.com/view/1213593.htm)
+
+” 不是一个概念 。只查到百度百科词条：
+
+[关系数据库](http://baike.baidu.com/view/68348.htm)
+
+里提到“每个表格（有时被称为一个关系）……” 。 其他参考链接 “
+
+[Merge Join”](https://en.wikipedia.org/wiki/Sort-merge_join)
+
+“
+
+[Hash Join”](https://en.wikipedia.org/wiki/Hash_join)
+
+“
+
+[Nested Loop Join”](https://en.wikipedia.org/wiki/Nested_loop_join)
+
+】  。 一个关系可以是：
+
+* 一个表
+* 一个索引
+* 上一个运算的中间结果（比如上一个联接运算的结果）
+
+当你联接两个关系时，联接算法对两个关系的处理是不同的。在本文剩余部分，我将假定：
+
+* 外关系是左侧数据集
+* 内关系是右侧数据集
+
+比如， A JOIN B 是 A 和 B 的联接，这里 A 是外关系，B 是内关系。
+
+多数情况下， A JOIN B 的成本跟 B JOIN A 的成本是不同的。
+
+在这一部分，我还将假定外关系有 N 个元素，内关系有 M 个元素。要记住，真实的优化器通过统计知道 N 和 M 的值。
+
+注：N 和 M 是关系的基数。【译者注：
+
+[基数](http://baike.baidu.com/subview/131521/5127870.htm)
+
+】
+
+##### 嵌套循环联接
+
+嵌套循环联接是最简单的。
+
+![](/assets/7cc829d3jw1f3drdvtvlqj20er09njtc.jpg)
+
+道理如下：
+
+* 针对外关系的每一行
+* 查看内关系里的所有行来寻找匹配的行
+
+下面是伪代码：
+
+```
+nested_loop_join(array outer, array inner)  
+    for each row a in outer    
+        for each row b in inner      
+            if (match_join_condition(a,b))        
+                write_result_in_output(a,b)      
+            end if    
+        end for   
+    end for
+```
+
+由于这是个双迭代，时间复杂度是 O\(N\*M\)。
+
+在磁盘 I/O 方面， 针对 N 行外关系的每一行，内部循环需要从内关系读取 M 行。这个算法需要从磁盘读取 N+ N\*M 行。但是，如果内关系足够小，你可以把它读入内存，那么就只剩下 M + N 次读取。这样修改之后，内关系必须是最小的，因为它有更大机会装入内存。
+
+在CPU成本方面没有什么区别，但是在磁盘 I/O 方面，最好最好的，是每个关系只读取一次。
+
+当然，内关系可以由索引代替，对磁盘 I/O 更有利。
+
+由于这个算法非常简单，下面这个版本在内关系太大无法装入内存时，对磁盘 I/O 更加有利。道理如下：
+
+* 为了避免逐行读取两个关系，
+* 你可以成簇读取，把（两个关系里读到的）两簇数据行保存在内存里，
+* 比较两簇数据，保留匹配的，
+* 然后从磁盘加载新的数据簇来继续比较
+* 直到加载了所有数据。
+
+可能的算法如下：
+
+```
+// improved version to reduce the disk I/O.
+nested_loop_join_v2(file outer, file inner)
+  for each bunch ba in outer
+  // ba is now in memory
+    for each bunch bb in inner
+        // bb is now in memory
+        for each row a in ba
+          for each row b in bb
+            if (match_join_condition(a,b))
+              write_result_in_output(a,b)
+            end if
+          end for
+       end for
+    end for
+   end for
+```
+
+使用这个版本，时间复杂度没有变化，但是磁盘访问降低了：
+
+* 用前一个版本，算法需要 N + N\*M 次访问（每次访问读取一行）。
+* 用新版本，磁盘访问变为_外关系的数据簇数量 + 外关系的数据簇数量 \* 内关系的数据簇数量_。
+* 增加数据簇的尺寸，可以降低磁盘访问。
+
+##### 哈希联接
+
+哈希联接更复杂，不过在很多场合比嵌套循环联接成本低。
+
+![](/assets/7cc829d3jw1f3drdvx8ikj20jb0d0mzp.jpg)
+
