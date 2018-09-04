@@ -466,3 +466,356 @@ $go run server4.go
 
 TCP连接通信两端的OS都会为该连接保留数据缓冲，一端调用Write后，实际上数据是写入到OS的协议栈的数据缓冲的。TCP是全双工通信，因此每个方向都有独立的数据缓冲。当发送方将对方的接收缓冲区以及自身的发送缓冲区写满后，Write就会阻塞。我们来看一个例子：client5.go和server.go。
 
+```go
+//go-tcpsock/read_write/client5.go
+... ...
+func main() {
+    log.Println("begin dial...")
+    conn, err := net.Dial("tcp", ":8888")
+    if err != nil {
+        log.Println("dial error:", err)
+        return
+    }
+    defer conn.Close()
+    log.Println("dial ok")
+
+    data := make([]byte, 65536)
+    var total int
+    for {
+        n, err := conn.Write(data)
+        if err != nil {
+            total += n
+            log.Printf("write %d bytes, error:%s\n", n, err)
+            break
+        }
+        total += n
+        log.Printf("write %d bytes this time, %d bytes in total\n", n, total)
+    }
+
+    log.Printf("write %d bytes in total\n", total)
+    time.Sleep(time.Second * 10000)
+}
+
+//go-tcpsock/read_write/server5.go
+... ...
+func handleConn(c net.Conn) {
+    defer c.Close()
+    time.Sleep(time.Second * 10)
+    for {
+        // read from the connection
+        time.Sleep(5 * time.Second)
+        var buf = make([]byte, 60000)
+        log.Println("start to read from conn")
+        n, err := c.Read(buf)
+        if err != nil {
+            log.Printf("conn read %d bytes,  error: %s", n, err)
+            if nerr, ok := err.(net.Error); ok && nerr.Timeout() {
+                continue
+            }
+        }
+
+        log.Printf("read %d bytes, content is %s\n", n, string(buf[:n]))
+    }
+}
+... ...
+```
+
+Server5在前10s中并不Read数据，因此当client5一直尝试写入时，写到一定量后就会发生阻塞：
+
+```
+$go run client5.go
+
+2015/11/17 14:57:33 begin dial...
+2015/11/17 14:57:33 dial ok
+2015/11/17 14:57:33 write 65536 bytes this time, 65536 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 131072 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 196608 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 262144 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 327680 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 393216 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 458752 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 524288 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 589824 bytes in total
+2015/11/17 14:57:33 write 65536 bytes this time, 655360 bytes in total
+```
+
+在Darwin上，这个size大约在679468bytes。后续当server5每隔5s进行Read时，OS socket缓冲区腾出了空间，client5就又可以写入了：
+
+```
+$go run server5.go
+2015/11/17 15:07:01 accept a new connection
+2015/11/17 15:07:16 start to read from conn
+2015/11/17 15:07:16 read 60000 bytes, content is
+2015/11/17 15:07:21 start to read from conn
+2015/11/17 15:07:21 read 60000 bytes, content is
+2015/11/17 15:07:26 start to read from conn
+2015/11/17 15:07:26 read 60000 bytes, content is
+....
+
+client端：
+
+2015/11/17 15:07:01 write 65536 bytes this time, 720896 bytes in total
+2015/11/17 15:07:06 write 65536 bytes this time, 786432 bytes in total
+2015/11/17 15:07:16 write 65536 bytes this time, 851968 bytes in total
+2015/11/17 15:07:16 write 65536 bytes this time, 917504 bytes in total
+2015/11/17 15:07:27 write 65536 bytes this time, 983040 bytes in total
+2015/11/17 15:07:27 write 65536 bytes this time, 1048576 bytes in total
+.... ...
+```
+
+#### 3、写入部分数据
+
+Write操作存在写入部分数据的情况，比如上面例子中，当client端输出日志停留在“write 65536 bytes this time, 655360 bytes in total”时，我们杀掉server5，这时我们会看到client5输出以下日志：
+
+```
+...
+2015/11/17 15:19:14 write 65536 bytes this time, 655360 bytes in total
+2015/11/17 15:19:16 write 24108 bytes, error:write tcp 127.0.0.1:62245->127.0.0.1:8888: write: broken pipe
+2015/11/17 15:19:16 write 679468 bytes in total
+```
+
+显然Write并非在655360这个地方阻塞的，而是后续又写入24108后发生了阻塞，server端socket关闭后，我们看到Wrote返回er != nil且n = 24108，程序需要对这部分写入的24108字节做特定处理。
+
+#### 4、写入超时
+
+如果非要给Write增加一个期限，那我们可以调用SetWriteDeadline方法。我们copy一份client5.go，形成client6.go，在client6.go的Write之前增加一行timeout设置代码：
+
+```
+conn.SetWriteDeadline(time.Now().Add(time.Microsecond * 10))
+```
+
+启动server6.go，启动client6.go，我们可以看到写入超时的情况下，Write的返回结果：
+
+```
+$go run client6.go
+2015/11/17 15:26:34 begin dial...
+2015/11/17 15:26:34 dial ok
+2015/11/17 15:26:34 write 65536 bytes this time, 65536 bytes in total
+... ...
+2015/11/17 15:26:34 write 65536 bytes this time, 655360 bytes in total
+2015/11/17 15:26:34 write 24108 bytes, error:write tcp 127.0.0.1:62325->127.0.0.1:8888: i/o timeout
+2015/11/17 15:26:34 write 679468 bytes in total
+```
+
+可以看到在写入超时时，依旧存在部分数据写入的情况。
+
+综上例子，虽然Go给我们提供了阻塞I/O的便利，但在调用Read和Write时依旧要综合需要方法返回的n和err的结果，以做出正确处理。net.conn实现了io.Reader和io.Writer接口，因此可以试用一些wrapper包进行socket读写，比如bufio包下面的Writer和Reader、io/ioutil下的函数等。
+
+#### Goroutine safe
+
+基于goroutine的网络架构模型，存在在不同goroutine间共享conn的情况，那么conn的读写是否是goroutine safe的呢？在深入这个问题之前，我们先从应用意义上来看read操作和write操作的goroutine-safe必要性。
+
+对于read操作而言，由于TCP是面向字节流，conn.Read无法正确区分数据的业务边界，因此多个goroutine对同一个conn进行read的意义不大，goroutine读到不完整的业务包反倒是增加了业务处理的难度。对与Write操作而言，倒是有多个goroutine并发写的情况。不过conn读写是否goroutine-safe的测试不是很好做，我们先深入一下runtime代码，先从理论上给这个问题定个性：
+
+net.conn只是\*netFD的wrapper结构，最终Write和Read都会落在其中的fd上：
+
+```
+type conn struct {
+    fd *netFD
+}
+```
+
+netFD在不同平台上有着不同的实现，我们以net/fd\_unix.go中的netFD为例：
+
+```
+// Network file descriptor.
+type netFD struct {
+    // locking/lifetime of sysfd + serialize access to Read and Write methods
+    fdmu fdMutex
+
+    // immutable until Close
+    sysfd       int
+    family      int
+    sotype      int
+    isConnected bool
+    net         string
+    laddr       Addr
+    raddr       Addr
+
+    // wait server
+    pd pollDesc
+}
+```
+
+我们看到netFD中包含了一个runtime实现的fdMutex类型字段，从注释上来看，该fdMutex用来串行化对该netFD对应的sysfd的Write和Read操作。从这个注释上来看，所有对conn的Read和Write操作都是有fdMutex互斥的，从netFD的Read和Write方法的实现也证实了这一点：
+
+```
+func (fd *netFD) Read(p []byte) (n int, err error) {
+    if err := fd.readLock(); err != nil {
+        return 0, err
+    }
+    defer fd.readUnlock()
+    if err := fd.pd.PrepareRead(); err != nil {
+        return 0, err
+    }
+    for {
+        n, err = syscall.Read(fd.sysfd, p)
+        if err != nil {
+            n = 0
+            if err == syscall.EAGAIN {
+                if err = fd.pd.WaitRead(); err == nil {
+                    continue
+                }
+            }
+        }
+        err = fd.eofError(n, err)
+        break
+    }
+    if _, ok := err.(syscall.Errno); ok {
+        err = os.NewSyscallError("read", err)
+    }
+    return
+}
+
+func (fd *netFD) Write(p []byte) (nn int, err error) {
+    if err := fd.writeLock(); err != nil {
+        return 0, err
+    }
+    defer fd.writeUnlock()
+    if err := fd.pd.PrepareWrite(); err != nil {
+        return 0, err
+    }
+    for {
+        var n int
+        n, err = syscall.Write(fd.sysfd, p[nn:])
+        if n > 0 {
+            nn += n
+        }
+        if nn == len(p) {
+            break
+        }
+        if err == syscall.EAGAIN {
+            if err = fd.pd.WaitWrite(); err == nil {
+                continue
+            }
+        }
+        if err != nil {
+            break
+        }
+        if n == 0 {
+            err = io.ErrUnexpectedEOF
+            break
+        }
+    }
+    if _, ok := err.(syscall.Errno); ok {
+        err = os.NewSyscallError("write", err)
+    }
+    return nn, err
+}
+```
+
+每次Write操作都是受lock保护，直到此次数据全部write完。因此在应用层面，要想保证多个goroutine在一个conn上write操作的Safe，需要一次write完整写入一个“业务包”；一旦将业务包的写入拆分为多次write，那就无法保证某个Goroutine的某“业务包”数据在conn发送的连续性。
+
+同时也可以看出即便是Read操作，也是lock保护的。多个Goroutine对同一conn的并发读不会出现读出内容重叠的情况，但内容断点是依 runtime调度来随机确定的。存在一个业务包数据，1/3内容被goroutine-1读走，另外2/3被另外一个goroutine-2读 走的情况。比如一个完整包：world，当goroutine的read slice size &lt; 5时，存在可能：一个goroutine读到 “worl”,另外一个goroutine读出”d”。
+
+### 四、Socket属性
+
+原生Socket API提供了丰富的sockopt设置接口，但Golang有自己的网络架构模型，golang提供的socket options接口也是基于上述模型的必要的属性设置。包括
+
+* SetKeepAlive
+* SetKeepAlivePeriod
+* SetLinger
+* SetNoDelay （默认no delay）
+* SetWriteBuffer
+* SetReadBuffer
+
+不过上面的Method是TCPConn的，而不是Conn的，要使用上面的Method的，需要type assertion：
+
+```
+tcpConn, ok := c.(*TCPConn)
+if !ok {
+    //error handle
+}
+
+tcpConn.SetNoDelay(true)
+```
+
+对于listener socket, golang默认采用了 SO\_REUSEADDR，这样当你重启 listener程序时，不会因为address in use的错误而启动失败。而listen backlog的默认值是通过获取系统的设置值得到的。不同系统不同：mac 128, linux 512等。
+
+### 五、关闭连接
+
+和前面的方法相比，关闭连接算是最简单的操作了。由于socket是全双工的，client和server端在己方已关闭的socket和对方关闭的socket上操作的结果有不同。看下面例子：
+
+```
+//go-tcpsock/conn_close/client1.go
+... ...
+func main() {
+    log.Println("begin dial...")
+    conn, err := net.Dial("tcp", ":8888")
+    if err != nil {
+        log.Println("dial error:", err)
+        return
+    }
+    conn.Close()
+    log.Println("close ok")
+
+    var buf = make([]byte, 32)
+    n, err := conn.Read(buf)
+    if err != nil {
+        log.Println("read error:", err)
+    } else {
+        log.Printf("read % bytes, content is %s\n", n, string(buf[:n]))
+    }
+
+    n, err = conn.Write(buf)
+    if err != nil {
+        log.Println("write error:", err)
+    } else {
+        log.Printf("write % bytes, content is %s\n", n, string(buf[:n]))
+    }
+
+    time.Sleep(time.Second * 1000)
+}
+
+//go-tcpsock/conn_close/server1.go
+... ...
+func handleConn(c net.Conn) {
+    defer c.Close()
+
+    // read from the connection
+    var buf = make([]byte, 10)
+    log.Println("start to read from conn")
+    n, err := c.Read(buf)
+    if err != nil {
+        log.Println("conn read error:", err)
+    } else {
+        log.Printf("read %d bytes, content is %s\n", n, string(buf[:n]))
+    }
+
+    n, err = c.Write(buf)
+    if err != nil {
+        log.Println("conn write error:", err)
+    } else {
+        log.Printf("write %d bytes, content is %s\n", n, string(buf[:n]))
+    }
+}
+... ...
+```
+
+上述例子的执行结果如下：
+
+```
+$go run server1.go
+2015/11/17 17:00:51 accept a new connection
+2015/11/17 17:00:51 start to read from conn
+2015/11/17 17:00:51 conn read error: EOF
+2015/11/17 17:00:51 write 10 bytes, content is
+
+$go run client1.go
+2015/11/17 17:00:51 begin dial...
+2015/11/17 17:00:51 close ok
+2015/11/17 17:00:51 read error: read tcp 127.0.0.1:64195->127.0.0.1:8888: use of closed network connection
+2015/11/17 17:00:51 write error: write tcp 127.0.0.1:64195->127.0.0.1:8888: use of closed network connection
+```
+
+从client1的结果来看，在己方已经关闭的socket上再进行read和write操作，会得到”use of closed network connection” error；  
+从server1的执行结果来看，在对方关闭的socket上执行read操作会得到EOF error，但write操作会成功，因为数据会成功写入己方的内核socket缓冲区中，即便最终发不到对方socket缓冲区了，因为己方socket并未关闭。因此当发现对方socket关闭后，己方应该正确合理处理自己的socket，再继续write已经无任何意义了。
+
+### 六、小结
+
+本文比较基础，但却很重要，毕竟golang是面向大规模服务后端的，对通信环节的细节的深入理解会大有裨益。另外Go的goroutine+阻塞通信的网络通信模型降低了开发者心智负担，简化了通信的复杂性，这点尤为重要。
+
+本文代码实验环境：go 1.5.1 on Darwin amd64以及部分在ubuntu 14.04 amd64。
+
+本文demo代码在[这里](https://github.com/bigwhite/experiments/tree/master/go-tcpsock)可以找到。
+
