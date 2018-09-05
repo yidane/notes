@@ -286,21 +286,7 @@ array mergeSort(array a)
 * 你必须在B+树中的节点之间保持顺序，否则节点会变得一团糟，你无法从中找到想要的节点。
 * 你必须尽可能降低B+树的层数，否则 O\(log\(N\)\) 复杂度会变成 O\(N\)。
 
-换句话说，B+树需要自我整理和自我平衡。谢天谢地，我们有智能删除和插入。但是这样也带来了成本：在B+树中，插入和删除操作是 O\(log\(N\)\) 复杂度。所以有些人听到过使用太多索引不是个好主意这类说法。没错，你减慢了快速插入/更新/删除表中的一个行的操作，因为数据库需要以代价高昂的每索引 O\(log\(N\)\) 运算来更新表的索引。再者，增加索引意味着给事务管理器带来更多的工作负荷（在本文结尾我们会探讨这个管理器）。
-
-想了解更多细节，你可以看看 Wikipedia 上这篇
-
-[关于B+树的文章](https://en.wikipedia.org/wiki/B%2B_tree)
-
-。如果你想要数据库中实现B+树的例子，看看MySQL核心开发人员写的
-
-[这篇文章](http://blog.jcole.us/2013/01/07/the-physical-structure-of-innodb-index-pages/)
-
-和
-
-[这篇文章](http://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/)
-
-。两篇文章都致力于探讨 innoDB\(MySQL引擎\)如何处理索引。
+换句话说，B+树需要自我整理和自我平衡。谢天谢地，我们有智能删除和插入。但是这样也带来了成本：在B+树中，插入和删除操作是 O\(log\(N\)\) 复杂度。所以有些人听到过使用太多索引不是个好主意这类说法。没错，你减慢了快速插入/更新/删除表中的一个行的操作，因为数据库需要以代价高昂的每索引 O\(log\(N\)\) 运算来更新表的索引。再者，增加索引意味着给事务管理器带来更多的工作负荷（在本文结尾我们会探讨这个管理器）。想了解更多细节，你可以看看 Wikipedia 上这篇[关于B+树的文章](https://en.wikipedia.org/wiki/B%2B_tree)。如果你想要数据库中实现B+树的例子，看看MySQL核心开发人员写的[这篇文章](http://blog.jcole.us/2013/01/07/the-physical-structure-of-innodb-index-pages/)和[这篇文章](http://blog.jcole.us/2013/01/10/btree-index-structures-in-innodb/)。两篇文章都致力于探讨 innoDB\(MySQL引擎\)如何处理索引。
 
 #### 哈希表
 
