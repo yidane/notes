@@ -34,10 +34,13 @@ kubernetes的服务都可以通过直接运行二进制文件加上启动采纳�
 
 ```
 sudo apt install etcd-server
+sudo apt install etcd-client
 ```
 
+设置为自动自动项
+
 ```
-sudo apt install etcd-client
+
 ```
 
 验证etcd安装
