@@ -48,8 +48,8 @@ After=network.service
 [Service]
 Type=simple
 WorkingDirectory=/var/lib/etcd/
-EnvironmentFile=/etc/etcd/etcd.conf
-ExecStart=/etc/etcd/etcd
+EnvironmentFile=-/etc/etcd/etcd.conf
+ExecStart=/usr/bin/etcd
 
 [Install]
 WanteBy=multi-user.target
