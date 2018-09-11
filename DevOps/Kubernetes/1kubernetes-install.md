@@ -40,7 +40,19 @@ sudo apt install etcd-client
 设置为自动自动项
 
 ```
+#cat /lib/systemd/system/kube-apiserver.service
+[Unit]
+Description=Etcd Server
+After=network.service
 
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/etcd/
+EnvironmentFile=/etc/etcd/etcd.conf
+ExecStart=/etc/etcd/etcd.conf
+
+[Install]
+WanteBy=multi-user.target
 ```
 
 验证etcd安装
