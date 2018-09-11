@@ -40,7 +40,7 @@ sudo apt install etcd-client
 设置为自动自动项
 
 ```
-#cat /lib/systemd/system/kube-apiserver.service
+#vi /lib/systemd/system/etcd.service
 [Unit]
 Description=Etcd Server
 After=network.service
@@ -70,7 +70,7 @@ cluster is healthy
 编辑systemd服务文件 /lib/systemd/system/kube-apiserver.service，内容如下
 
 ```
-#cat /lib/systemd/system/kube-apiserver.service
+#vi /lib/systemd/system/kube-apiserver.service
 [Unit]
 Description=Kubernetes API Server
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
