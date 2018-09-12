@@ -238,13 +238,13 @@ sudo systemctl start kube-scheduler.service
 
 执行 systemctl ststus &lt;service\_name&gt; 来验证服务状态
 
-6、kubelet服务
+### 6、kubelet服务
 
 kubelet服务依赖于Docker服务
 
 ```
 #cat /lib/systemd/system/kubelet.service
-[Unil]
+[Unit]
 Description=kubernetes Kubelet Server
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
 After=docker.service
