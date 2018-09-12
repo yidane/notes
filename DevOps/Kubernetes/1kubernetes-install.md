@@ -338,5 +338,11 @@ sudo systemctl status <service_name>
 
 kubelet默认采用向Master自动注册本Node的机制，在Master上查看各Node的状态，状态为Ready表示Node以及成功注册并且状态为可用。
 
+```
+# kube get nodes
+Name            STATUS            AG
+127.0.0.1       Ready             1m    
+```
 
+至此，单机配置Kubernetes完成。
 
