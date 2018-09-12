@@ -225,23 +225,7 @@ KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080
 
 --v：日志级别
 
-### 5、启动服务
-
-配置完成之后，执行systemctl start命令依次启动上述服务。使用systemctl enable命令jian个服务加入开机启动列表中
-
-```
-sudo systemctl daemon-reload
-sudo systemctl enable kube-apiserver.service
-sudo systemctl start kube-apiserver.service
-sudo systemctl enable kube-controller-manager.service
-sudo systemctl start kube-controller-manager.service
-sudo systemctl enable kube-scheduler.service
-sudo systemctl start kube-scheduler.service
-```
-
-执行 systemctl ststus &lt;service\_name&gt; 来验证服务状态
-
-### 6、kubelet服务
+### 5、kubelet服务
 
 kubelet服务依赖于Docker服务
 
@@ -284,7 +268,7 @@ KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
 > * --log-dir：日志目录
 > * --v：日志级别
 
-### 7、kube-proxy服务
+### 6、kube-proxy服务
 
 kube-proxy服务依赖于network服务。
 
@@ -321,6 +305,38 @@ KUBE_PROXY_ARGS="--master=http://127.0.0.1:8080
 > * --logtostderr：设置为false表示将日志写入文件，不写入stderr
 > * --log-dir：日志目录
 > * --v：日志级别
+
+### 7、启动服务
+
+配置完成之后，执行systemctl start命令依次启动上述服务。使用systemctl enable命令jian个服务加入开机启动列表中
+
+```
+# master服务
+sudo systemctl daemon-reload # 重载Unit文件
+
+sudo systemctl enable kube-apiserver.service
+sudo systemctl start kube-apiserver.service
+
+sudo systemctl enable kube-controller-manager.service
+sudo systemctl start kube-controller-manager.service
+
+sudo systemctl enable kube-scheduler.service
+sudo systemctl start kube-scheduler.service
+
+
+# node服务
+sudo systemctl daemon-reload # 重载Unit文件
+sudo systemctl enable kubelet.service
+sudo systemctl start kubelet.service
+
+sudo systemctl enable kube-proxy.service
+sudo systemctl start kube-proxy.service
+
+# 查看服务状态
+sudo systemctl status <service_name>
+```
+
+kubelet默认采用向Master自动注册本Node的机制，在Master上查看各Node的状态，状态为Ready表示Node以及成功注册并且状态为可用。
 
 
 
