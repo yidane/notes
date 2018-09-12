@@ -126,7 +126,7 @@ KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 --insecure-port=8080
 --service-cluster-ip-range=169.168.0.0/16 
 --service-node-port-range=1-65535
---admission_control=NamespaceLifecyce,LimitRange,SecurityContextDeny,ServiceAcount,ResourceQuota 
+--admission_control=NamespaceLifecycle,LimitRange,SecurityContextDeny,ServiceAcount,ResourceQuota 
 --log-dir=/var/log/kubernetes --v=2"
 ```
 
