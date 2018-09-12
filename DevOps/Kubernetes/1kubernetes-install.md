@@ -55,6 +55,35 @@ ExecStart=/usr/bin/etcd
 WanteBy=multi-user.target
 ```
 
+> 此配置是安装成功之后自动生产的启动配置 /lib/systemd/system/etcd.service
+>
+> ```
+> [Unit]
+> Description=etcd - highly-available key value store
+> Documentation=https://github.com/coreos/etcd
+> Documentation=man:etcd
+> After=network.target
+> Wants=network-online.target
+>
+> [Service]
+> Environment=DAEMON_ARGS=
+> Environment=ETCD_NAME=%H
+> Environment=ETCD_DATA_DIR=/var/lib/etcd/default
+> EnvironmentFile=-/etc/default/%p
+> Type=notify
+> User=etcd
+> PermissionsStartOnly=true
+> #ExecStart=/bin/sh -c "GOMAXPROCS=$(nproc) /usr/bin/etcd $DAEMON_ARGS"
+> ExecStart=/usr/bin/etcd $DAEMON_ARGS
+> Restart=on-abnormal
+> #RestartSec=10s
+> LimitNOFILE=65536
+>
+> [Install]
+> WantedBy=multi-user.target
+> Alias=etcd2.service
+> ```
+
 验证etcd安装
 
 ```
