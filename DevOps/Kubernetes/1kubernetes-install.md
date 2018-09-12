@@ -286,7 +286,41 @@ KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
 
 ### 7、kube-proxy服务
 
-kube-proxy服务依赖于network服务
+kube-proxy服务依赖于network服务。
+
+```
+[Unit]
+Description=Kubernetes Kube-Proxy Server
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=network.target
+Requires=network.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/proxy
+ExecStart=/usr/bin/kube-proxy $KUBE_PROXY_ARGS
+Restart=on-failure
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+```
+
+配置文件/etc/kubernetes/proxy的内容包括了kube-proxy的全部启动参数，主要的配置参数在变量KUBE\_PROXY\_ARGS中指定。
+
+```
+# cat /etc/kubernetes/proxy
+KUBE_PROXY_ARGS="--master=http://127.0.0.1:8080
+--logtostderr=false
+--log-dir=/var/log/kubernetes
+--v=2"
+```
+
+启动参数说明如下：
+
+> * --master：指定apiserver的URL地址
+> * --logtostderr：设置为false表示将日志写入文件，不写入stderr
+> * --log-dir：日志目录
+> * --v：日志级别
 
 
 
