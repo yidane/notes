@@ -147,7 +147,7 @@ KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 kube-controller-manager服务依赖于kube-apiserver服务
 
 ```
-#cat /lib/systemd/system/kube-controller-manager.service
+# cat /lib/systemd/system/kube-controller-manager.service
 [Unit]
 Description=Kubernetes Controller Manager
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
@@ -167,7 +167,7 @@ WantedBy=multi-user.target
 配置文件/etc/kubernetes/controller-managerc的内容包含了kube-controller-manager的全部启动参数，主要的配置参数在变量KUBE\__CONTROLLER\_MANAGER\_ARGS 中指定_
 
 ```
-#cat /etc/kubernetes/controller-manager
+# cat /etc/kubernetes/controller-manager
 KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
 --logostderr=false --log-dir/var/log/kubernetes --v=2"
 ```
