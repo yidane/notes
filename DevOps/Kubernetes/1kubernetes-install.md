@@ -225,13 +225,13 @@ KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080
 配置完成之后，执行systemctl start命令依次启动上述服务。使用systemctl enable命令jian个服务加入开机启动列表中
 
 ```
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable kube-apiserver.service
-$ sudo systemctl start kube-apiserver.service
-$ sudo systemctl enable kube-controller-manager.service
-$ sudo systemctl start kube-controller-manager.service
-$ sudo systemctl enable kube-scheduler.service
-$ sudo systemctl start kube-scheduler.service
+sudo systemctl daemon-reload
+sudo systemctl enable kube-apiserver.service
+sudo systemctl start kube-apiserver.service
+sudo systemctl enable kube-controller-manager.service
+sudo systemctl start kube-controller-manager.service
+sudo systemctl enable kube-scheduler.service
+sudo systemctl start kube-scheduler.service
 ```
 
 执行 systemctl ststus &lt;service\_name&gt; 来验证服务状态
