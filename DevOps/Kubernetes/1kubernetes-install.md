@@ -260,5 +260,26 @@ Restart=on_failure
 WantedBy=nulti-use.target
 ```
 
-其中，WorkingDirectory表示kubelet保存数据的目录，需要在启动kubelet服务之前进行创建
+其中，WorkingDirectory表示kubelet保存数据的目录，需要在启动kubelet服务之前进行创建。
+
+配置文件/etc/kubernetes/kubelet的内容包括了kubelet的全部启动参数，主要的配置参数在变量KUBELET\_ARGS中指定。
+
+```
+# cat /etc/kubernetes/kubelet
+KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
+--hostname-override=127.0.0.1
+--logtostderr=false
+--log-dir=/var/log/kubernetes
+--v=2"
+```
+
+参数启动说明如下：
+
+> * --api-servers：指定apiserver的URL地址，可以指定多个
+> * --hostname-override：设置本Node的名称
+> * --logtostderr：设置为false表示讲日志写入文件，不写入stderr
+> * --log-dir：日志目录
+> * --v：日志级别
+
+
 
