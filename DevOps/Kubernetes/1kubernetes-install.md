@@ -277,7 +277,7 @@ kube-proxy服务依赖于network服务。
 Description=Kubernetes Kube-Proxy Server
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
 After=network.target
-Requires=network.service
+Wants=network-online.target
 
 [Service]
 EnvironmentFile=/etc/kubernetes/proxy
@@ -341,7 +341,7 @@ kubelet默认采用向Master自动注册本Node的机制，在Master上查看各
 ```
 # kube get nodes
 Name            STATUS            AG
-127.0.0.1       Ready             1m    
+127.0.0.1       Ready             1m
 ```
 
 至此，单机配置Kubernetes完成。
