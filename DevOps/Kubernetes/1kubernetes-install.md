@@ -284,5 +284,9 @@ KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
 > * --log-dir：日志目录
 > * --v：日志级别
 
+### 7、kube-proxy服务
+
+kube-proxy服务依赖于network服务
+
 
 
