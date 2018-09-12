@@ -169,7 +169,9 @@ WantedBy=multi-user.target
 ```
 # cat /etc/kubernetes/controller-manager
 KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
---logostderr=false --log-dir/var/log/kubernetes --v=2"
+--logostderr=false 
+--log-dir/var/log/kubernetes 
+--v=2"
 ```
 
 启动参数说明如下
