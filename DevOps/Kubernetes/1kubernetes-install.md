@@ -164,7 +164,7 @@ LimitNOFILE=65536
 WantedBy=multi-user.target
 ```
 
-配置文件/etc/kubernetes/controller-managerc的内容包含了kube-controller-manager的全部启动参数，主要的配置参数在变量KUBE\__CONTROLLER\_MANAGER\_ARGS 中指定_
+配置文件/etc/kubernetes/controller-managerc的内容包含了kube-controller-manager的全部启动参数，主要的配置参数在变量_KUBE\_CONTROLLER\_MANAGER\_ARGS 中指定_
 
 ```
 # cat /etc/kubernetes/controller-manager
@@ -186,9 +186,9 @@ KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
 kube-scheduler服务也依赖于kube-apiserver服务
 
 ```
-#cat /lib/systemd/system/kube-controller-manager.service
+#cat /lib/systemd/system/kube-scheduler.service
 [Unit]
-Description=Kubernetes Controller Manager
+Description=Kubernetes Scheduler
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
 After=kube-apiserver.service
 Requires=kube-apiserver.service
