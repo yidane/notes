@@ -110,6 +110,7 @@ Wants=etcd.service
 EnvironmentFile=/etc/kubernetes/apiserver
 ExecStart=/usr/bin/kube-apiserver $KUBE_API_ARGS
 Restart=on-failure
+Type=notify
 LimitNOFILE=65535
 
 [Install]
@@ -119,6 +120,7 @@ WanteBy=multi-user.target
 配置文件 /etc/kubernetes/apiserver的内容包括了kube-apiserver的全部启动参数，主要的配置参数变量在KUBE\_\_API\_\_ARGS中指定
 
 ```
+# cat /etc/kubernetes/apiserver
 KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 --insecure-bind-address=0.0.0.0 --insecure-port=8080
 --service-cluster-ip-range=169.168.0.0/16 --service-node-port-range=1-65535
