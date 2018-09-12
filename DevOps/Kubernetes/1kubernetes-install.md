@@ -40,7 +40,7 @@ sudo apt install etcd-client
 设置为自动自动项
 
 ```
-#vi /lib/systemd/system/etcd.service
+# cat /lib/systemd/system/etcd.service
 [Unit]
 Description=Etcd Server
 After=network.service
@@ -99,7 +99,7 @@ cluster is healthy
 编辑systemd服务文件 /lib/systemd/system/kube-apiserver.service，内容如下
 
 ```
-#vi /lib/systemd/system/kube-apiserver.service
+# cat /lib/systemd/system/kube-apiserver.service
 [Unit]
 Description=Kubernetes API Server
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
@@ -122,10 +122,12 @@ WanteBy=multi-user.target
 ```
 # cat /etc/kubernetes/apiserver
 KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
---insecure-bind-address=0.0.0.0 --insecure-port=8080
---service-cluster-ip-range=169.168.0.0/16 --service-node-port-range=1-65535
---admission_control=NamespaceLifecyce,LimitRange,SecurityContextDeny,
-ServiceAcount,ResourceQuota --log-dir=/var/og/kubernetes --v=2"
+--insecure-bind-address=0.0.0.0 
+--insecure-port=8080
+--service-cluster-ip-range=169.168.0.0/16 
+--service-node-port-range=1-65535
+--admission_control=NamespaceLifecyce,LimitRange,SecurityContextDeny,ServiceAcount,ResourceQuota 
+--log-dir=/var/og/kubernetes --v=2"
 ```
 
 对启动参数的说明如下
@@ -133,7 +135,8 @@ ServiceAcount,ResourceQuota --log-dir=/var/og/kubernetes --v=2"
 * --etcd\_services：指定etcd服务的URL
 * --insecure-bind-address：apiserver绑定主机的非安全IP地址，设置0.0.0.0b表示绑定所有IP地址
 * --insecure-port：apiserver绑定主机的非安全端口号，默认为8080
-* --service-cluster-ip-range：kubernetes集群中Service可映射的屋里机端口号范围，默认为3000~32767
+* --service-cluster-ip-range：Kubernetes集群中Service的虚拟IP地址范围，以CIDR格式表示，例如169.169.0.0/16，该IP范围不能与物理机的真实IP段有重合
+* --service-node-port-range：kubernetes集群中Service可映射的屋里机端口号范围，默认为3000~3276
 * --admission\_control：Kubernetes集群的准入控制设置，各公职模块以插件的形式依次生效
 * --logtostderr：设置为false表示将日志写入文件，不写入stderr
 * --log-dir：日志目录
