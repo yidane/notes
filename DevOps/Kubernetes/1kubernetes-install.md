@@ -134,15 +134,16 @@ KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 
 对启动参数的说明如下
 
-* --etcd\_servers：指定etcd服务的URL
-* --insecure-bind-address：apiserver绑定主机的非安全IP地址，设置0.0.0.0b表示绑定所有IP地址
-* --insecure-port：apiserver绑定主机的非安全端口号，默认为8080
-* --service-cluster-ip-range：Kubernetes集群中Service的虚拟IP地址范围，以CIDR格式表示，例如169.169.0.0/16，该IP范围不能与物理机的真实IP段有重合
-* --service-node-port-range：kubernetes集群中Service可映射的屋里机端口号范围，默认为3000~3276
-* --admission\_control：Kubernetes集群的准入控制设置，各公职模块以插件的形式依次生效
-* --logtostderr：设置为false表示将日志写入文件，不写入stderr
-* --log-dir：日志目录
-* --v：日志级别
+> * --etcd\_servers：指定etcd服务的URL
+> * --insecure-bind-address：apiserver绑定主机的非安全IP地址，设置0.0.0.0b表示绑定所有IP地址
+> * --insecure-port：apiserver绑定主机的非安全端口号，默认为8080
+> * --service-cluster-ip-range：Kubernetes集群中Service的虚拟IP地址范围，以CIDR格式表示，例如169.169.0.0/16，该IP范围不能与物理机的真实IP段有重合
+> * --service-node-port-range：kubernetes集群中Service可映射的屋里机端口号范围，默认为3000~3276
+> * --admission\_control：Kubernetes集群的准入控制设置，各公职模块以插件的形式依次生效
+> * --logtostderr：设置为false表示将日志写入文件，不写入stderr
+> * --log-dir：日志目录
+
+--v：日志级别
 
 ### 3、kube-controller-manager服务
 
@@ -178,10 +179,11 @@ KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
 
 启动参数说明如下
 
-* --master：指定apiserver的URL地址
-* --logtostderr：设置为false表示将日志写入文件，不写入stderr
-* --log-dir：日志目录
-* --v：日志级别
+> * --master：指定apiserver的URL地址
+> * --logtostderr：设置为false表示将日志写入文件，不写入stderr
+> * --log-dir：日志目录
+
+--v：日志级别
 
 ### 4、kube-scheduler服务
 
@@ -217,10 +219,11 @@ KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080
 
 启动参数说明如下
 
-* --master：指定apiserver的URL地址
-* --logtostderr：设置为false表示将日志写入文件，不写入stderr
-* --log-dir：日志目录
-* --v：日志级别
+> * --master：指定apiserver的URL地址
+> * --logtostderr：设置为false表示将日志写入文件，不写入stderr
+> * --log-dir：日志目录
+
+--v：日志级别
 
 ### 5、启动服务
 
