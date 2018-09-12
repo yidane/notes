@@ -119,7 +119,7 @@ WanteBy=multi-user.target
 
 配置文件 /etc/kubernetes/apiserver的内容包括了kube-apiserver的全部启动参数，主要的配置参数变量在KUBE\_\_API\_\_ARGS中指定
 
-```
+```bash
 # cat /etc/kubernetes/apiserver
 KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 --insecure-bind-address=0.0.0.0 
