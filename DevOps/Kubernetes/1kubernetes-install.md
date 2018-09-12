@@ -130,6 +130,8 @@ KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 --log-dir=/var/log/kubernetes --v=2"
 ```
 
+> 注意：配置值为一行，使用时候记得删除换行符。换行符作用是方便查看。
+
 对启动参数的说明如下
 
 * --etcd\_servers：指定etcd服务的URL
