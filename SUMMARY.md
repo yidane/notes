@@ -6,6 +6,8 @@
 * [程序设计](编程语言/README.md)
   * [Go](程序设计/Go/README.md)
     * [Go语言TCP Socket编程](程序设计/Go/Go语言TCP Socket编程.md)
+  * [JavaScript](程序设计/JavaScript/README.md)
+    * [配置vscode开发es6环境](程序设计/JavaScript/配置vscode开发es6环境.md)
 * [数据库](数据库/README.md)
   * [RDBMS](数据库/RDBMS/README.md)
     * [数据库原理](数据库/RDBMS/MySQL/shu-ju-ku-yuan-li.md)
