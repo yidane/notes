@@ -1,4 +1,4 @@
-gnome extensions
+gnome 3.82.2 extensions
 
 * Alternatetab
 
@@ -35,8 +35,6 @@ gnome extensions
 * Workspace indicator
 
 > 在顶部菜单添加工作区管理
-
-
 
 
 
