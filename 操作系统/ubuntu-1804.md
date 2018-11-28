@@ -1,4 +1,4 @@
-gnome 3.82.2 extensions
+extensions for gnome 3.82.2
 
 * Alternatetab
 
