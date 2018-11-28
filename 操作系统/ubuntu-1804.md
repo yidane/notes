@@ -36,5 +36,9 @@ extensions for gnome 3.82.2
 
 > 在顶部菜单添加工作区管理
 
+* Window list
+
+> 在底部菜单栏显示打开的应用程序
+
 
 
