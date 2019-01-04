@@ -8,7 +8,7 @@
 
 前天在[GitHub](http://joearms.github.io/2013/04/05/concurrent-and-parallel-programming.html)上看到一幅图，问如何向五岁的小孩讲解并发和并行。然后有人以这幅图做答：
 
-![](/assets/b38a577b-6ab1-4bea-862f-6bf983ae9386.png)
+![""](/assets/b38a577b-6ab1-4bea-862f-6bf983ae9386.png)
 
 这幅图有点儿意思，用咖啡机的比喻来形容并发和并行，从中最直接的体会是，并发是有状态的，某一线程同时执行一个任务，完了才能进行到下一个，而并行是无状态的。
 
@@ -40,7 +40,7 @@
 
 为了说明问题，我们使用查找质数的例子来说明问题：有一系列自然数，我们需要从这些自然数中找出所有的质数并将它们存储到一个结合中。首先我们编写一个传统的运行在一个CPU线程上的方法：
 
-```
+``` C#
 public static IEnumerable<int> PrimesInRange_Sequential(int start, int end)
 {
     List<int> primes = new List<int>();
@@ -50,6 +50,7 @@ public static IEnumerable<int> PrimesInRange_Sequential(int start, int end)
     }
     return primes;
 }
+
 public static bool IsPrime(int number)
 {
     if (number == 2)
@@ -67,7 +68,7 @@ public static bool IsPrime(int number)
 
 首先第一个步的优化就是对算法效率本身的优化，比如说可以将线性的时间复杂度优化为根号n的时间复杂度，这里为了演示差异，暂不处理。但是无论算法怎么优化，似乎看起来仍旧不好进行并行处理。但仔细想想判断4977是否是一个质数和判断3221是否是质数是独立的，所以，将上面的数组划分到不同的线程中去计算就可以并行化。显然，在并行化的时候，我们需要注意多线程同步的问题，我们需要防止同一集合同时被多个线程修改，下面是一个改版后的代码，我们将任务均分，然后放在不同的线程上执行：
 
-```
+``` C#
 public static IEnumerable<int> PrimesInRange_Thread(int start, int end)
 {
     List<int> primes = new List<int>();
@@ -109,11 +110,11 @@ public static IEnumerable<int> PrimesInRange_Thread(int start, int end)
 
 顺序执行的算法平均需要执行12000ms, 而使用多线程的方法则只需要大约4000ms。如果在多核的机器上，运行速度会更快。但是通过Concurrency Profile的分析,可以看出问题。本人机器是i5处理器，有四个逻辑内核，从图中可以看出，在最开始的一段时间，CPU使用了四个内核处理，但是到最后只有一个CPU在运行。可以看到整体的CPU使用率从开始的4个核，然后下降到最后的 1个核
 
-![](/assets/b06398ea-f651-44de-a7ee-b36dc8b11da5.png)
+![""](/assets/b06398ea-f651-44de-a7ee-b36dc8b11da5.png)
 
 进一步从下图可以看出，四个线程的运行时间并不一样，可以看到一些线程比另外一些线程结束的早，使得整个的CPU的使用率远低于100%。
 
-![](/assets/95bb578d-34b3-489f-8e7c-6b7e6137e346.png)
+![""](/assets/95bb578d-34b3-489f-8e7c-6b7e6137e346.png)
 
 实际上如果内核更多的话，程序会运行的更快，但是有几个问题需要考虑：
 
@@ -130,7 +131,7 @@ public static IEnumerable<int> PrimesInRange_Thread(int start, int end)
 
 在我们的例子中，我们将上面的处理过程分成大块，然后放到线程池中让其处理。
 
-```
+``` C#
 public static IEnumerable<int> PrimesInRange_ThreadPool(int start, int end)
 {
     List<int> primes = new List<int>();
@@ -197,7 +198,7 @@ public static IEnumerable<int> PrimesInRange_ThreadPool(int start, int end)
 
 快速排序是一个比较有名的基于递归比较的排序算法。快速排序通过递归调用很容易实现并行化，其平均时间复杂度为nlog\(n\)。快速排序的代码如下：
 
-```
+``` C#
 public static void QuickSort_Sequential<T>(T[] items) where T : IComparable<T>
 {
     QuickSort_Sequential(items, 0, items.Length);
@@ -239,7 +240,7 @@ private static void Swap<T>(ref T a, ref T b)
 
 QuickSort递归调用的每一步都可以并行化。 左侧和右侧数组排序是独立的任务，不需要同步操作。这个很容易使用task来表示。下面是使用task对QuickSort进行并行化的第一步：
 
-```
+``` C#
 private static void QuickSort_Parallel<T>(T[] items) where T : IComparable<T>
 {
     QuickSort_Parallel(items, 0, items.Length);
@@ -259,7 +260,7 @@ Task.Run方法创建了一个新的任务,效果和new Task相同，然后让该
 
 TPL中还有一个Parallel.Invoke 的帮助类，它能够执行一系列的任务，然后当所有任务结束之后，返回结果值，使用该方法可以重写QuickSort的主体代码。
 
-```
+``` C#
 Parallel.Invoke(() =>QuickSort_Parallel_Threshold(items, left, pivot),
                 () =>QuickSort_Parallel_Threshold(items, pivot + 1, right));
 ```
@@ -270,9 +271,7 @@ Parallel.Invoke(() =>QuickSort_Parallel_Threshold(items, left, pivot),
 
 ### 3.控制递归算法中的并行化
 
-```
 下面有几个方法可以对上面的并行算法进行优化：
-```
 
 * 只要数组的大小大于某一个阈值，就采用并行版本，否则采用顺序执行的版本。
 * 只要递归的深度小于某一阈值，采用并行版本，否则采用顺序执行版本。（这一点甚至要优先于第一条，除非哨兵元素一直恰好排在元素的中间。
@@ -280,7 +279,7 @@ Parallel.Invoke(() =>QuickSort_Parallel_Threshold(items, left, pivot),
 
   在上面的例子中，限制并行集合的大小会产生比较好的效果。在本人机器上，只需要600ms大概会比顺序版本快4倍多。而代码改动则很小，只需要设置一个阈值，该阈值需要不断测试获得。
 
-```
+``` C#
 private static void QuickSort_Parallel_Threshold<T>(T[] items, int left, int right) where T : IComparable<T>
 {
     if (left == right) return;
@@ -308,7 +307,6 @@ private static void QuickSort_Parallel_Threshold<T>(T[] items, int left, int rig
 
 除了以上的例子外，还有很多使用递归处理的算法可以很容易的进行并行化，比如我们熟知的合并排序，Strassen矩阵乘法等等，这里有很多使用TPL进行并行化处理的例子，您感兴趣可以在[MSDN](http://code.msdn.microsoft.com/windowsdesktop/Samples-for-Parallel-b4b76364)看看。
 
-# 五、结语
+## 五、结语
 
 本文简要介绍了并行和并发编程所面临的问题，并以查找素数的例子演示了在.NET中并发编程的演变，最后以快速排序演示了如何使用TPL对能够进行递归处理的算法进行并行化。本文中的代码点击此处下载。希望这些对您了解并发和并行编程有所帮助。
-
