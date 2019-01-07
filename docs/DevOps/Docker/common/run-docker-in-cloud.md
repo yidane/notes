@@ -1,4 +1,12 @@
-## 1、安装[docker](https://docs.docker.com/install/linux/docker-ce/centos/)
+---
+layout: default
+title: Docker
+nav_order: 4
+parent: DevOps
+permalink: /docs/DevOps/Docker/common
+---
+
+# 1、安装[docker](https://docs.docker.com/install/linux/docker-ce/centos/)
 
 * ### 卸载旧版本
 

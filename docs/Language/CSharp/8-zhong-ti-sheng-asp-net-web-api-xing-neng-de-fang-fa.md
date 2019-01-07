@@ -1,3 +1,12 @@
+---
+layout: default
+title: 提升ASP.NET Web API性能方法
+nav_order: 4
+parent: CSharp
+grand_parent: Language
+permalink: /docs/Language/CSharp
+---
+
 # 8 种提升 ASP.NET Web API 性能的方法
 
 FROM [开源中国](https://www.oschina.net/translate/8-ways-improve-asp-net-web-api-performance)

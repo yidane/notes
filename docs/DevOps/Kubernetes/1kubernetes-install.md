@@ -1,3 +1,11 @@
+---
+layout: default
+title: Kubernetes
+nav_order: 4
+parent: DevOps
+permalink: /docs/DevOps/Kubernetes
+---
+
 # 在ubuntu 18.04安装单机版kubernetes 1.3.0
 
 ## 1、下载kubernetes 1.3.0

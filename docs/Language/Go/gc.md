@@ -1,5 +1,9 @@
 ---
-title: This is my title | hahah | hello
+layout: default
+title: Go
+nav_order: 4
+has_children: true
+permalink: /docs/Language/Go
 ---
 
 # 常见 GC 算法

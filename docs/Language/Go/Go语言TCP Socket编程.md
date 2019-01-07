@@ -1,3 +1,12 @@
+---
+layout: default
+title: Go语言Socket编程
+nav_order: 4
+parent: Go
+grand_parent: Language
+permalink: /docs/Language/Go
+---
+
 # Go语言TCP Socket编程
 
 [Golang](http://tonybai.com/tag/go)的主要 设计目标之一就是面向大规模后端服务程序，网络通信这块是服务端 程序必不可少也是至关重要的一部分。在日常应用中，我们也可以看到Go中的net以及其subdirectories下的包均是“高频+刚需”，而TCP socket则是网络编程的主流，即便您没有直接使用到net中有关TCP Socket方面的接口，但net/http总是用到了吧，http底层依旧是用tcp socket实现的。

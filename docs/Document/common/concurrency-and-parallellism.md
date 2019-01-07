@@ -1,3 +1,11 @@
+---
+layout: default
+title: 浅谈并发与并行
+nav_order: 4
+has_children: true
+permalink: /docs/Document
+---
+
 # 浅谈并发与并行
 
 摘自 [cnblogs](http://www.cnblogs.com/yangecnu/p/Something-about-Concurrent-and-Parallel-Programming.html#!comments)

@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Java
+title: CSharp
 nav_order: 4
 has_children: true
 parent: Language
-
-permalink: /docs/Language/Java
+permalink: /docs/Language/CSharp
 ---
 
-# Java
+# CSharp
