@@ -6,4 +6,5 @@
  future: true
  jailed: false
  theme: just-the-docs
+ remote_theme: pmarsceill/just-the-docs
  gfm_quirks: paragraph_end
