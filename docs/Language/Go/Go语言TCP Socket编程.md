@@ -4,7 +4,6 @@ title: Go语言Socket编程
 nav_order: 4
 parent: Go
 grand_parent: Language
-permalink: /docs/Language/Go
 ---
 
 # Go语言TCP Socket编程

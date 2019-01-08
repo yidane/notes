@@ -2,8 +2,8 @@
 layout: default
 title: rancher
 nav_order: 4
-parent: DevOps
-grand_parent: Docker
+parent: Docker
+grand_parent: DevOps
 permalink: /docs/DevOps/Docker/rancher
 ---
 

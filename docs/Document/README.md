@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 文档库
+title: Document
 nav_order: 8
 has_children: true
 permalink: /docs/Document

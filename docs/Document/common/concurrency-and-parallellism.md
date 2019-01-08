@@ -2,8 +2,7 @@
 layout: default
 title: 浅谈并发与并行
 nav_order: 4
-has_children: true
-permalink: /docs/Document
+parent: Document
 ---
 
 # 浅谈并发与并行

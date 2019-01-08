@@ -1,3 +1,14 @@
+---
+layout: default
+title: Ubuntu 18.04推荐扩展
+nav_order: 4
+has_children: true
+parent: Linux
+grand_parent: OS
+---
+
+# Ubuntu 18.04推荐扩展
+
 extensions for gnome 3.82.2
 
 * [x] Alternatetab 

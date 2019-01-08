@@ -1,9 +1,8 @@
 ---
 layout: default
-title: 文档库
+title: klockargardens
 nav_order: 4
-has_children: true
-permalink: /docs/Document
+parent: Document
 ---
 
 # klockargardens

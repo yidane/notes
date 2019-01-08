@@ -4,7 +4,6 @@ title: Go精编100题
 nav_order: 4
 parent: Go
 grand_parent: Language
-permalink: /docs/Language/Go
 ---
 
 Golang 精编 100 题

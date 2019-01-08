@@ -3,7 +3,8 @@ layout: default
 title: Go
 nav_order: 4
 has_children: true
-permalink: /docs/Language/Go
+parent: Go
+grand_parent: Language
 ---
 
 # 常见 GC 算法
