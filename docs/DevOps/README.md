@@ -7,4 +7,3 @@ permalink: /docs/DevOps
 ---
 
 # devops document
-

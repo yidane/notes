@@ -2,7 +2,7 @@
 layout: default
 title: 浅谈并发与并行
 nav_order: 4
-parent: Document
+parent: 文档库
 ---
 
 # 浅谈并发与并行

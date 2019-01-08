@@ -12,5 +12,5 @@ permalink: /docs/DevOps/Docker/rancher
 1、获取Rancher镜像
 
 ``` bash
-$ sudo docker pull rancher/rancher
+sudo docker pull rancher/rancher
 ```

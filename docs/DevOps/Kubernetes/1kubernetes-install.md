@@ -40,14 +40,14 @@ kubernetes的服务都可以通过直接运行二进制文件加上启动采纳�
 
 ### 1、etcd服务
 
-```
+``` bash
 sudo apt install etcd-server
 sudo apt install etcd-client
 ```
 
 设置为自动自动项
 
-```
+``` bash
 # cat /lib/systemd/system/etcd.service
 [Unit]
 Description=Etcd Server
@@ -63,9 +63,10 @@ ExecStart=/usr/bin/etcd
 WanteBy=multi-user.target
 ```
 
-> 此配置是安装成功之后自动生产的启动配置 /lib/systemd/system/etcd.service
+> 此配置是安装成功之后自动生产的启动配  
+> /lib/systemd/system/etcd.service
 >
-> ```
+> ``` bash
 > [Unit]
 > Description=etcd - highly-available key value store
 > Documentation=https://github.com/coreos/etcd
@@ -94,7 +95,7 @@ WanteBy=multi-user.target
 
 验证etcd安装
 
-```
+``` bash
 etcdctl cluster-health
 member 8e9e05c52164694d is healthy: got healthy result from http://localhost:2379
 cluster is healthy
@@ -106,7 +107,7 @@ cluster is healthy
 
 编辑systemd服务文件 /lib/systemd/system/kube-apiserver.service，内容如下
 
-```
+``` bash
 # cat /lib/systemd/system/kube-apiserver.service
 [Unit]
 Description=Kubernetes API Server
@@ -130,11 +131,11 @@ WanteBy=multi-user.target
 ```bash
 # cat /etc/kubernetes/apiserver
 KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
---insecure-bind-address=0.0.0.0 
+--insecure-bind-address=0.0.0.0
 --insecure-port=8080
---service-cluster-ip-range=169.168.0.0/16 
+--service-cluster-ip-range=169.168.0.0/16
 --service-node-port-range=1-65535
---admission_control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota 
+--admission_control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota
 --log-dir=/var/log/kubernetes --v=2"
 ```
 
@@ -157,7 +158,7 @@ KUBE_API_ARGS="--etcd_servers=http://127.0.0.1:2379
 
 kube-controller-manager服务依赖于kube-apiserver服务
 
-```
+``` bash
 # cat /lib/systemd/system/kube-controller-manager.service
 [Unit]
 Description=Kubernetes Controller Manager
@@ -177,11 +178,11 @@ WantedBy=multi-user.target
 
 配置文件/etc/kubernetes/controller-managerc的内容包含了kube-controller-manager的全部启动参数，主要的配置参数在变量_KUBE\_CONTROLLER\_MANAGER\_ARGS 中指定_
 
-```
+``` bash
 # cat /etc/kubernetes/controller-manager
 KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
---logtostderr=false 
---log-dir=/var/log/kubernetes 
+--logtostderr=false
+--log-dir=/var/log/kubernetes
 --v=2"
 ```
 
@@ -197,7 +198,7 @@ KUBE_CONTROLLER_MANAGER_ARGS="--master=https://192.168.18.3:8080
 
 kube-scheduler服务也依赖于kube-apiserver服务
 
-```
+``` bash
 #cat /lib/systemd/system/kube-scheduler.service
 [Unit]
 Description=Kubernetes Scheduler
@@ -217,11 +218,11 @@ WantedBy=multi-user.target
 
 配置文件 /etc/kubernetes/scheduler的内容包括了kube-scheduler的全部启动参数，主要的配置参数在变量 KUBE\_\_SCHEDULER\_\_ARGS中指定
 
-```
+``` bash
 # cat /etc/kubernetes/scheduler
-KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080 
+KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080
 --logtostderr=false
---log-dir=/var/log/kubernetes 
+--log-dir=/var/log/kubernetes
 --v=2"
 ```
 
@@ -237,7 +238,7 @@ KUBE_SCHEDULER_ARGS="--master=http://192.168.18.3:8080
 
 kubelet服务依赖于Docker服务
 
-```
+``` bash
 #cat /lib/systemd/system/kubelet.service
 [Unit]
 Description=kubernetes Kubelet Server
@@ -259,7 +260,7 @@ WantedBy=nulti-use.target
 
 配置文件/etc/kubernetes/kubelet的内容包括了kubelet的全部启动参数，主要的配置参数在变量KUBELET\_ARGS中指定。
 
-```
+``` bash
 # cat /etc/kubernetes/kubelet
 KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
 --hostname-override=127.0.0.1
@@ -280,7 +281,7 @@ KUBELET_ARGS="--api-servers=http://127.0.0.1:8080
 
 kube-proxy服务依赖于network服务。
 
-```
+``` bash
 [Unit]
 Description=Kubernetes Kube-Proxy Server
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
@@ -299,7 +300,7 @@ WantedBy=multi-user.target
 
 配置文件/etc/kubernetes/proxy的内容包括了kube-proxy的全部启动参数，主要的配置参数在变量KUBE\_PROXY\_ARGS中指定。
 
-```
+``` bash
 # cat /etc/kubernetes/proxy
 KUBE_PROXY_ARGS="--master=http://127.0.0.1:8080
 --logtostderr=false
@@ -318,7 +319,7 @@ KUBE_PROXY_ARGS="--master=http://127.0.0.1:8080
 
 配置完成之后，执行systemctl start命令依次启动上述服务。使用systemctl enable命令jian个服务加入开机启动列表中
 
-```
+``` bash
 # master服务
 sudo systemctl daemon-reload # 重载Unit文件
 
@@ -346,11 +347,10 @@ sudo systemctl status <service_name>
 
 kubelet默认采用向Master自动注册本Node的机制，在Master上查看各Node的状态，状态为Ready表示Node以及成功注册并且状态为可用。
 
-```
+``` bash
 # kube get nodes
 Name            STATUS            AG
 127.0.0.1       Ready             1m
 ```
 
 至此，单机配置Kubernetes完成。
-

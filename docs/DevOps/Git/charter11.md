@@ -10,7 +10,7 @@ grand_parent: DevOps
 
 ## 1 场景描述
 
-计划将本笔记开源，同时提交到github和gitee上。
+计划将本笔记开源，同时提交到github和gitee上
 
 ## 2 实现步骤
 
@@ -18,7 +18,7 @@ grand_parent: DevOps
 
 #### 2.1.1 查看秘钥
 
-```
+``` bash
 ls ~/.ssh
 ```
 
@@ -26,7 +26,7 @@ ls ~/.ssh
 
 #### 2.1.2 创建秘钥和公钥
 
-```
+``` bash
 ssh-kengen -t rsa -f ~/.ssh/gitee -C "yidane@163.com"
 ssh-kengen -t ras -f ~/.ssh/github -C "yidane@163.com"
 ```
@@ -37,14 +37,14 @@ ssh-kengen -t ras -f ~/.ssh/github -C "yidane@163.com"
 
 * 在～/.ssh文件夹下创建config文件
 
-```
-$ touch config
-$ vim config
+``` bash
+touch config
+vim config
 ```
 
 * 编辑config文件，配置不同的仓库指向不同的秘钥文件
 
-```
+``` bash
 # github config
 Host github.com
 HostName github.com
@@ -66,9 +66,9 @@ IdentityFile ~/.ssh/gitee
 
 #### 2.1.4 导入秘钥
 
-```
-$ cat github.pub
-$ cat gitee
+``` bash
+cat github.pub
+cat gitee
 ```
 
 复制输出的值，分别导入到github和gitee账号中的SSH keys中保存
@@ -77,21 +77,21 @@ $ cat gitee
 
 清空本地的SSH缓存，添加新的SSH秘钥到SSH agent中
 
-```
-$ ssh-add -D
-$ ssh-add github
-$ ssh-add gitee
+``` bash
+ssh-add -D
+ssh-add github
+ssh-add gitee
 ```
 
 确认新秘钥添加成功
 
-```
-$ ssh-add -l
+``` bash
+ssh-add -l
 ```
 
 #### 2.1.6 测试ssh链接
 
-```
+``` bash
 $ ssh -T git@github.com
 Hi yidane/notes! You've successfully authenticated, but GitHub does not provide shell access.
 $ ssh -T git@gitee.com
@@ -104,7 +104,7 @@ Hi yidane/notes! You've successfully authenticated, but GitHub does not provide 
 
 #### 2.2.1 全局用户名邮箱配置
 
-```
+``` bash
 # 取消全局 用户名/邮箱 配置
 $ git config --global --unset user.name
 $ git config --global --unset user.email
@@ -119,7 +119,7 @@ $ git config --list
 
 #### 2.2.2 重建远程仓库地址
 
-```
+``` bash
 # 进入项目目录后
 $ git remote rm origin
 
@@ -145,16 +145,16 @@ origin    https://gitee.com/yidane/notes.git (push)
 
 #### 2.2.3 pull数据
 
-```
+``` bash
 # 从远程仓库pull数据
-$ git pull origin master 
+$ git pull origin master
 # 若出现unrelated histories错误，则使用下面命令pull数据
 $ git pull origin master --allow-unrelated-histories
 ```
 
 #### 2.2.4 push数据
 
-```
+``` bash
 # 添加README.md文件
 $ git add README.md
 $ git commit -m "first commit"
@@ -183,6 +183,3 @@ To https://gitee.com/yidane/notes.git
    afeda66..f5a3036  master -> master
 # 从输出信息可以看出，代码向两个远程仓库提交数据，且都提交成功
 ```
-
-
-

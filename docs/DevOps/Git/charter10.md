@@ -10,14 +10,14 @@ grand_parent: DevOps
 
 ## 1、克隆仓库
 
-```
+``` bash
 git clone --bare https://gitee.com/yidane/notes.git
 cd repo.git
 ```
 
 ## 2、命令行中执行修改命令
 
-```
+``` bash
 #!/bin/sh
 
 git filter-branch --env-filter '
@@ -31,6 +31,7 @@ if [ "$GIT_COMMITTER_EMAIL" = "$Nxin_EMAIL" ]||[ "$GIT_COMMITTER_EMAIL" = "$Outl
     export GIT_COMMITTER_NAME="$CORRECT_NAME"
     export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
 fi
+
 if [ "$GIT_AUTHOR_EMAIL" = "$Nxin_EMAIL" ]||[ "$GIT_AUTHOR_EMAIL" = "$Outlook_EMAIL" ];then
     export GIT_AUTHOR_NAME="$CORRECT_NAME"
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
@@ -40,9 +41,6 @@ fi
 
 ## 3、同步到远程仓库
 
-```
+``` bash
 git push --force --tags origin 'refs/heads/*'
 ```
-
-
-
