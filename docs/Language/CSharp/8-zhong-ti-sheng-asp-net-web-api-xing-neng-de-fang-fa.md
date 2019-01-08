@@ -23,7 +23,7 @@ JSON 的序列化对整个 ASP.NET Web API 的性能有着关键性的影响。 
 
 我测量过，Web API 的性能提升了20%左右。 我强烈建议你去尝试一下这个序列化工具。这里有一些最近的流行序列化工具性能的比较数据。
 
-![](/assets/23071618_Ks6a.png)
+![/asssets/404.png](/assets/23071618_Ks6a.png)
 
 [来源： theburningmonk](http://theburningmonk.com/2014/06/json-and-binary-serializers-benchmarks-updated/)
 
@@ -37,7 +37,7 @@ JSON 的序列化对整个 ASP.NET Web API 的性能有着关键性的影响。 
 
 使用StringBuilder产生JSON，并在结尾处返回StringContent作为在WebAPI中响应的内容。
 
-```
+``` C#
 var response = Request.CreateResponse(HttpStatusCode.OK);
 response.Content = new StringContent(jsonResult, Encoding.UTF8, "application/json");
 return response;
@@ -71,7 +71,7 @@ return response;
 
 你可以看到最流行的ORM之间的性能比较.
 
-![](/assets/2018年04月09日14:58:48.png)
+![/asssets/404.png](/assets/2018年04月09日14:58:48.png)
 
 _Dapper_和_hand-written fetch code_很快，果不其然，所有的ORM都比这三种慢.
 
@@ -83,10 +83,10 @@ _带有resultset缓存的LLBLGen_ 很快，但它要重新遍历一遍resultset�
 
 实现是简单的，只需使用 _async  的关键字和 将你方法的返回值类型改为 Task即可。_
 
-```
+``` C#
 [HttpGet]  
 public async Task OperationAsync()  
-{   
+{
     await Task.Delay(2000);  
 }
 ```
@@ -97,29 +97,29 @@ public async Task OperationAsync()
 
 也就是说你可以从**DataReader**去提取多个结果集 参见以下演示代码：
 
-```
-// read the first resultset 
-var reader = command.ExecuteReader(); 
+``` C#
+// read the first resultset
+var reader = command.ExecuteReader();
 
-// read the data from that resultset 
-while (reader.Read()) 
-{ 
-    suppliers.Add(PopulateSupplierFromIDataReader( reader )); 
-} 
+// read the data from that resultset
+while (reader.Read())
+{
+    suppliers.Add(PopulateSupplierFromIDataReader( reader ));
+}
 
-// read the next resultset 
-reader.NextResult(); 
+// read the next resultset
+reader.NextResult();
 
-// read the data from that second resultset 
-while (reader.Read()) 
-{ 
-    products.Add(PopulateProductFromIDataReader( reader )); 
+// read the data from that second resultset
+while (reader.Read())
+{
+    products.Add(PopulateProductFromIDataReader( reader ));
 }
 ```
 
 你可以在一个 Web API 的一次响应中返回多个对象，试着将你的返回的多个对象进行组合后返回 如下：
 
-```
+``` C#
 public class AggregateResult
 {
      public long MaxId { get; set; }
@@ -129,4 +129,3 @@ public class AggregateResult
 ```
 
 这种方式将减少对你的WEB API的HTTP请求。
-

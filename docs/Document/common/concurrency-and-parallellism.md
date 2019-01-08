@@ -64,7 +64,7 @@ public static bool IsPrime(int number)
         return true;
     for (int divisor = 2; divisor < number; divisor += 1)
     {
-        if (number % divisor == 0) 
+        if (number % divisor == 0)
         return false;
     }
     return true;
@@ -179,11 +179,11 @@ public static IEnumerable<int> PrimesInRange_ThreadPool(int start, int end)
 
 这样，较前一版本，代码更具有可扩展性。教前面那种复杂的手动创建线程的版本，使用线程池的方式，时间大概为2000ms，其次，使用Concurrency Profiler查看，CPU使用率大概接近100%，而且每一个线程执行的结束时间差不多。
 
-![](/assets/78a5d2eb-a642-4319-b701-8ad30fa12a5a.png)
+![/asssets/404.png](/assets/78a5d2eb-a642-4319-b701-8ad30fa12a5a.png)
 
 在CLR 4.0中，CLR线程池包含几个协作的部分。当不属于线程池的线程，比如说主线程，将任务分配到线程池时，实际上是将任务压入到一个全局的处理队列FIFO中。然后线程池中的每一个线程有一个本地的栈LIFO,然后不断的执行这个栈上的任务。如果线程池中的栈为空，他会试图尝试获取其他线程的本地栈中的任务，以队列的方式\(FIF0\)去执行。当所有的本地队列为空时，线程会询问全局的FIFO队列，然后从哪儿获取任务并执行。
 
-![](/assets/f69e9510-f601-436c-a067-2b09b81c8181.png)
+![/asssets/404.png](/assets/f69e9510-f601-436c-a067-2b09b81c8181.png)
 
 当将任务压进全局的队列时，没有一个子线程有优先级去执行特定的任务，只有按顺序执行，所以FIFO适合全局队列。但是当线程池里的线程来执行一个任务时，它通常会使用当前的数据以及指令来执行下一个任务，这充分利用了CPU的数据和指令级缓存。更进一步，访问线程本地队列需要较少的同步，并且很少会遇到在访问全局队列时，其他线程争夺资源的问题。同样，当本地线程从其它线程抢工作任务是，他是以一种FIFO的形式，所以LIFO优化考虑到了CPU在本地原来线程上的缓存。
 

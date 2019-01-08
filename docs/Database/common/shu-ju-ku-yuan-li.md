@@ -49,7 +49,7 @@ nav_order: 2
 
 重要的不是数据量，而是当数据量增加时运算如何增加。时间复杂度不会给出确切的运算次数，但是给出的是一种理念。
 
-![](/assets/7cc829d3jw1f3drdktjmvj20ez0bggmz.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdktjmvj20ez0bggmz.jpg)
 
 图中可以看到不同类型的复杂度的演变过程，我用了对数尺来建这个图。具体点儿说，数据量以很快的速度从1条增长到10亿条。我们可得到如下结论：
 
@@ -85,10 +85,10 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 为了让你能明白
 
 * 搜索一个好的哈希表会得到 O\(1\) 复杂度
-* * 搜索一个均衡的树会得到 O\(log\(n\)\) 复杂度
-  * 搜索一个阵列会得到 O\(n\) 复杂度
-  * 最好的排序算法具有 O\(n\*log\(n\)\) 复杂度
-  * 糟糕的排序算法具有 O\(n^2\) 复杂度
+* 搜索一个均衡的树会得到 O\(log\(n\)\) 复杂度
+* 搜索一个阵列会得到 O\(n\) 复杂度
+* 最好的排序算法具有 O\(n\*log\(n\)\) 复杂度
+* 糟糕的排序算法具有 O\(n^2\) 复杂度
 
 注：在接下来的部分，我们将会研究这些算法和数据结构。
 
@@ -104,6 +104,7 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 
 * 算法的内存消耗
 * 算法的磁盘 I/O 消耗
+  
 当然还有比 n^2 更糟糕的复杂度，比如：
 
 * n^4：差劲！我将要提到的一些算法具备这种复杂度。
@@ -125,7 +126,7 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 
 我们用个简单的例子来看看这是什么意思：
 
-![](/assets/7cc829d3jw1f3drdlx1osj20b5069mxt.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdlx1osj20b5069mxt.jpg)
 
 通过此图你可以看到，在 2 个 4元素序列里你只需要迭代一次，就能构建最终的8元素已排序序列，因为两个4元素序列已经排好序了：
 
@@ -139,22 +140,22 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 
 【译者注：[合并排序详细原理](http://blog.jobbole.com/79293/)，其中一个动图（原图较长，我做了删减）清晰的演示了上述合并排序的过程，而原文的叙述似乎没有这么清晰，不动戳大。】
 
-![](/assets/7cc829d3jw1f3drdn5ynkg208w05cjsj.gif)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdn5ynkg208w05cjsj.gif)
 
 既然我们明白了这个技巧，下面就是我的合并排序伪代码。
 
-```
-array mergeSort(array a)   
-    if(length(a)==1)      
-        return a[0];   
+``` c
+array mergeSort(array a)
+    if(length(a)==1)
+        return a[0];
     end if
 
-    //recursive calls   
-    [left_array right_array] := split_into_2_equally_sized_arrays(a);   
+    //recursive calls
+    [left_array right_array] := split_into_2_equally_sized_arrays(a);
     array new_left_array := mergeSort(left_array);  
-    array new_right_array := mergeSort(right_array);   
+    array new_right_array := mergeSort(right_array);
 
-     //merging the 2 small ordered arrays into a big one   
+     //merging the 2 small ordered arrays into a big one
     array result := merge(new_left_array,new_right_array);  
     return result;
 ```
@@ -166,7 +167,7 @@ array mergeSort(array a)
 
 #### 拆分阶段
 
-![](/assets/7cc829d3jw1f3drdnwywaj20gl08ljst.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdnwywaj20gl08ljst.jpg)
 
 在拆分阶段过程中，使用3个步骤将序列分为一元序列。步骤数量的值是 log\(N\) （因为 N=8, log\(N\)=3）。【译者注：底数为2，下文有说明】
 
@@ -176,7 +177,7 @@ array mergeSort(array a)
 
 #### 排序阶段
 
-![](/assets/7cc829d3jw1f3drdoof0qj20gn0a0mz3.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdoof0qj20gn0a0mz3.jpg)
 
 在排序阶段，你从一元序列开始。在每一个步骤中，你应用多次合并操作，成本一共是 N=8 次运算。
 
@@ -188,7 +189,7 @@ array mergeSort(array a)
 
 【译者注：这个完整的动图演示了拆分和排序的全过程，不动戳大。】
 
-![](/assets/7cc829d3jw1f3drdpmohcg208c05040x.gif)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdpmohcg208c05040x.gif)
 
 #### 合并排序的强大之处
 
@@ -203,6 +204,7 @@ array mergeSort(array a)
 * 你可以更改算法，以便于同时使用磁盘空间和少量内存而避免巨量磁盘 I/O。方法是只向内存中加载当前处理的部分。在仅仅100MB的内存缓冲区内排序一个几个GB的表时，这是个很重要的技巧。
 
 注：这种算法叫『外部排序』\([external sorting](https://en.wikipedia.org/wiki/External_sorting)\)。
+
 * 你可以更改算法，以便于在 多处理器/多线程/多服务器 上运行。
 
 比如，分布式合并排序是[Hadoop](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/mapreduce/Reducer.html)（那个著名的大数据框架）的关键组件之一。
@@ -219,7 +221,7 @@ array mergeSort(array a)
 
 二维阵列是最简单的数据结构。一个表可以看作是个阵列，比如：
 
-![](/assets/7cc829d3jw1f3drdpqm1oj20cl0apdhp.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdpqm1oj20cl0apdhp.jpg)
 
 这个二维阵列是带有行与列的表：
 
@@ -238,9 +240,7 @@ array mergeSort(array a)
 
 【译者注：binary search tree，二叉查找树/二叉搜索树，或称 Binary Sort Tree 二叉排序树。见[百度百科](http://baike.baidu.com/view/647462.htm)】
 
-##### 概念
-
-![](/assets/432222c9e8cd2d665083915430ae1a2e.png)
+![/asssets/404.png](/assets/432222c9e8cd2d665083915430ae1a2e.png)
 
 这个树有 N=15 个元素。比方说我要找208：
 
@@ -277,7 +277,7 @@ array mergeSort(array a)
 
 【译者注：参考[B+树](http://baike.baidu.com/view/1168762.htm)，[二叉树遍历](http://baike.baidu.com/view/549587.htm)[维基百科](https://en.wikipedia.org/wiki/Tree_traversal)】
 
-![](/assets/15c4b064af9ac7f357404a1b17ff1cae.png)你可以看到，节点更多了（多了两倍）。确实，你有了额外的节点，它们就是帮助你找到正确节点的『决策节点』（正确节点保存着相关表中行的位置）。但是搜索复杂度还是在 O\(log\(N\)\)（只多了一层）。一个重要的不同点是，最底层的节点是跟后续节点相连接的。
+![/asssets/404.png](/assets/15c4b064af9ac7f357404a1b17ff1cae.png)你可以看到，节点更多了（多了两倍）。确实，你有了额外的节点，它们就是帮助你找到正确节点的『决策节点』（正确节点保存着相关表中行的位置）。但是搜索复杂度还是在 O\(log\(N\)\)（只多了一层）。一个重要的不同点是，最底层的节点是跟后续节点相连接的。
 
 用这个 B+树，假设你要找40到100间的值：
 
@@ -313,14 +313,14 @@ array mergeSort(array a)
 哈希表这种数据结构可以用关键字来快速找到一个元素。为了构建一个哈希表，你需要定义：
 
 * 元素的关键字
-* * 关键字的哈希函数。关键字计算出来的哈希值给出了元素的位置（叫做哈希桶）。
-  * 关键字比较函数。一旦你找到正确的哈希桶，你必须用比较函数在桶内找到你要的元素。
+* 关键字的哈希函数。关键字计算出来的哈希值给出了元素的位置（叫做哈希桶）。
+* 关键字比较函数。一旦你找到正确的哈希桶，你必须用比较函数在桶内找到你要的元素。
 
 ##### 一个简单的例子
 
 我们来看一个形象化的例子：
 
-![](/assets/7cc829d3jw1f3drdsruaqj20hp09075r.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdsruaqj20hp09075r.jpg)
 
 这个哈希表有10个哈希桶。因为我懒，我只给出5个桶，但是我知道你很聪明，所以我让你想象其它的5个桶。我用的哈希函数是关键字对10取模，也就是我只保留元素关键字的最后一位，用来查找它的哈希桶：
 
@@ -388,7 +388,7 @@ array mergeSort(array a)
 
 数据库一般可以用如下图形来理解：
 
-![](/assets/7cc829d3jw1f3drdtcrs7j20dq0fijtz.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdtcrs7j20dq0fijtz.jpg)
 
 撰写这部分之前，我读过很多书/论文，它们都以自己的方式描述数据库。所以，我不会特别关注如何组织数据库或者如何命名各种进程，因为我选择了自己的方式来描述这些概念以适应本文。区别就是不同的组件，总体思路为：数据库是由多种互相交互的组件构成的。
 
@@ -401,6 +401,7 @@ array mergeSort(array a)
 * 安全管理器（Security Manager）：用于对用户的验证和授权。
 * 客户端管理器（Client manager）：用于管理客户端连接。
 * ……
+  
 工具：
 
 * 备份管理器（Backup manager）：用于保存和恢复数据。
@@ -430,7 +431,7 @@ array mergeSort(array a)
 
 ## 客户端管理器
 
-![](/assets/7cc829d3jw1f3drdtyhwtj20g606imxv.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdtyhwtj20g606imxv.jpg)
 
 客户端管理器是处理客户端通信的。客户端可以是一个（网站）服务器或者一个最终用户或最终应用。客户端管理器通过一系列知名的API（JDBC, ODBC, OLE-DB …）提供不同的方式来访问数据库。
 
@@ -448,7 +449,7 @@ array mergeSort(array a)
 
 ## 查询管理器
 
-![](/assets/7cc829d3jw1f3drdudpcuj20fy0630tf.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdudpcuj20fy0630tf.jpg)
 
 这部分是数据库的威力所在，在这部分里，一个写得糟糕的查询可以转换成一个快速执行的代码，代码执行的结果被送到客户端管理器。这个多步骤操作过程如下：
 
@@ -505,20 +506,20 @@ array mergeSort(array a)
 
 例如：
 
-```
-SELECT PERSON.* FROM 
+``` SQL
+SELECT PERSON.* FROM
 PERSON
 WHERE PERSON.person_key IN
 (SELECT MAILS.person_key
 FROM MAILS
-WHERE MAILS.mail 
+WHERE MAILS.mail
 LIKE 'christophe%');
 ```
 
 会转换为：
 
-```
-SELECT PERSON.* 
+``` SQL
+SELECT PERSON.*
 FROM PERSON, MAILS
 WHERE PERSON.person_key = MAILS.person_key
 and MAILS.mail LIKE 'christophe%';
@@ -527,11 +528,7 @@ and MAILS.mail LIKE 'christophe%';
 去除不必要的运算符：比如，如果你用了 DISTINCT，而其实你有 UNIQUE 约束（这本身就防止了数据出现重复），那么 DISTINCT 关键字就被去掉了。
 
 * 排除冗余的联接：如果相同的 JOIN 条件出现两次，比如隐藏在视图中的 JOIN 条件，或者由于传递性产生的无用 JOIN，都会被消除。
-* 常数计算赋值：如果你的查询需要计算，那么在重写过程中计算会执行一次。比如 WHERE AGE 
-  &gt;
-   10+2 会转换为 WHERE AGE 
-  &gt;
-   12 ， TODATE\(“日期字符串”\) 会转换为 datetime 格式的日期值。
+* 常数计算赋值：如果你的查询需要计算，那么在重写过程中计算会执行一次。比如 WHERE AGE &gt; 10+2 会转换为 WHERE AGE &gt; 12 ， TODATE\(“日期字符串”\) 会转换为 datetime 格式的日期值。
 * （高级）分区裁剪（Partition Pruning）：如果你用了分区表，重写器能够找到需要使用的分区。
 * （高级）物化视图重写（Materialized view rewrite）：如果你有个物化视图匹配查询谓词的一个子集，重写器将检查视图是否最新并修改查询，令查询使用物化视图而不是原始表。
 * （高级）自定义规则：如果你有自定义规则来修改查询（就像 Oracle policy），重写器就会执行这些规则。
@@ -599,7 +596,6 @@ and MAILS.mail LIKE 'christophe%';
 
 [PostgreSQL](http://www.postgresql.org/docs/9.4/static/row-estimation-examples.html)
 
-。
 ### 查询优化器
 
 所有的现代数据库都在用基于成本的优化（即CBO）来优化查询。道理是针对每个运算设置一个成本，通过应用成本最低廉的一系列运算，来找到最佳的降低查询成本的方法。
@@ -651,7 +647,7 @@ and MAILS.mail LIKE 'christophe%';
 
 例如，假如你运行：
 
-```
+``` SQL
 SELECT LASTNAME, FIRSTNAME from PERSON WHERE AGE = 28
 ```
 
@@ -659,7 +655,7 @@ SELECT LASTNAME, FIRSTNAME from PERSON WHERE AGE = 28
 
 但是，假如你换个做法：
 
-```
+``` SQL
 SELECT TYPE_PERSON.CATEGORY from PERSON ,TYPE_PERSON
 WHERE PERSON.AGE = TYPE_PERSON.AGE
 ```
@@ -680,31 +676,7 @@ PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根
 
 那么，我们知道如何获取数据了，那现在就把它们联接起来！
 
-我要展现的是3个个常用联接运算符：合并联接（Merge join），哈希联接（Hash Join）和嵌套循环联接（Nested Loop Join）。但是在此之前，我需要引入新词汇了：内关系和外关系（ inner relation and outer relation） 【译者注： “内关系和外关系” 这个说法来源不明，跟查询的“
-
-[内联接（INNER JOIN）](http://baike.baidu.com/view/672349.htm)
-
-、
-
-[外联接（OUTER JOIN）](http://baike.baidu.com/view/1213593.htm)
-
-” 不是一个概念 。只查到百度百科词条：
-
-[关系数据库](http://baike.baidu.com/view/68348.htm)
-
-里提到“每个表格（有时被称为一个关系）……” 。 其他参考链接 “
-
-[Merge Join”](https://en.wikipedia.org/wiki/Sort-merge_join)
-
-“
-
-[Hash Join”](https://en.wikipedia.org/wiki/Hash_join)
-
-“
-
-[Nested Loop Join”](https://en.wikipedia.org/wiki/Nested_loop_join)
-
-】  。 一个关系可以是：
+我要展现的是3个个常用联接运算符：合并联接（Merge join），哈希联接（Hash Join）和嵌套循环联接（Nested Loop Join）。但是在此之前，我需要引入新词汇了：内关系和外关系（ inner relation and outer relation） 【译者注： “内关系和外关系” 这个说法来源不明，跟查询的“[内联接（INNER JOIN）](http://baike.baidu.com/view/672349.htm)、[外联接（OUTER JOIN）](http://baike.baidu.com/view/1213593.htm)” 不是一个概念 。只查到百度百科词条：[关系数据库](http://baike.baidu.com/view/68348.htm)里提到“每个表格（有时被称为一个关系）……” 。 其他参考链接 “[Merge Join”](https://en.wikipedia.org/wiki/Sort-merge_join)“[Hash Join”](https://en.wikipedia.org/wiki/Hash_join)“[Nested Loop Join”](https://en.wikipedia.org/wiki/Nested_loop_join)】  。 一个关系可以是：
 
 * 一个表
 * 一个索引
@@ -731,7 +703,7 @@ PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根
 
 嵌套循环联接是最简单的。
 
-![](/assets/7cc829d3jw1f3drdvtvlqj20er09njtc.jpg)
+![/asssets/404.png](/assets/7cc829d3jw1f3drdvtvlqj20er09njtc.jpg)
 
 道理如下：
 
@@ -740,14 +712,14 @@ PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根
 
 下面是伪代码：
 
-```
+``` C
 nested_loop_join(array outer, array inner)  
-    for each row a in outer    
-        for each row b in inner      
-            if (match_join_condition(a,b))        
-                write_result_in_output(a,b)      
-            end if    
-        end for   
+    for each row a in outer
+        for each row b in inner
+            if (match_join_condition(a,b))
+                write_result_in_output(a,b)
+            end if
+        end for
     end for
 ```
 
@@ -769,7 +741,7 @@ nested_loop_join(array outer, array inner)
 
 可能的算法如下：
 
-```
+``` C
 // improved version to reduce the disk I/O.
 nested_loop_join_v2(file outer, file inner)
   for each bunch ba in outer
@@ -797,5 +769,4 @@ nested_loop_join_v2(file outer, file inner)
 
 哈希联接更复杂，不过在很多场合比嵌套循环联接成本低。
 
-![](/assets/7cc829d3jw1f3drdvx8ikj20jb0d0mzp.jpg)
-
+![/asssets/404.png](/assets/7cc829d3jw1f3drdvx8ikj20jb0d0mzp.jpg)
