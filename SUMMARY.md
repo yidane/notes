@@ -28,7 +28,7 @@ nav_order: 2
   * [Go](docs/Language/Go/README.md)
   * [Java](docs/Language/Java/README.md)
 * [数据库](docs/Database/README.md)
-  * [数据库基础](docs/Database/common/README/md)
+  * [数据库基础](docs/Database/common/README.md)
   * [MSSQL](docs/Database/MSSQL/README.md)
   * [MySQL](docs/Database/MySQL/README.md)
   * [Oracle](docs/Database/Oracle/README.md)
