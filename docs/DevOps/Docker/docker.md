@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Docker
-nav_order: 4
-parent: DevOps
+title: Docker安装
+nav_order: 1
+parent: Docker
+grand_parent: DevOps
 permalink: /docs/DevOps/Docker/common
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 修改已提交的用户信息
-nav_order: 4
+nav_order: 1
 parent: Git
 grand_parent: DevOps
 ---
