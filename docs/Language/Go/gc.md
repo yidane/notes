@@ -26,7 +26,7 @@ grand_parent: Language
 * 标记：从程序的根节点开始， 递归地 遍历所有对象，将能遍历到的对象打上标记。
 * 清除：讲所有未标记的的对象当作垃圾销毁。
 
-![](https://lengzzz.com/static/img/d86a2fc011c99baadcde3c12b046b2ef.gif)
+![/assets/404.png](/assets/23820644.gif)
 
 如图所示。
 
@@ -50,7 +50,7 @@ golang 1.5以前使用的这个算法。
 6. 通过write-barrier检测对象有变化，重复以上操作
 7. 收集所有白色对象（垃圾）
 
-![](https://lengzzz.com/static/img/c9dbfac2f1b6bf5f73efe8dd6f551c36.gif)
+![/assets/404.png](/assets/23820645.gif)
 
 过程如上图所示。
 
