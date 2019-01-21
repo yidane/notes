@@ -23,7 +23,7 @@ JSON 的序列化对整个 ASP.NET Web API 的性能有着关键性的影响。 
 
 我测量过，Web API 的性能提升了20%左右。 我强烈建议你去尝试一下这个序列化工具。这里有一些最近的流行序列化工具性能的比较数据。
 
-![/asssets/404.png](/assets/23071618_Ks6a.png)
+![/assets/404.png](/assets/1008239.png)
 
 [来源： theburningmonk](http://theburningmonk.com/2014/06/json-and-binary-serializers-benchmarks-updated/)
 
@@ -71,7 +71,7 @@ return response;
 
 你可以看到最流行的ORM之间的性能比较.
 
-![/asssets/404.png](/assets/2018年04月09日14:58:48.png)
+![/assets/404.png](/assets/1008237.png)
 
 _Dapper_和_hand-written fetch code_很快，果不其然，所有的ORM都比这三种慢.
 

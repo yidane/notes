@@ -49,7 +49,7 @@ nav_order: 2
 
 重要的不是数据量，而是当数据量增加时运算如何增加。时间复杂度不会给出确切的运算次数，但是给出的是一种理念。
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdktjmvj20ez0bggmz.jpg)
+![/assets/404.png](/assets/1008221.jpg)
 
 图中可以看到不同类型的复杂度的演变过程，我用了对数尺来建这个图。具体点儿说，数据量以很快的速度从1条增长到10亿条。我们可得到如下结论：
 
@@ -126,7 +126,7 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 
 我们用个简单的例子来看看这是什么意思：
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdlx1osj20b5069mxt.jpg)
+![/assets/404.png](/assets/1008222.jpg)
 
 通过此图你可以看到，在 2 个 4元素序列里你只需要迭代一次，就能构建最终的8元素已排序序列，因为两个4元素序列已经排好序了：
 
@@ -140,7 +140,7 @@ O\(1\) 和 O\(n^2\) 的区别似乎很大（4百万）,但你最多损失 2 毫�
 
 【译者注：[合并排序详细原理](http://blog.jobbole.com/79293/)，其中一个动图（原图较长，我做了删减）清晰的演示了上述合并排序的过程，而原文的叙述似乎没有这么清晰，不动戳大。】
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdn5ynkg208w05cjsj.gif)
+![/assets/404.png](/assets/1008223.gif)
 
 既然我们明白了这个技巧，下面就是我的合并排序伪代码。
 
@@ -167,7 +167,7 @@ array mergeSort(array a)
 
 #### 拆分阶段
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdnwywaj20gl08ljst.jpg)
+![/assets/404.png](/assets/1008224.jpg)
 
 在拆分阶段过程中，使用3个步骤将序列分为一元序列。步骤数量的值是 log\(N\) （因为 N=8, log\(N\)=3）。【译者注：底数为2，下文有说明】
 
@@ -177,7 +177,7 @@ array mergeSort(array a)
 
 #### 排序阶段
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdoof0qj20gn0a0mz3.jpg)
+![/assets/404.png](/assets/1008225.jpg)
 
 在排序阶段，你从一元序列开始。在每一个步骤中，你应用多次合并操作，成本一共是 N=8 次运算。
 
@@ -189,7 +189,7 @@ array mergeSort(array a)
 
 【译者注：这个完整的动图演示了拆分和排序的全过程，不动戳大。】
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdpmohcg208c05040x.gif)
+![/assets/404.png](/assets/1008226.gif)
 
 #### 合并排序的强大之处
 
@@ -221,7 +221,7 @@ array mergeSort(array a)
 
 二维阵列是最简单的数据结构。一个表可以看作是个阵列，比如：
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdpqm1oj20cl0apdhp.jpg)
+![/assets/404.png](/assets/1008227.jpg)
 
 这个二维阵列是带有行与列的表：
 
@@ -240,7 +240,7 @@ array mergeSort(array a)
 
 【译者注：binary search tree，二叉查找树/二叉搜索树，或称 Binary Sort Tree 二叉排序树。见[百度百科](http://baike.baidu.com/view/647462.htm)】
 
-![/asssets/404.png](/assets/432222c9e8cd2d665083915430ae1a2e.png)
+![/assets/404.png](/assets/1008238.png)
 
 这个树有 N=15 个元素。比方说我要找208：
 
@@ -277,7 +277,7 @@ array mergeSort(array a)
 
 【译者注：参考[B+树](http://baike.baidu.com/view/1168762.htm)，[二叉树遍历](http://baike.baidu.com/view/549587.htm)[维基百科](https://en.wikipedia.org/wiki/Tree_traversal)】
 
-![/asssets/404.png](/assets/15c4b064af9ac7f357404a1b17ff1cae.png)你可以看到，节点更多了（多了两倍）。确实，你有了额外的节点，它们就是帮助你找到正确节点的『决策节点』（正确节点保存着相关表中行的位置）。但是搜索复杂度还是在 O\(log\(N\)\)（只多了一层）。一个重要的不同点是，最底层的节点是跟后续节点相连接的。
+![/assets/404.png](/assets/1008234.png)你可以看到，节点更多了（多了两倍）。确实，你有了额外的节点，它们就是帮助你找到正确节点的『决策节点』（正确节点保存着相关表中行的位置）。但是搜索复杂度还是在 O\(log\(N\)\)（只多了一层）。一个重要的不同点是，最底层的节点是跟后续节点相连接的。
 
 用这个 B+树，假设你要找40到100间的值：
 
@@ -320,7 +320,7 @@ array mergeSort(array a)
 
 我们来看一个形象化的例子：
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdsruaqj20hp09075r.jpg)
+![/assets/404.png](/assets/1008228.jpg)
 
 这个哈希表有10个哈希桶。因为我懒，我只给出5个桶，但是我知道你很聪明，所以我让你想象其它的5个桶。我用的哈希函数是关键字对10取模，也就是我只保留元素关键字的最后一位，用来查找它的哈希桶：
 
@@ -388,7 +388,7 @@ array mergeSort(array a)
 
 数据库一般可以用如下图形来理解：
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdtcrs7j20dq0fijtz.jpg)
+![/assets/404.png](/assets/1008229.jpg)
 
 撰写这部分之前，我读过很多书/论文，它们都以自己的方式描述数据库。所以，我不会特别关注如何组织数据库或者如何命名各种进程，因为我选择了自己的方式来描述这些概念以适应本文。区别就是不同的组件，总体思路为：数据库是由多种互相交互的组件构成的。
 
@@ -431,7 +431,7 @@ array mergeSort(array a)
 
 ## 客户端管理器
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdtyhwtj20g606imxv.jpg)
+![/assets/404.png](/assets/1008230.jpg)
 
 客户端管理器是处理客户端通信的。客户端可以是一个（网站）服务器或者一个最终用户或最终应用。客户端管理器通过一系列知名的API（JDBC, ODBC, OLE-DB …）提供不同的方式来访问数据库。
 
@@ -449,7 +449,7 @@ array mergeSort(array a)
 
 ## 查询管理器
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdudpcuj20fy0630tf.jpg)
+![/assets/404.png](/assets/1008231.jpg)
 
 这部分是数据库的威力所在，在这部分里，一个写得糟糕的查询可以转换成一个快速执行的代码，代码执行的结果被送到客户端管理器。这个多步骤操作过程如下：
 
@@ -703,7 +703,7 @@ PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根
 
 嵌套循环联接是最简单的。
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdvtvlqj20er09njtc.jpg)
+![/assets/404.png](/assets/1008232.jpg)
 
 道理如下：
 
@@ -769,4 +769,4 @@ nested_loop_join_v2(file outer, file inner)
 
 哈希联接更复杂，不过在很多场合比嵌套循环联接成本低。
 
-![/asssets/404.png](/assets/7cc829d3jw1f3drdvx8ikj20jb0d0mzp.jpg)
+![/assets/404.png](/assets/1008233.jpg)

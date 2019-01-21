@@ -1,0 +1,1 @@
+./mdImage -rf docs/
