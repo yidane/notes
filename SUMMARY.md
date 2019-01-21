@@ -10,6 +10,7 @@ nav_order: 2
 * [目录](/SUMMARY.md#summary)
 * [算法与数据结构](docs/DSA/README.md)
   * [数据结构](docs/DSA/README.md)
+  * [Go](docs/DSA/README.md)
 * [操作系统](docs/OS/README.md)
 * [编程语言](docs/Language/README.md)
 * [数据库](docs/Database/README.md)
