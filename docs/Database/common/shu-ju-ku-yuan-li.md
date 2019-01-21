@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 数据库原理
-parent: 数据库
+parent: 数据库基础
+grand_parent: 数据库
 nav_order: 2
 ---
 
