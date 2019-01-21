@@ -2,12 +2,10 @@
 layout: default
 title: 数组
 nav_order: 1
-has_children: true
-parent: DSA
-permalink: /docs/DSA/datastructure
+has_children: false
+parent: 数据结构
+grand_parent: 算法与数据结构
 ---
-
-<!-- TOC -->autoauto- [数组](#数组)auto    - [优点：](#优点)auto    - [缺点：](#缺点)auto    - [适用场景：](#适用场景)autoauto<!-- /TOC -->
 
 # 数组
 

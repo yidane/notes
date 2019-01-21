@@ -4,7 +4,7 @@ title: Ubuntu 18.04推荐扩展
 nav_order: 4
 has_children: true
 parent: Linux
-grand_parent: OS
+grand_parent: 操作系统
 ---
 
 # Ubuntu 18.04推荐扩展

@@ -3,8 +3,8 @@ layout: default
 title: 栈
 nav_order: 2
 has_children: true
-parent: DSA
-permalink: /docs/DSA/datastructure
+parent: 数据结构
+grand_parent: 算法与数据结构
 ---
 
 # 栈
