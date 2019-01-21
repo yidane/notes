@@ -4,7 +4,6 @@ title: Docker安装
 nav_order: 1
 parent: Docker
 grand_parent: DevOps
-permalink: /docs/DevOps/Docker/common
 ---
 
 # 1、安装[docker](https://docs.docker.com/install/linux/docker-ce/centos/)
