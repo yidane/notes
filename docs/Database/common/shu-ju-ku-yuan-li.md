@@ -507,7 +507,7 @@ array mergeSort(array a)
 
 例如：
 
-``` SQL
+``` sql
 SELECT PERSON.* FROM
 PERSON
 WHERE PERSON.person_key IN
@@ -519,7 +519,7 @@ LIKE 'christophe%');
 
 会转换为：
 
-``` SQL
+``` sql
 SELECT PERSON.*
 FROM PERSON, MAILS
 WHERE PERSON.person_key = MAILS.person_key
@@ -648,7 +648,7 @@ and MAILS.mail LIKE 'christophe%';
 
 例如，假如你运行：
 
-``` SQL
+``` sql
 SELECT LASTNAME, FIRSTNAME from PERSON WHERE AGE = 28
 ```
 
@@ -656,7 +656,7 @@ SELECT LASTNAME, FIRSTNAME from PERSON WHERE AGE = 28
 
 但是，假如你换个做法：
 
-``` SQL
+``` sql
 SELECT TYPE_PERSON.CATEGORY from PERSON ,TYPE_PERSON
 WHERE PERSON.AGE = TYPE_PERSON.AGE
 ```
@@ -713,7 +713,7 @@ PERSON 表的索引会用来联接 TYPE\_PERSON 表，但是 PERSON 表不会根
 
 下面是伪代码：
 
-``` C
+``` c
 nested_loop_join(array outer, array inner)  
     for each row a in outer
         for each row b in inner
@@ -742,7 +742,7 @@ nested_loop_join(array outer, array inner)
 
 可能的算法如下：
 
-``` C
+``` c
 // improved version to reduce the disk I/O.
 nested_loop_join_v2(file outer, file inner)
   for each bunch ba in outer

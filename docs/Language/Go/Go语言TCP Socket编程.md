@@ -12,13 +12,13 @@ grand_parent: Language
 
 网络编程方面，我们最常用的就是tcp socket编程了，在posix标准出来后，socket在各大主流OS平台上都得到了很好的支持。关于tcp programming，最好的资料莫过于[W. Richard Stevens](http://en.wikipedia.org/wiki/W._Richard_Stevens)的网络编程圣经《[UNIX网络 编程 卷1：套接字联网API](http://book.douban.com/subject/4859464/)》 了，书中关于tcp socket接口的各种使用、行为模式、异常处理讲解的十分细致。Go是自带runtime的跨平台编程语言，Go中暴露给语言使用者的tcp socket api是建立OS原生tcp socket接口之上的。由于Go runtime调度的需要，golang tcp socket接口在行为特点与异常处理方面与OS原生接口有着一些差别。这篇博文的目标就是整理出关于Go tcp socket在各个场景下的使用方法、行为特点以及注意事项。
 
-### 一、模型
+## 一、模型
 
 从tcp socket诞生后，网络编程架构模型也几经演化，大致是：“每进程一个连接” –&gt; “每线程一个连接” –&gt; “Non-Block + I/O多路复用\(linux epoll/windows iocp/freebsd darwin kqueue/solaris Event Port\)”。伴随着模型的演化，服务程序愈加强大，可以支持更多的连接，获得更好的处理性能。
 
 目前主流web server一般均采用的都是”Non-Block + I/O多路复用”（有的也结合了多线程、多进程）。不过I/O多路复用也给使用者带来了不小的复杂度，以至于后续出现了许多高性能的I/O多路复用框架， 比如[libevent](http://libevent.org/)、[libev](http://software.schmorp.de/pkg/libev.html)、[libuv](https://github.com/joyent/libuv)等，以帮助开发者简化开发复杂性，降低心智负担。不过Go的设计者似乎认为I/O多路复用的这种通过回调机制割裂控制流 的方式依旧复杂，且有悖于“一般逻辑”设计，为此Go语言将该“复杂性”隐藏在Runtime中了：Go开发者无需关注socket是否是 non-block的，也无需亲自注册文件描述符的回调，只需在每个连接对应的goroutine中以**“block I/O”**的方式对待socket处理即可，这可以说大大降低了开发人员的心智负担。一个典型的Go server端程序大致如下：
 
-```
+``` go
 /go-tcpsock/server.go
 func handleConn(c net.Conn) {
     defer c.Close()
@@ -58,7 +58,7 @@ func main() {
 
 阻塞Dial：
 
-```
+``` go
 conn, err := net.Dial("tcp", "google.com:80")
 if err != nil {
     //handle error
@@ -68,7 +68,7 @@ if err != nil {
 
 或是带上超时机制的Dial：
 
-```
+``` go
 conn, err := net.DialTimeout("tcp", ":8080", 2 * time.Second)
 if err != nil {
     //handle error
@@ -82,7 +82,7 @@ if err != nil {
 
 如果传给Dial的Addr是可以立即判断出网络不可达，或者Addr中端口对应的服务没有启动，端口未被监听，Dial会几乎立即返回错误，比如：
 
-```
+``` go
 //go-tcpsock/conn_establish/client1.go
 ... ...
 func main() {
@@ -99,7 +99,7 @@ func main() {
 
 如果本机8888端口未有服务程序监听，那么执行上面程序，Dial会很快返回错误：
 
-```
+``` go
 $go run client1.go
 2015/11/16 14:37:41 begin dial...
 2015/11/16 14:37:41 dial error: dial tcp :8888: getsockopt: connection refused
@@ -111,7 +111,7 @@ $go run client1.go
 
 服务端代码：
 
-```
+``` go
 /go-tcpsock/conn_establish/server2.go
 ... ...
 func main() {
@@ -138,7 +138,7 @@ func main() {
 
 客户端代码：
 
-```
+``` go
 //go-tcpsock/conn_establish/client2.go
 ... ...
 func establishConn(i int) net.Conn {
@@ -166,7 +166,7 @@ func main() {
 
 从程序可以看出，服务端在listen成功后，每隔10s钟accept一次。客户端则是串行的尝试建立连接。这两个程序在Darwin下的执行 结果：
 
-```
+``` go
 $go run server2.go
 2015/11/16 21:55:41 listen ok
 2015/11/16 21:55:51 1: accept a new connection
@@ -191,7 +191,7 @@ $go run client2.go
 
 可以看出Client初始时成功地一次性建立了128个连接，然后后续每阻塞近10s才能成功建立一条连接。也就是说在server端 backlog满时\(未及时accept\)，客户端将阻塞在Dial上，直到server端进行一次accept。至于为什么是128，这与darwin 下的默认设置有关：
 
-```
+``` go
 $sysctl -a|grep kern.ipc.somaxconn
 kern.ipc.somaxconn: 128
 ```
@@ -200,7 +200,7 @@ kern.ipc.somaxconn: 128
 
 如果server一直不accept，client端会一直阻塞么？我们去掉accept后的结果是：在Darwin下，client端会阻塞大 约1分多钟才会返回timeout：
 
-```
+``` go
 2015/11/16 22:03:31 128 :connect to server ok
 2015/11/16 22:04:48 129: dial error: dial tcp :8888: getsockopt: operation timed out
 ```
@@ -213,7 +213,7 @@ kern.ipc.somaxconn: 128
 
 在连接建立阶段，多数情况下，Dial是可以满足需求的，即便阻塞一小会儿。但对于某些程序而言，需要有严格的连接时间限定，如果一定时间内没能成功建立连接，程序可能会需要执行一段“异常”处理逻辑，为此我们就需要DialTimeout了。下面的例子将Dial的最长阻塞时间限制在2s内，超出这个时长，Dial将返回timeout error：
 
-```
+``` go
 //go-tcpsock/conn_establish/client3.go
 ... ...
 func main() {
@@ -230,7 +230,7 @@ func main() {
 
 执行结果如下（需要模拟一个延迟较大的网络环境）：
 
-```
+``` go
 $go run client3.go
 2015/11/17 09:28:34 begin dial...
 2015/11/17 09:28:36 dial error: dial tcp 104.236.176.96:80: i/o timeout
@@ -240,7 +240,7 @@ $go run client3.go
 
 连接建立起来后，我们就要在conn上进行读写，以完成业务逻辑。前面说过Go runtime隐藏了I/O多路复用的复杂性。语言使用者只需采用goroutine+Block I/O的模式即可满足大部分场景需求。Dial成功后，方法返回一个net.Conn接口类型变量值，这个接口变量的动态类型为一个\*TCPConn：
 
-```
+``` go
 //$GOROOT/src/net/tcpsock_posix.go
 type TCPConn struct {
     conn
@@ -249,7 +249,7 @@ type TCPConn struct {
 
 TCPConn内嵌了一个unexported类型：conn，因此TCPConn”继承”了conn的Read和Write方法，后续通过Dial返回值调用的Write和Read方法均是net.conn的方法：
 
-```
+``` go
 //$GOROOT/src/net/net.go
 type conn struct {
     fd *netFD
@@ -297,7 +297,7 @@ func (c *conn) Write(b []byte) (int, error) {
 
 Client端：
 
-```
+``` go
 //go-tcpsock/read_write/client2.go
 ... ...
 func main() {
@@ -324,7 +324,7 @@ func main() {
 
 Server端：
 
-```
+``` go
 //go-tcpsock/read_write/server2.go
 ... ...
 func handleConn(c net.Conn) {
@@ -348,7 +348,7 @@ func handleConn(c net.Conn) {
 
 运行结果:
 
-```
+``` go
 $go run client2.go hi
 2015/11/17 13:30:53 begin dial...
 2015/11/17 13:30:53 dial ok
@@ -368,7 +368,7 @@ Client向socket中写入两个字节数据\(“hi”\)，Server端创建一个le
 
 我们通过client2.go向Server2发送如下内容：abcdefghij12345，执行结果如下：
 
-```
+``` go
 $go run client2.go abcdefghij12345
 2015/11/17 13:38:00 begin dial...
 2015/11/17 13:38:00 dial ok
@@ -389,7 +389,7 @@ client端发送的内容长度为15个字节，Server端Read buffer的长度为1
 
 “有数据关闭”是指在client关闭时，socket中还有server端未读取的数据，我们在go-tcpsock/read\_write/client3.go和server3.go中模拟这种情况：
 
-```
+``` go
 $go run client3.go hello
 2015/11/17 13:50:57 begin dial...
 2015/11/17 13:50:57 dial ok
@@ -410,7 +410,7 @@ $go run server3.go
 
 有些场合对Read的阻塞时间有严格限制，在这种情况下，Read的行为到底是什么样的呢？在返回超时错误时，是否也同时Read了一部分数据了呢？这个实验比较难于模拟，下面的测试结果也未必能反映出所有可能结果。我们编写了client4.go和server4.go来模拟这一情形。
 
-```
+``` go
 //go-tcpsock/read_write/client4.go
 ... ...
 func main() {
@@ -454,7 +454,7 @@ func handleConn(c net.Conn) {
 
 在Server端我们通过Conn的SetReadDeadline方法设置了10微秒的读超时时间，Server的执行结果如下：
 
-```
+``` go
 $go run server4.go
 
 2015/11/17 14:21:17 accept a new connection
@@ -532,7 +532,7 @@ func handleConn(c net.Conn) {
 
 Server5在前10s中并不Read数据，因此当client5一直尝试写入时，写到一定量后就会发生阻塞：
 
-```
+``` go
 $go run client5.go
 
 2015/11/17 14:57:33 begin dial...
@@ -551,7 +551,7 @@ $go run client5.go
 
 在Darwin上，这个size大约在679468bytes。后续当server5每隔5s进行Read时，OS socket缓冲区腾出了空间，client5就又可以写入了：
 
-```
+``` go
 $go run server5.go
 2015/11/17 15:07:01 accept a new connection
 2015/11/17 15:07:16 start to read from conn
@@ -577,7 +577,7 @@ client端：
 
 Write操作存在写入部分数据的情况，比如上面例子中，当client端输出日志停留在“write 65536 bytes this time, 655360 bytes in total”时，我们杀掉server5，这时我们会看到client5输出以下日志：
 
-```
+``` go
 ...
 2015/11/17 15:19:14 write 65536 bytes this time, 655360 bytes in total
 2015/11/17 15:19:16 write 24108 bytes, error:write tcp 127.0.0.1:62245->127.0.0.1:8888: write: broken pipe
@@ -590,13 +590,13 @@ Write操作存在写入部分数据的情况，比如上面例子中，当client
 
 如果非要给Write增加一个期限，那我们可以调用SetWriteDeadline方法。我们copy一份client5.go，形成client6.go，在client6.go的Write之前增加一行timeout设置代码：
 
-```
+``` go
 conn.SetWriteDeadline(time.Now().Add(time.Microsecond * 10))
 ```
 
 启动server6.go，启动client6.go，我们可以看到写入超时的情况下，Write的返回结果：
 
-```
+``` go
 $go run client6.go
 2015/11/17 15:26:34 begin dial...
 2015/11/17 15:26:34 dial ok
@@ -619,7 +619,7 @@ $go run client6.go
 
 net.conn只是\*netFD的wrapper结构，最终Write和Read都会落在其中的fd上：
 
-```
+``` go
 type conn struct {
     fd *netFD
 }
@@ -627,7 +627,7 @@ type conn struct {
 
 netFD在不同平台上有着不同的实现，我们以net/fd\_unix.go中的netFD为例：
 
-```
+``` go
 // Network file descriptor.
 type netFD struct {
     // locking/lifetime of sysfd + serialize access to Read and Write methods
@@ -649,7 +649,7 @@ type netFD struct {
 
 我们看到netFD中包含了一个runtime实现的fdMutex类型字段，从注释上来看，该fdMutex用来串行化对该netFD对应的sysfd的Write和Read操作。从这个注释上来看，所有对conn的Read和Write操作都是有fdMutex互斥的，从netFD的Read和Write方法的实现也证实了这一点：
 
-```
+``` go
 func (fd *netFD) Read(p []byte) (n int, err error) {
     if err := fd.readLock(); err != nil {
         return 0, err
@@ -731,7 +731,7 @@ func (fd *netFD) Write(p []byte) (nn int, err error) {
 
 不过上面的Method是TCPConn的，而不是Conn的，要使用上面的Method的，需要type assertion：
 
-```
+``` go
 tcpConn, ok := c.(*TCPConn)
 if !ok {
     //error handle
@@ -746,7 +746,7 @@ tcpConn.SetNoDelay(true)
 
 和前面的方法相比，关闭连接算是最简单的操作了。由于socket是全双工的，client和server端在己方已关闭的socket和对方关闭的socket上操作的结果有不同。看下面例子：
 
-```
+``` go
 //go-tcpsock/conn_close/client1.go
 ... ...
 func main() {
@@ -804,7 +804,7 @@ func handleConn(c net.Conn) {
 
 上述例子的执行结果如下：
 
-```
+``` go
 $go run server1.go
 2015/11/17 17:00:51 accept a new connection
 2015/11/17 17:00:51 start to read from conn
@@ -828,4 +828,3 @@ $go run client1.go
 本文代码实验环境：go 1.5.1 on Darwin amd64以及部分在ubuntu 14.04 amd64。
 
 本文demo代码在[这里](https://github.com/bigwhite/experiments/tree/master/go-tcpsock)可以找到。
-
