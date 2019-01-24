@@ -24,11 +24,12 @@ grand_parent: 算法与数据结构
 | 选择排序 | O(n^2)         | O(n^2)     | O(n^2)     | O(1)       | In-place  | 不稳定 |
 | 插入排序 | O(n^2)         | O(n)       | O(n^2)     | O(1)       | In-place  | 稳定   |
 | 希尔排序 | O(nlogn)       | O(nlog^2n) | O(nlog^2n) | O(1)       | In-place  | 不稳定 |
-| 归并排序 | O(nlogn)       | O(nlogn)   | O(nlogn)   | O(n)       | In-place  | 稳定   |
+| 归并排序 | O(nlogn)       | O(nlogn)   | O(nlogn)   | O(n)       | Out-place | 稳定   |
 | 快速排序 | O(nlogn)       | O(nlogn)   | O(n^2)     | O(logn)    | In-place  | 不稳定 |
 | 堆排序   | O(nlogn)       | O(nlogn)   | O(nlogn)   | O(1)       | In-place  | 不稳定 |
 | 计数排序 | O(n+k)         | O(n+k)     | O(n+k)     | O(k)       | Out-place | 稳定   |
 | 桶排序   | O(n+k)         | O(n+k)     | O(n^2)     | O(n+k)     | Out-place | 稳定   |
+| 基数排序 | O(n*k)         | O(n*k)     | O(n*k)     | O(n+k)     | Out-place | 稳定   |
 
 * 关于时间复杂度
 
@@ -57,34 +58,20 @@ grand_parent: 算法与数据结构
 
 ### 1.3 参考代码
 
-``` java
-public class BubbleSort implements IArraySort {
-
-    @Override
-    public int[] sort(int[] sourceArray) throws Exception {
-        // 对 arr 进行拷贝，不改变参数内容
-        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
-
-        for (int i = 1; i < arr.length; i++) {
-            // 设定一个标记，若为true，则表示此次循环没有进行交换，也就是待排序列已经有序，排序已经完成。
-            boolean flag = true;
-
-            for (int j = 0; j < arr.length - i; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-
-                    flag = false;
-                }
-            }
-
-            if (flag) {
-                break;
+``` go
+func bubbleSort1(arr []int) []int {
+    hasChange := true
+    for i := 0; i < len(arr) && hasChange; i++ {
+        hasChange = false
+        for j := len(arr) - 1; j > i; j-- {
+            if arr[j] < arr[j-1] {
+                arr[j-1], arr[j] = arr[j], arr[j-1]
+                hasChange = true
             }
         }
-        return arr;
     }
+
+    return arr
 }
 ```
 
@@ -320,7 +307,7 @@ public class QuickSort implements IArraySort {
             quickSort(arr, partitionIndex + 1, right);
         }
         return arr;
-    }
+    }****
 
     private int partition(int[] arr, int left, int right) {
         // 设定基准值（pivot）

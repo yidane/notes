@@ -3,7 +3,7 @@ layout: default
 title: Go语言Socket编程
 nav_order: 4
 parent: Go
-grand_parent: Language
+grand_parent: 编程语言
 ---
 
 # Go语言TCP Socket编程

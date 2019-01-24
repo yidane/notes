@@ -2,9 +2,8 @@
 layout: default
 title: 构造函数
 nav_order: 4
-has_children: true
 parent: Go
-grand_parent: Language
+grand_parent: 编程语言
 ---
 
 # 构造函数

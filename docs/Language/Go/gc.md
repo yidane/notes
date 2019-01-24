@@ -1,13 +1,12 @@
 ---
 layout: default
-title: Go
+title: 常见GC算法
 nav_order: 4
-has_children: true
 parent: Go
-grand_parent: Language
+grand_parent: 编程语言
 ---
 
-# 常见 GC 算法
+# 常见GC算法
 
 ## 1. 引用计数法
 
