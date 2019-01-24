@@ -25,7 +25,7 @@ grand_parent: 编程语言
 > C. struct  
 > D. class  
 
-参考答案：AC
+        参考答案：AC
 
 ### 2. 【初级】定义一个包内全局字符串变量，下面语法正确的是（）
 
@@ -34,7 +34,7 @@ grand_parent: 编程语言
 > C. str = ""  
 > D. var str = ""  
 
-参考答案：AD
+        参考答案：AD
 
 ### 3. 【初级】通过指针变量 p 访问其成员变量 name，下面语法正确的是（）
 
@@ -43,7 +43,7 @@ grand_parent: 编程语言
 > C. (&p).name  
 > D. p->name  
 
-参考答案：AB
+        参考答案：AB
 
 ### 4. 【初级】关于接口和类的说法，下面说法正确的是（）
 
@@ -52,7 +52,7 @@ grand_parent: 编程语言
 > C. 类实现接口时，需要导入接口所在的包  
 > D. 接口由使用方按自身需求来定义，使用方无需关心是否有其他模块定义过类似的接口
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 5. 【初级】关于字符串连接，下面语法正确的是（）
 
@@ -61,7 +61,7 @@ grand_parent: 编程语言
 > C. str ：= '123' + "abc"  
 > D. fmt.Sprintf("abc%d", 123)
 
-参考答案：BD
+        参考答案：BD
 
 ### 6. 【初级】关于协程，下面说法正确是（）
 
@@ -70,7 +70,7 @@ grand_parent: 编程语言
 > C. 协程不存在死锁问题
 > D. 通过 channel 来进行协程间的通信
 
-参考答案：AD
+        参考答案：AD
 
 ### 7. 【中级】关于 init 函数，下面说法正确的是（）
 
@@ -79,7 +79,7 @@ grand_parent: 编程语言
 > C. main 包中，不能有 init 函数  
 > D. init 函数可以被其他函数调用
 
-参考答案：AB
+        参考答案：AB
 
 ### 8. 【初级】关于循环语句，下面说法正确的有（）
 
@@ -88,7 +88,7 @@ grand_parent: 编程语言
 > C. for 循环支持 continue 和 break 来控制循环，但是它提供了一个更高级的 break，可以选择中断哪一个循环  
 > D. for 循环不支持以逗号为间隔的多个赋值语句，必须使用平行赋值的方式来初始化多个变量
 
-参考答案：CD
+        参考答案：CD
 
 ### 9. 【中级】对于函数定义：
 
@@ -110,7 +110,7 @@ func add(args ...int) int {
 > C. add([]int{1, 2})  
 > D. add([]int{1, 3, 7}...)
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 16. 【初级】关于类型转化，下面语法正确的是（）
 
@@ -139,16 +139,28 @@ func add(args ...int) int {
 > var jMyInt = i.(MyInt)
 > ```
 
-参考答案：C
+        参考答案：C
 
 ### 19. 【初级】关于局部变量的初始化，下面正确的使用方式是（）
 
-> A. var i int = 10  
-> B. var i = 10  
-> C. i := 10  
-> D. i = 10  
+> A.
+> ``` go
+> var i int = 10  
+> ```
+> B.
+> ```go
+> var i = 10  
+> ```
+> C.
+> ``` go
+> i := 10
+> ```  
+> D.
+> ``` go
+> i = 10
+> ```  
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 20. 【初级】关于 const 常量定义，下面正确的使用方式是（）
 
@@ -177,36 +189,48 @@ func add(args ...int) int {
 > const a,b, c = 3, 4, "foo"
 > ```
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 22. 【初级】关于布尔变量 b 的赋值，下面错误的用法是（）
 
-> A. b = true  
-> B. b = 1  
-> C. b = bool(1)  
-> D. b = (1 == 2)  
+> A.
+> ``` go
+> b = true
+> ```  
+> B.
+> ``` go
+> b = 1
+> ```
+> C.
+> ``` go
+> b = bool(1)
+> ```
+> D.
+> ``` go
+> b = (1 == 2)
+> ```
 
-参考答案：BC
+        参考答案：BC
 
 ### 23\. 【中级】下面的程序的运行结果是（）
 
 ``` go
 func main() {
-    if true {
-        defer fmt.Printf("1")
-    } else {
-        defer fmt.Printf("2")
-    }
-    fmt.Printf("3")
+   if true {
+       defer fmt.Printf("1")
+   } else {
+       defer fmt.Printf("2")
+   }
+   fmt.Printf("3")
 }
 ```
 
-> A. 321
-> B. 32
-> C. 31
-> D. 13
+> A. 321  
+> B. 32  
+> C. 31  
+> D. 13  
 
-参考答案：C
+        参考答案：C
 
 ### 31. 【初级】关于 switch 语句，下面说法正确的有（）
 
@@ -215,7 +239,7 @@ func main() {
 > C. 需要用 break 来明确退出一个 case  
 > D. 只有在 case 中明确添加 fallthrough 关键字，才会继续执行紧跟的下一个 case
 
-参考答案：BD
+        参考答案：BD
 
 ### 32. 【中级】 golang 中没有隐藏的 this 指针，这句话的含义是（）
 
@@ -224,16 +248,16 @@ func main() {
 > C. golang 的面向对象表达更直观，对于面向过程只是换了一种语法形式来表达  
 > D. 方法施加的对象不需要非得是指针，也不用非得叫 this
 
-参考答案：ACD
+        参考答案：ACD
 
-###　33. 【中级】 golang 中的引用类型包括（）
+### 33. 【中级】 golang 中的引用类型包括()
 
 > A. 数组切片　　
 > B. map　　
 > C. channel　　
 > D. interface
 
-参考答案：ABCD
+        参考答案：ABCD
 
 ### 34. 【中级】 golang 中的指针运算包括（）
 
@@ -242,16 +266,16 @@ func main() {
 > C. 可以通过 “*” 取指针指向的数据  
 > D. 可以对指针进行下标运算
 
-参考答案：BC
+        参考答案：BC
 
-###　35. 【初级】关于 main 函数（可执行程序的执行起点），下面说法正确的是（）
+### 35. 【初级】关于 main 函数（可执行程序的执行起点），下面说法正确的是（）
 
 > A. main 函数不能带参数  
 > B. main 函数不能定义返回值  
 > C. main 函数所在的包必须为 main 包  
 > D. main 函数中可以使用 flag 包来获取和解析命令行参数  
 
-参考答案：ABCD
+        参考答案：ABCD
 
 ###　36. 【中级】下面赋值正确的是（）
 
@@ -260,7 +284,7 @@ func main() {
 > C. var x string = nil  
 > D. var x error = nil
 
-参考答案：BD
+        参考答案：BD
 
 ### 37. 【中级】关于整型切片的初始化，下面正确的是（）
 
@@ -269,7 +293,7 @@ func main() {
 > C. s := make([]int, 5, 10)  
 > D. s := []int{1, 2, 3, 4, 5}
 
-参考答案：BCD
+        参考答案：BCD
 
 ### 38. 【中级】从切片中删除一个元素，下面的算法实现正确的是（）
 
@@ -330,134 +354,124 @@ func main() {
 >}
 >```
 
-参考答案：D
+        参考答案：D
 
-### 51\. 【初级】对于局部变量整型切片 x 的赋值，下面定义正确的是（）
+### 51. 【初级】对于局部变量整型切片 x 的赋值，下面定义正确的是（）
 
-A.
-x := []int{
-1, 2, 3,
-4, 5, 6,
-}
+>A.
+>```go
+>x := []int{
+>1, 2, 3,
+>4, 5, 6,
+>}
+>```
+>B.
+>```go
+>x :=[]int{
+>1, 2, 3,
+>4, 5, 6
+>}
+>```
+>C.
+>```go
+>x :=[]int{
+>1, 2, 3,
+>4, 5, 6}
+>```
+>D.
+>```go
+>x :=[]int{1, 2, 3, 4, 5, 6,}
+>```
+        参考答案：ACD
 
-B.
+### 55. 【初级】关于变量的自增和自减操作，下面语句正确的是（）
 
-x :=[]int{
-
-1, 2, 3,
-
-4, 5, 6
-
-}
-
-C.
-
-x :=[]int{
-
-1, 2, 3,
-
-4, 5, 6}
-
-D.
-
-x :=[]int{1, 2, 3, 4, 5, 6,}
-
-参考答案：ACD
-
-55\. 【初级】关于变量的自增和自减操作，下面语句正确的是（）
-A.
-
-56\. i := 1
-
-i++
-
-B.
-
-i := 1
-
-j = i++
-
-C.
-
-i := 1
-
-++i
-
-D.
-
-i := 1
-
-i--
-
-参考答案：AD
+> A.
+> ```go
+> i := 1
+> i++
+> ```
+> B.
+> ```go
+> i := 1
+> j = i++
+> ```
+> C.
+> ```go
+> i := 1
+> ++i
+> ```
+> D.
+> ```go
+> i := 1
+> i--
+> ```
+        参考答案：AD
 
 ### 57\. 【中级】关于函数声明，下面语法错误的是（）
 
-> A. func f(a, b int) (value int, err error)  
-> B. func f(a int, b int) (value int, err error)  
-> C. func f(a, b int) (value int, error)  
-> D. func f(a int, b int) (int, int, error)
+> A.
+> ```go
+> func f(a, b int) (value int, err error)  
+> ```
+> B.
+> ```go
+> func f(a int, b int) (value int, err error)  
+> ```
+> C.
+> ```go
+> func f(a, b int) (value int, error)  
+>```
+> D.
+> ```go
+> func f(a int, b int) (int, int, error)
+> ```
 
-参考答案：C
+        参考答案：C
 
 58\. 【中级】如果 Add 函数的调用代码为：
 
-59\. func main() {
-
-60\. var a Integer = 1
-
-61\. var b Integer = 2
-
-62\. var i interface{} = &a
-
-63\. sum := i.(*Integer).Add(b)
-
-64\. fmt.Println(sum)
-
+```go
+func main() {
+        var a Integer = 1
+        var b Integer = 2
+        var i interface{} = &a
+        sum := i.(*Integer).Add(b)
+        fmt.Println(sum)
 }
+```
 
 则 Add 函数定义正确的是（）
 A.
-
-typeInteger int
-
+``` go
+type Integer int
 func (aInteger) Add(b Integer) Integer {
-
- return a + b
-
+        return a + b
 }
-
+```
 B.
-
-typeInteger int
-
+``` go
+type Integer int
 func (aInteger) Add(b *Integer) Integer {
-
- return a + *b
-
+        return a + *b
 }
-
+```
 C.
-
-typeInteger int
-
+```go
+type Integer int
 func (a*Integer) Add(b Integer) Integer {
-
- return *a + b
-
+        return *a + b
 }
-
+```
 D.
-
-typeInteger int
-
+```go
+type Integer int
 func (a*Integer) Add(b *Integer) Integer {
-
- return *a + *b
-
+        `return *a + *b
 }
+```
 
-参考答案：AC
+        参考答案：AC
 
 65\. 【中级】如果 Add 函数的调用代码为：
 
@@ -516,7 +530,7 @@ func (a*Integer) Add(b *Integer) Integer {
 
 }
 
-参考答案：A
+        参考答案：A
 
 72\. 【中级】关于 GetPodAction 定义，下面赋值正确的是（）
 
@@ -542,14 +556,14 @@ A. var fragment Fragment =new(GetPodAction)
 B. var fragment Fragment = GetPodAction
 C. var fragment Fragment = &GetPodAction{}
 D. var fragment Fragment = GetPodAction{}
-参考答案：ACD
+        参考答案：ACD
 
 81\. 【中级】关于 GoMock，下面说法正确的是（）
 A. GoMock 可以对 interface 打桩
 B. GoMock 可以对类的成员函数打桩
 C. GoMock 可以对函数打桩
 D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
-参考答案：AD
+        参考答案：AD
 
 ### 82. 【中级】关于接口，下面说法正确的是（）
 
@@ -558,7 +572,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. 接口查询是否成功，要在运行期才能够确定  
 > D. 接口赋值是否可行，要在运行期才能够确定
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 83. 【初级】关于 channel，下面语法正确的是（）
 
@@ -567,7 +581,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. <- ch  
 > D. ch <-
 
-参考答案：ABC
+        参考答案：ABC
 
 ###  84. 【初级】关于同步锁，下面说法正确的是（）
 
@@ -576,7 +590,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. RWMutex 在写锁占用情况下，会阻止任何其他 goroutine（无论读和写）进来，整个锁相当于由该 goroutine 独占  
 > D. Lock() 操作需要保证有 Unlock() 或 RUnlock() 调用与之对应
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 85. 【中级】 golang 中大多数数据类型都可以转化为有效的 JSON 文本，下面几种类型除外（）
 
@@ -585,7 +599,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. complex  
 > D. 函数
 
-参考答案：BCD
+        参考答案：BCD
 
 ### 86. 【中级】关于 go vendor，下面说法正确的是（）
 
@@ -594,7 +608,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. 可以指定引用某个特定版本的外部包  
 > D. 有了 vendor 目录后，打包当前的工程代码到其他机器的 $GOPATH/src 下都可以通过编译
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 87. 【初级】 flag 是 bool 型变量，下面 if 表达式符合编码规范的是（）
 
@@ -603,7 +617,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. if flag == false  
 > D. if !flag
 
-参考答案：BD
+        参考答案：BD
 
 ### 88. 【初级】 value 是整型变量，下面 if 表达式符合编码规范的是（）
 
@@ -612,7 +626,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. if value != 0  
 > D. if !value
 
-参考答案：AC
+        参考答案：AC
 
 ### 89. 【中级】关于函数返回值的错误设计，下面说法正确的是（）
 
@@ -621,7 +635,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. 如果没有失败原因，则不返回 bool 或 error  
 > D. 如果重试几次可以避免失败，则不要立即返回 bool 或 error
 
-参考答案：ABCD
+        参考答案：ABCD
 
 ### 90. 【中级】关于异常设计，下面说法正确的是（）
 
@@ -630,7 +644,7 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 > C. 一切皆错误，不用进行异常设计  
 > D. 对于不应该出现的分支，使用异常处理
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 91. 【中级】关于 slice 或 map 操作，下面正确的是（）
 
@@ -662,7 +676,7 @@ m =make(map[string]int)
 
 m["one"]= 1
 
-参考答案：ACD
+        参考答案：ACD
 
 ### 93. 【中级】关于 channel 的特性，下面说法正确的是（）
 
@@ -671,7 +685,7 @@ m["one"]= 1
 > C. 给一个已经关闭的 channel 发送数据，引起 panic  
 > D. 从一个已经关闭的 channel 接收数据，如果缓冲区中为空，则返回一个零值
 
-参考答案：ABCD
+        参考答案：ABCD
 
 ### 94. 【中级】关于无缓冲和有冲突的 channel，下面说法正确的是（）
 
@@ -680,7 +694,7 @@ m["one"]= 1
 > C. 无缓冲的 channel 和有缓冲的 channel 都是非同步的  
 > D. 无缓冲的 channel 是同步的，而有缓冲的 channel 是非同步的
 
-参考答案：D
+        参考答案：D
 
 ### 95. 【中级】关于异常的触发，下面说法正确的是（）
 
@@ -689,7 +703,7 @@ m["one"]= 1
 > C. 除数为 0  
 > D. 调用 panic 函数
 
-参考答案：ABCD
+        参考答案：ABCD
 
 ### 96. 【中级】关于 cap 函数的适用类型，下面说法正确的是（）
 
@@ -698,7 +712,7 @@ m["one"]= 1
 > C. map  
 > D. channel
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 97. 【中级】关于 beego 框架，下面说法正确的是（）
 
@@ -707,7 +721,7 @@ m["one"]= 1
 > C. 可以使用 bee new 工具生成空工程，然后使用 bee run 命令自动热编译  
 > D. beego 框架只提供了对 url 路由的处理，而对于 MVC 架构中的数据库部分未提供框架支持
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 98. 【中级】关于 goconvey，下面说法正确的是（）
 
@@ -716,7 +730,7 @@ m["one"]= 1
 > C. goconvey 提供了丰富的断言简化测试用例的编写  
 > D. goconvey 无法与 go test 集成
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 99. 【中级】关于 go vet，下面说法正确的是（）
 
@@ -725,7 +739,7 @@ m["one"]= 1
 > C. go vet 可以使用绝对路径、相对路径或相对 GOPATH 的路径指定待检测的包  
 > D. go vet 可以检测出死代码
 
-参考答案：ACD
+        参考答案：ACD
 
 ### 100. 【中级】关于 map，下面说法正确的是（）
 
@@ -734,7 +748,7 @@ m["one"]= 1
 > C. 在函数调用中传递 map，则子函数中对 map 元素的修改不会导致父函数中 map 的修改  
 > D. 不能使用内置函数 delete 删除 map 的元素
 
-参考答案：A
+        参考答案：A
 
 ### 101. 中级】关于 GoStub，下面说法正确的是（）
 
@@ -743,7 +757,7 @@ m["one"]= 1
 > C. GoStub 可以对类的成员方法打桩  
 > D. GoStub 可以打动态桩，比如对一个函数打桩后，多次调用该函数会有不同的行为
 
-参考答案：ABD
+        参考答案：ABD
 
 ### 102. 【初级】关于 select 机制，下面说法正确的是（）
 
@@ -752,7 +766,7 @@ m["one"]= 1
 > C. golang 在语言级别支持 select 关键字  
 > D. select 关键字的用法与 switch 语句非常类似，后面要带判断条件
 
-参考答案：ABC
+        参考答案：ABC
 
 ### 103. 【初级】关于内存泄露，下面说法正确的是（）
 
@@ -761,37 +775,37 @@ m["one"]= 1
 > C. 内存泄露可以在编译阶段发现  
 > D. 应定期使用浏览器来查看系统的实时内存信息，及时发现内存泄露问题
 
-参考答案：BD
+        参考答案：BD
 
 ## 二、填空题
 
 1. 【初级】声明一个整型变量 i__________  
 
-        参考答案：var i int
+                参考答案：var i int
 
-1. 【初级】声明一个含有 10 个元素的整型数组 a__________
-参考答案：var a [10]int
+2. 【初级】声明一个含有 10 个元素的整型数组 a__________
+        参考答案：var a [10]int
 
 3. 【初级】声明一个整型数组切片 s__________
-参考答案：var s []int
+        参考答案：var s []int
 
 4. 【初级】声明一个整型指针变量 p__________
-参考答案：var p *int
+        参考答案：var p *int
 
 5. 【初级】声明一个 key 为字符串型 value 为整型的 map 变量 m__________
-参考答案：var m map[string]int
+        参考答案：var m map[string]int
 
 6. 【初级】声明一个入参和返回值均为整型的函数变量 f__________
-参考答案：var f func(a int) int
+        参考答案：var f func(a int) int
 
 7. 【初级】声明一个只用于读取 int 数据的单向 channel 变量 ch__________
-参考答案：var ch <-chan int
+        参考答案：var ch <-chan int
 
 8. 【初级】假设源文件的命名为 slice.go，则测试文件的命名为__________
-参考答案：slice_test.go
+        参考答案：slice_test.go
 
 9. 【初级】 go test 要求测试函数的前缀必须命名为__________
-参考答案：Test
+        参考答案：Test
 
 10\. 【中级】下面的程序的运行结果是__________
 
@@ -801,7 +815,7 @@ m["one"]= 1
 
 }
 
-参考答案：4 3 2 1 0
+        参考答案：4 3 2 1 0
 
 13\. 【中级】下面的程序的运行结果是__________
 
@@ -821,7 +835,7 @@ m["one"]= 1
 
 }
 
-参考答案：21
+        参考答案：21
 
 21\. 【中级】下面的程序的运行结果是__________
 
@@ -847,7 +861,7 @@ m["one"]= 1
 
 }
 
-参考答案：three threethree
+        参考答案：three threethree
 
 32\. 【中级】下面的程序的运行结果是__________
 
@@ -863,7 +877,7 @@ m["one"]= 1
 
 }
 
-参考答案：012
+        参考答案：012
 
 38\. 【中级】下面的程序的运行结果是__________
 
@@ -879,7 +893,7 @@ m["one"]= 1
 
 }
 
-参考答案：abc
+        参考答案：abc
 
 44\. 【初级】下面的程序的运行结果是__________
 
@@ -895,7 +909,7 @@ m["one"]= 1
 
 }
 
-参考答案：21
+        参考答案：21
 
 50\. 【初级】下面的程序的运行结果是__________
 
@@ -917,10 +931,10 @@ m["one"]= 1
 
 }
 
-参考答案：2
+        参考答案：2
 
 59\. 【初级】启动一个 goroutine 的关键字是__________
-参考答案：go
+        参考答案：go
 
 60\. 【中级】下面的程序的运行结果是__________
 
@@ -952,24 +966,24 @@ m["one"]= 1
 
 }
 
-参考答案：132
+        参考答案：132
 
 判断题
 
 1. 【初级】数组是一个值类型（）
-参考答案：T
+        参考答案：T
 
 2. 【初级】使用 map 不需要引入任何库（）
-参考答案：T
+        参考答案：T
 
 3. 【中级】内置函数 delete 可以删除数组切片内的元素（）
-参考答案：F
+        参考答案：F
 
 4. 【初级】指针是基础类型（）
-参考答案：F
+        参考答案：F
 
 5. 【初级】 interface{} 是可以指向任意对象的 Any 类型（）
-参考答案：T
+        参考答案：T
 
 6. 【中级】下面关于文件操作的代码可能触发异常（）
 
@@ -987,16 +1001,16 @@ m["one"]= 1
 
 ...
 
-参考答案：T
+        参考答案：T
 
 13\. 【初级】 Golang 不支持自动垃圾回收（）
-参考答案：F
+        参考答案：F
 
 14\. 【初级】 Golang 支持反射，反射最常见的使用场景是做对象的序列化（）
-参考答案：T
+        参考答案：T
 
 15\. 【初级】 Golang 可以复用 C/C++ 的模块，这个功能叫 Cgo（）
-参考答案：F
+        参考答案：F
 
 16\. 【初级】下面代码中两个斜点之间的代码，比如 json:"x"，作用是 X 字段在从结构体实例编码到 JSON 数据格式的时候，使用 x 作为名字，这可以看作是一种重命名的方式（）
 
@@ -1010,16 +1024,16 @@ m["one"]= 1
 
 }
 
-参考答案：T
+        参考答案：T
 
 21\. 【初级】通过成员变量或函数首字母的大小写来决定其作用域（）
-参考答案：T
+        参考答案：T
 
 22\. 【初级】对于常量定义 zero(const zero = 0.0)，zero 是浮点型常量（）
-参考答案：F
+        参考答案：F
 
 23\. 【初级】对变量 x 的取反操作是~x（）
-参考答案：F
+        参考答案：F
 
 24\. 【初级】下面的程序的运行结果是 xello（）
 
@@ -1033,10 +1047,10 @@ m["one"]= 1
 
 }
 
-参考答案：F
+        参考答案：F
 
 29\. 【初级】 golang 支持 goto 语句（）
-参考答案：T
+        参考答案：T
 
 30\. 【初级】下面代码中的指针 p 为野指针，因为返回的栈内存在函数结束时会被释放（）
 
@@ -1060,46 +1074,46 @@ m["one"]= 1
 
 }
 
-参考答案：F
+        参考答案：F
 
 40\. 【初级】匿名函数可以直接赋值给一个变量或者直接执行（）
-参考答案：T
+        参考答案：T
 
 41\. 【初级】如果调用方调用了一个具有多返回值的方法，但是却不想关心其中的某个返回值，可以简单地用一个下划线 “_” 来跳过这个返回值，该下划线对应的变量叫匿名变量（）
-参考答案：T
+        参考答案：T
 
 42\. 【初级】在函数的多返回值中，如果有 error 或 bool 类型，则一般放在最后一个（）
-参考答案：T
+        参考答案：T
 
 43\. 【初级】错误是业务过程的一部分，而异常不是（）
-参考答案：T
+        参考答案：T
 
 44\. 【初级】函数执行时，如果由于 panic 导致了异常，则延迟函数不会执行（）
-参考答案：F
+        参考答案：F
 
 45\. 【中级】当程序运行时，如果遇到引用空指针、下标越界或显式调用 panic 函数等情况，则先触发 panic 函数的执行，然后调用延迟函数。调用者继续传递 panic，因此该过程一直在调用栈中重复发生：函数停止执行，调用延迟执行函数。如果一路在延迟函数中没有 recover 函数的调用，则会到达该携程的起点，该携程结束，然后终止其他所有携程，其他携程的终止过程也是重复发生：函数停止执行，调用延迟执行函数（）
-参考答案：F
+        参考答案：F
 
 46\. 【初级】同级文件的包名不允许有多个（）
-参考答案：T
+        参考答案：T
 
 47\. 【中级】可以给任意类型添加相应的方法（）
-参考答案：F
+        参考答案：F
 
 48\. 【初级】 golang 虽然没有显式的提供继承语法，但是通过匿名组合实现了继承（）
-参考答案：T
+        参考答案：T
 
 49\. 【初级】使用 for range 迭代 map 时每次迭代的顺序可能不一样，因为 map 的迭代是随机的（）
-参考答案：T
+        参考答案：T
 
 50\. 【初级】 switch 后面可以不跟表达式（）
-参考答案：T
+        参考答案：T
 
 51\. 【中级】结构体在序列化时非导出变量（以小写字母开头的变量名）不会被 encode，因此在 decode 时这些非导出变量的值为其类型的零值（）
-参考答案：T
+        参考答案：T
 
 52\. 【初级】 golang 中没有构造函数的概念，对象的创建通常交由一个全局的创建函数来完成，以 NewXXX 来命名（）
-参考答案：T
+        参考答案：T
 
 53\. 【中级】当函数 deferDemo 返回失败时，并不能 destroy 已 create 成功的资源（）
 
@@ -1157,13 +1171,13 @@ m["one"]= 1
 
 }
 
-参考答案：F
+        参考答案：F
 
 80\. 【中级】 channel 本身必然是同时支持读写的，所以不存在单向 channel（）
-参考答案：F
+        参考答案：F
 
 81\. 【初级】 import 后面的最后一个元素是包名（）
-参考答案：F
+        参考答案：F
 
 最近在很多地方看到了 golang 的面试题，看到了很多人对 Golang 的面试题心存恐惧，也是为了复习基础，我把解题的过程总结下来。
 
@@ -1246,23 +1260,34 @@ func pase_student() {
 
 3 下面的代码会输出什么，并说明原因
 
+``` go
+package main
+
+import (
+        "fmt"
+        "runtime"
+        "sync"
+)
+
 func main() {
-    runtime.GOMAXPROCS(1)
-    wg := sync.WaitGroup{}
-    wg.Add(20)   for i := 0; i < 10; i++ {        
-         gofunc() {
-           fmt.Println("A:", i)
-           wg.Done()
-        }()
-    }    
-        for i:= 0; i < 10; i++ {        
-           gofunc(i int) {
-           fmt.Println("B:", i)
-           wg.Done()
-        }(i)
-    }
-    wg.Wait()
+        runtime.GOMAXPROCS(1)
+        wg := sync.WaitGroup{}
+        wg.Add(20)
+        for i := 0; i < 10; i++ {
+                go func() {
+                        fmt.Println("A:", i)
+                        wg.Done()
+                }()
+        }
+        for i := 0; i < 10; i++ {
+                go func(i int) {
+                        fmt.Println("B:", i)
+                        wg.Done()
+                }(i)
+        }
+        wg.Wait()
 }
+```
 
 考点：go 执行的随机性和闭包
 解答：
@@ -1533,21 +1558,27 @@ type_type struct {
 BBBBBBB
 12\. 是否可以编译通过？如果通过，输出什么？
 
+```go
+package main
+
 func main() {
-    i := GetValue() switch i.(type) { 
-        caseint:       
-        println("int")   
-        casestring:       
-        println("string")   
-        caseinterface{}:       
-        println("interface")   
-        default:       
-         println("unknown")
-    }
+    i := GetValue()
+    switch i.(type) {
+    case int:
+        println("int")
+    case string:
+        println("string")
+    case interface{}:
+        println("interface")
+    default:
+        println("unknown")
+    }
 }
-funcGetValue()int {   
-return1
+
+func GetValue() int {
+    return 1
 }
+```
 
 解析
 考点：type
@@ -1724,7 +1755,8 @@ func main() {
 
 21\. 编译执行下面代码会出现什么?
 
-```go
+``` go
+
 package main
 
 var (
@@ -1735,6 +1767,7 @@ var (
 func main() {
     println(size, max_size)
 }
+
 ```
 
 解析
