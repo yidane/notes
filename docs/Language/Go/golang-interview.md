@@ -411,21 +411,28 @@ func main() {
 ### 57\. 【中级】关于函数声明，下面语法错误的是（）
 
 > A.
-> ```go
-> func f(a, b int) (value int, err error)  
-> ```
+ 
+```go
+func f(a, b int) (value int, err error)  
+```
+
 > B.
-> ```go
-> func f(a int, b int) (value int, err error)  
-> ```
+
+```go
+func f(a int, b int) (value int, err error)  
+```
+
 > C.
-> ```go
-> func f(a, b int) (value int, error)  
->```
+
+```go
+func f(a, b int) (value int, error)  
+```
+
 > D.
-> ```go
-> func f(a int, b int) (int, int, error)
-> ```
+
+```go
+func f(a int, b int) (int, int, error)
+```
 
         参考答案：C
 
@@ -441,7 +448,7 @@ func main() {
 }
 ```
 
-则 Add 函数定义正确的是（）
+则 Add 函数定义正确的是（）  
 A.
 ``` go
 type Integer int
@@ -475,19 +482,15 @@ func (a*Integer) Add(b *Integer) Integer {
 
 65\. 【中级】如果 Add 函数的调用代码为：
 
-66\. func main() {
-
-67\. var a Integer = 1
-
-68\. var b Integer = 2
-
-69\. var i interface{} = a
-
-70\. sum := i.(Integer).Add(b)
-
-71\. fmt.Println(sum)
-
+```go
+func main() {
+        var a Integer = 1
+        var b Integer = 2
+        var i interface{} = a
+        sum := i.(Integer).Add(b)
+        fmt.Println(sum)
 }
+```
 
 则 Add 函数定义正确的是（）
 A.
