@@ -252,9 +252,9 @@ func main() {
 
 ### 33. 【中级】 golang 中的引用类型包括()
 
-> A. 数组切片　　
-> B. map　　
-> C. channel　　
+> A. 数组切片  
+> B. map  
+> C. channel  
 > D. interface
 
         参考答案：ABCD
