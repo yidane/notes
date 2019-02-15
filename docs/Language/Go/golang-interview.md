@@ -450,27 +450,34 @@ func main() {
 
 则 Add 函数定义正确的是（）  
 A.
+
 ``` go
 type Integer int
 func (aInteger) Add(b Integer) Integer {
         return a + b
 }
 ```
+
 B.
+
 ``` go
 type Integer int
 func (aInteger) Add(b *Integer) Integer {
         return a + *b
 }
 ```
+
 C.
+
 ```go
 type Integer int
 func (a*Integer) Add(b Integer) Integer {
         return *a + b
 }
 ```
+
 D.
+
 ```go
 type Integer int
 func (a*Integer) Add(b *Integer) Integer {
@@ -480,7 +487,7 @@ func (a*Integer) Add(b *Integer) Integer {
 
         参考答案：AC
 
-65\. 【中级】如果 Add 函数的调用代码为：
+### 65. 【中级】如果 Add 函数的调用代码为：
 
 ```go
 func main() {
@@ -492,80 +499,92 @@ func main() {
 }
 ```
 
-则 Add 函数定义正确的是（）
+则 Add 函数定义正确的是（）  
 A.
 
-typeInteger int
-
+```go
+type Integer int
 func (a Integer)Add(b Integer) Integer {
-
- return a + b
-
+        return a + b
 }
+```
 
 B.
 
-typeInteger int
-
+```go
+type Integer int
 func (aInteger) Add(b *Integer) Integer {
-
- return a + *b
-
+        return a + *b
 }
+```
 
 C.
 
-typeInteger int
-
+```go
+type Integer int
 func (a*Integer) Add(b Integer) Integer {
-
- return *a + b
-
+        return *a + b
 }
+```
 
 D.
-
-typeInteger int
-
+```go
+type Integer int
 func (a*Integer) Add(b *Integer) Integer {
-
- return *a + *b
-
+        return *a + *b
 }
+```
 
         参考答案：A
 
-72\. 【中级】关于 GetPodAction 定义，下面赋值正确的是（）
+### 72. 【中级】关于 GetPodAction 定义，下面赋值正确的是（）
 
-73\. type Fragment interface {
-
-74\. Exec(transInfo *TransInfo) error
-
-75\. }
-
-76\. type GetPodAction struct {
-
-77\. }
-
-78\. func (g GetPodAction) Exec(transInfo*TransInfo) error {
-
-79\. ...
-
-80\. return nil
-
+```go
+type Fragment interface {
+        Exec(transInfo *TransInfo) error
 }
 
-A. var fragment Fragment =new(GetPodAction)
-B. var fragment Fragment = GetPodAction
-C. var fragment Fragment = &GetPodAction{}
-D. var fragment Fragment = GetPodAction{}
+type GetPodAction struct {}
+
+func (g GetPodAction) Exec(transInfo*TransInfo) error {
+        ...
+        return nil
+}
+```
+
+A.
+
+```go
+var fragment Fragment =new(GetPodAction)
+```
+
+B.
+
+```go
+var fragment Fragment = GetPodAction
+```
+
+C.
+
+```go
+var fragment Fragment = &GetPodAction{}
+```
+
+D.
+
+```go
+var fragment Fragment = GetPodAction{}
+```
+
         参考答案：ACD
 
-81\. 【中级】关于 GoMock，下面说法正确的是（）
-A. GoMock 可以对 interface 打桩
-B. GoMock 可以对类的成员函数打桩
-C. GoMock 可以对函数打桩
-D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
+### 81. 【中级】关于 GoMock，下面说法正确的是（）  
+
+A. GoMock 可以对 interface 打桩  
+B. GoMock 可以对类的成员函数打桩  
+C. GoMock 可以对函数打桩  
+D. GoMock 打桩后的依赖注入可以通过 GoStub 完成  
+
         参考答案：AD
 
 ### 82. 【中级】关于接口，下面说法正确的是（）
@@ -1188,19 +1207,23 @@ m["one"]= 1
 
 1 写出下面代码输出内容。
 
+```go
 package main
-import (   
-"fmt"
+
+import (
+        "fmt"
 )
-funcmain() {
+
+func main() {
     defer_call()
 }
-funcdefer_call() {
-    deferfunc() {fmt.Println(" 打印前 ")}()
-    deferfunc() {fmt.Println(" 打印中 ")}()
-    deferfunc() {fmt.Println(" 打印后 ")}()
+func defer_call() {
+    defer func() {fmt.Println(" 打印前 ")}()
+    defer func() {fmt.Println(" 打印中 ")}()
+    defer func() {fmt.Println(" 打印后 ")}()
     panic(" 触发异常 ")
 }
+```
 
 考点：defer 执行顺序
 解答：
@@ -1214,20 +1237,23 @@ panic: 触发异常
 
 2 以下代码有什么问题，说明原因。
 
+``` go
 type student struct {
     Name string
     Age  int
 }
-funcpase_student() {
-    m := make(map[string]*student)
-    stus := []student{
-        {Name: "zhou",Age: 24},
-        {Name: "li",Age: 23},
-        {Name: "wang",Age: 22},
-    }    for _,stu := range stus {
+func pase_student() {
+        m := make(map[string]*student)
+        stus := []student{
+                {Name: "zhou",Age: 24},
+                {Name: "li",Age: 23},
+                {Name: "wang",Age: 22},
+        }
+        for _,stu := range stus {
         m[stu.Name] =&stu
     }
 }
+```
 
 考点：foreach
 解答：
