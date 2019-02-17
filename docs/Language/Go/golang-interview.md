@@ -1259,11 +1259,15 @@ func pase_student() {
 解答：
 这样的写法初学者经常会遇到的，很危险！ 与 Java 的 foreach 一样，都是使用副本的方式。所以 m[stu.Name]=&stu 实际上一致指向同一个指针， 最终该指针的值为遍历的最后一个 struct 的值拷贝。 就像想修改切片元素的属性：
 
+```go
 for _, stu := rangestus {
-    stu.Age = stu.Age+10}
+    stu.Age = stu.Age+10
+}
+```
 
 也是不可行的。 大家可以试试打印出来：
 
+```go
 func pase_student() {
     m := make(map[string]*student)
     stus := []student{
@@ -1286,6 +1290,7 @@ func pase_student() {
        println(k,"=>",v.Name)
     }
 }
+```
 
 3 下面的代码会输出什么，并说明原因
 
@@ -1325,6 +1330,7 @@ func main() {
 第二个 go func 中 i 是函数参数，与外部 for 中的 i 完全是两个变量。 尾部 (i) 将发生值拷贝，go func 内部指向值拷贝地址。
 4 下面代码会输出什么？
 
+```go
 type People struct{}func (p *People)ShowA() {
     fmt.Println("showA")
     p.ShowB()
@@ -1342,6 +1348,7 @@ funcmain() {
     t := Teacher{}
     t.ShowA()
 }
+```
 
 考点：go 的组合继承
 解答：
@@ -1350,6 +1357,7 @@ showAshowB
 
 5 下面代码会触发异常吗？请详细说明
 
+```go
 func main() {
     runtime.GOMAXPROCS(1)
     int_chan := make(chanint, 1)
@@ -1363,6 +1371,7 @@ func main() {
           panic(value)
     }
 }
+```
 
 考点：select 随机性
 解答：
@@ -1374,17 +1383,19 @@ select 中只要有一个 case 能 return，则立刻执行。
 
 6 下面代码输出什么？
 
-funccalc(indexstring, a, bint) int {
+```go
+func calc(indexstring, a, bint) int {
     ret := a+ b
     fmt.Println(index,a, b, ret)
     return ret
 }
-funcmain() {   
+func main() {   
       a := 1
     b := 2
     defer calc("1", a,calc("10", a, b))    a = 0
     defer calc("2", a,calc("20", a, b))    b = 1
 }
+```
 
 考点：defer 执行顺序
 解答：
@@ -1395,11 +1406,13 @@ calc("10",1,2)==>10,1,2,3 执行 index:2 时, 与之前一样，需要先调用 
 
 7 请写出以下输入内容
 
-funcmain() {    
-       s := make([]int,5)
-    s = append(s,1, 2, 3)
+```go
+func main() {
+    s := make([]int,5)
+    s = append(s,1, 2, 3)
     fmt.Println(s)
 }
+```
 
 考点：make 默认值和 append
 解答：
