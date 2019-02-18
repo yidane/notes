@@ -975,19 +975,16 @@ func main() {
 
 6. 【中级】下面关于文件操作的代码可能触发异常（）
 
-7.  file, err := os.Open("test.go")
-
-8.  defer file.Close()
-
-9.  if err != nil {
-
-10\.  fmt.Println("open file failed:",err)
-
-11\.  return
-
-12\. }
+```go
+file, err := os.Open("test.go")
+defer file.Close()
+if err != nil {
+        fmt.Println("open file failed:",err)
+        return
+}
 
 ...
+```
 
         参考答案：T
 
@@ -1002,15 +999,13 @@ func main() {
 
 16\. 【初级】下面代码中两个斜点之间的代码，比如 json:"x"，作用是 X 字段在从结构体实例编码到 JSON 数据格式的时候，使用 x 作为名字，这可以看作是一种重命名的方式（）
 
-17\. type Position struct {
-
-18\. X int `json:"x"`
-
-19\. Y int `json:"y"`
-
-20\. Z int `json:"z"`
-
+```go
+type Position struct {
+        X int `json:"x"`
+        Y int `json:"y"`
+        Z int `json:"z"`
 }
+```
 
         参考答案：T
 
@@ -1025,15 +1020,13 @@ func main() {
 
 24\. 【初级】下面的程序的运行结果是 xello（）
 
-25\. func main() {
-
-26\. str := "hello"
-
-27\. str[0] = 'x'
-
-28\. fmt.Println(str)
-
+```go
+func main() {
+        str := "hello"
+        str[0] = 'x'
+        fmt.Println(str)
 }
+```
 
         参考答案：F
 
@@ -1042,25 +1035,20 @@ func main() {
 
 30\. 【初级】下面代码中的指针 p 为野指针，因为返回的栈内存在函数结束时会被释放（）
 
-31\. type TimesMatcher struct {
-
-32\. base int
-
-33\. }
-
-34\. func NewTimesMatcher(base int) *TimesMatcher{
-
-35\. return &TimesMatcher{base:base}
-
-36\. }
-
-37\. func main() {
-
-38\. p := NewTimesMatcher(3)
-
-39\. ...
-
+```go
+type TimesMatcher struct {
+        base int
 }
+
+func NewTimesMatcher(base int) *TimesMatcher{
+        return &TimesMatcher{base:base}
+}
+
+func main() {
+        p := NewTimesMatcher(3)
+        ...
+}
+```
 
         参考答案：F
 
@@ -1105,59 +1093,39 @@ func main() {
 
 53\. 【中级】当函数 deferDemo 返回失败时，并不能 destroy 已 create 成功的资源（）
 
-54\. func deferDemo() error {
-
-55\. err := createResource1()
-
-56\. if err != nil {
-
-57\.    return ERR_CREATE_RESOURCE1_FAILED
-
-58\. }
-
-59\. defer func() {
-
-60\.    if err != nil {
-
-61\.        destroyResource1()
-
-62\.    }
-
-63\. }()
-
-64\.  
-
-65\. err = createResource2()
-
-66\. if err != nil {
-
-67\.    return ERR_CREATE_RESOURCE2_FAILED
-
-68\. }
-
-69\. defer func() {
-
-70\.    if err != nil {
-
-71\.        destroyResource2()
-
-72\.    }
-
-73\. }()
-
-74\.  
-
-75\. err = createResource3()
-
-76\. if err != nil {
-
-77\.    return ERR_CREATE_RESOURCE3_FAILED
-
-78\. }
-
-79\. return nil
-
+```go
+func deferDemo() error {
+err := createResource1()
+if err != nil {
+        return ERR_CREATE_RESOURCE1_FAILED
 }
+
+defer func() {
+if err != nil {
+                destroyResource1()
+        }
+}()
+
+        err = createResource2()
+        if err != nil {
+        return ERR_CREATE_RESOURCE2_FAILED
+}
+
+defer func() {
+        if err != nil {
+                destroyResource2()
+        }
+}()
+
+
+        err = createResource3()
+        if err != nil {
+                return ERR_CREATE_RESOURCE3_FAILED
+        }
+
+        return nil
+}
+```
 
         参考答案：F
 
