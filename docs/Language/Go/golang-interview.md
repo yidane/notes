@@ -699,6 +699,7 @@ var mmap[string]int
 m =make(map[string]int)
 m["one"]= 1
 ```
+
         参考答案：ACD
 
 ### 93. 【中级】关于 channel 的特性，下面说法正确的是（）
@@ -832,31 +833,26 @@ m["one"]= 1
 
 10\. 【中级】下面的程序的运行结果是__________
 
-11\. for i := 0; i < 5; i++ {
-
-12\. defer fmt.Printf("%d", i)
-
+```gi
+for i := 0; i < 5; i++ {
+    defer fmt.Printf("%d", i)
 }
+```
 
         参考答案：4 3 2 1 0
 
 13\. 【中级】下面的程序的运行结果是__________
 
-14\. func main() {
-
-15\. x := 1
-
-16\. {
-
-17\.    x := 2
-
-18\.    fmt.Print(x)
-
-19\. }
-
-20\. fmt.Println(x)
-
+```go
+func main() {
+        x := 1
+        {
+                x := 2
+                fmt.Print(x)
+        }
+        fmt.Println(x)
 }
+```
 
         参考答案：21
 
