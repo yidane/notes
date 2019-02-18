@@ -888,17 +888,14 @@ func main() {
 
 38\. 【中级】下面的程序的运行结果是__________
 
-39\. func main() {  
-
-40\. x := []string{"a", "b","c"}
-
-41\. for _, v := range x {
-
-42\.    fmt.Print(v)
-
-43\. }
-
+```go
+func main() {
+        x := []string{"a", "b","c"}
+        for _, v := range x {
+                fmt.Print(v)
+        }
 }
+```
 
         参考答案：abc
 
