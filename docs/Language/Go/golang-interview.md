@@ -914,23 +914,18 @@ func main() {
 
 50\. 【初级】下面的程序的运行结果是__________
 
-51\. func incr(p *int) int {
-
-52\. *p++  
-
-53\. return *p
-
-54\. }
-
-55\. func main() {  
-
-56\. v := 1
-
-57\. incr(&v)
-
-58\. fmt.Println(v)
-
+```go
+func incr(p *int) int {
+        *p++  
+        return *p
 }
+
+func main() {
+        v := 1
+        incr(&v)
+        fmt.Println(v)
+}
+```
 
         参考答案：2
 
