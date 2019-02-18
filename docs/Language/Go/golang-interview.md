@@ -858,27 +858,18 @@ func main() {
 
 21\. 【中级】下面的程序的运行结果是__________
 
-22\. func main() {
-
-23\. strs := []string{"one","two", "three"}
-
-24\.  
-
-25\. for _, s := range strs {
-
-26\.    go func() {
-
-27\.        time.Sleep(1 * time.Second)
-
-28\.        fmt.Printf("%s", s)
-
-29\.    }()
-
-30\. }
-
-31\. time.Sleep(3 * time.Second)
-
+```go
+func main() {
+strs := []string{"one","two", "three"}
+for _, s := range strs {
+        go func() {
+                time.Sleep(1 * time.Second)
+                fmt.Printf("%s", s)
+        }()
+        }
+        time.Sleep(3 * time.Second)
 }
+```
 
         参考答案：three threethree
 
