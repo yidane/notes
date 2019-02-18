@@ -934,33 +934,25 @@ func main() {
 
 60\. 【中级】下面的程序的运行结果是__________
 
-61\. type Slice []int
+```go
+type Slice []int
 
-62\. func NewSlice() Slice {
-
-63\. return make(Slice, 0)
-
-64\. }
-
-65\. func (s* Slice) Add(elem int) *Slice {
-
-66\. *s = append(*s, elem)
-
-67\. fmt.Print(elem)
-
-68\. return s
-
-69\. }
-
-70\. func main() {  
-
-71\. s := NewSlice()
-
-72\. defer s.Add(1).Add(2)
-
-73\. s.Add(3)
-
+func NewSlice() Slice {
+        return make(Slice, 0)
 }
+
+func (s* Slice) Add(elem int) *Slice {
+        *s = append(*s, elem)
+        fmt.Print(elem)
+        return s
+}
+
+func main() {
+        s := NewSlice()
+        defer s.Add(1).Add(2)
+        s.Add(3)
+}
+```
 
         参考答案：132
 
