@@ -901,17 +901,14 @@ func main() {
 
 44\. 【初级】下面的程序的运行结果是__________
 
-45\. func main() {  
-
-46\. i := 1
-
-47\. j := 2
-
-48\. i, j = j, i
-
-49\. fmt.Printf("%d%d\n", i, j)
-
+```go
+func main() {
+        i := 1
+        j := 2
+        i, j = j, i
+        fmt.Printf("%d%d\n", i, j)
 }
+```
 
         参考答案：21
 
