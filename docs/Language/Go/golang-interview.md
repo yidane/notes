@@ -875,17 +875,14 @@ for _, s := range strs {
 
 32\. 【中级】下面的程序的运行结果是__________
 
-33\. func main() {  
-
-34\. x := []string{"a", "b","c"}
-
-35\. for v := range x {
-
-36\.    fmt.Print(v)
-
-37\. }
-
+```go
+func main() {
+        x := []string{"a", "b","c"}
+        for v := range x {
+        fmt.Print(v)
+        }
 }
+```
 
         参考答案：012
 
