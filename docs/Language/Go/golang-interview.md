@@ -672,32 +672,33 @@ D. GoMock 打桩后的依赖注入可以通过 GoStub 完成
 
 A.
 
-92\. var s []int
-
+```go
+var s []int
 s =append(s,1)
+```
 
 B.
 
+```go
 var mmap[string]int
-
 m["one"]= 1
+```
 
 C.
 
+```go
 var s[]int
-
 s =make([]int, 0)
-
 s =append(s,1)
+```
 
 D.
 
+```go
 var mmap[string]int
-
 m =make(map[string]int)
-
 m["one"]= 1
-
+```
         参考答案：ACD
 
 ### 93. 【中级】关于 channel 的特性，下面说法正确的是（）
