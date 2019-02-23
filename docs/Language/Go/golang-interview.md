@@ -1356,6 +1356,7 @@ make 初始化是由默认值的哦，此处默认值为 0
 
 大家试试改为:
 
+```go
 s := make([]int, 0)
 s = append(s, 1, 2, 3)
 fmt.Println(s)//[1 2 3]
@@ -1377,6 +1378,7 @@ func(ua*UserAges)Get(name string)int {    
     }  
       return-1
 }
+```
 
 考点：map 线程安全
 解答：
@@ -1386,6 +1388,7 @@ fatal error: concurrent mapreadandmapwrite.
 
 修改一下看看效果
 
+``` go
 func (ua *UserAges)Get(namestring)int {
     ua.Lock()    
      deferua.Unlock()    
@@ -1394,6 +1397,7 @@ func (ua *UserAges)Get(namestring)int {
     }    
        return-1
 }
+```
 
 9.   下面的迭代会有什么问题？
 
