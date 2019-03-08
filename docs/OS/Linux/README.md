@@ -8,3 +8,5 @@ permalink: /docs/OS/Linux
 ---
 
 # Linux
+
+https://www.jianshu.com/p/0ae245cfe1cf?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
