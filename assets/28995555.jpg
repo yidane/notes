@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer"content="always">
+    <meta name="msvalidate.01" content="3189512127C34C46BC74BED5852D45E4" />
+    <title>CSDN博客-专业IT技术发表平台</title>
+    <script src='/js/tingyun-rum-feed.js?v=20181030' type='text/javascript'></script>
+    <link ref="canonical"  href="https://blog.csdn.net/">
+    <link href="//csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <link rel="stylesheet" href="//csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <link rel="stylesheet" href="//csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//csdnimg.cn/public/static/css/avatar.css">
+    <script src="//csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link href='/css/csdn_feed.css?1553161050' rel='stylesheet' />
+</head>
+<body data-category="home" data-host_type="blog">
+    <script id="toolbar-tpl-scriptId" prod="download" skin="black" src="//csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="http://blog.csdn.net"></script>
+    <div class="container clearfix">
+      <nav id="nav" class="clearfix">
+        <div class="clearfix">
+        <div class="nav_com">
+          <ul>
+                  <li class="active"><a href="/">推荐</a></li>
+                                                                                          
+                        
+                      <li class=""><a href="/nav/watchers">关注</a></li>
+
+                                                <li><a href="https://spec.csdn.net">专题</a></li>
+                                                                
+                        
+                      <li class=""><a href="/nav/career">程序人生</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/web">前端</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/arch">架构</a></li>
+
+                                                                
+                                                    <li class=""><a href="https://blockchain.csdn.net">区块链</a></li>
+                                                    
+                        
+                      <li class=""><a href="/nav/lang">编程语言</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/db">数据库</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/game">游戏开发</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/mobile">移动开发</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/ops">运维</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/ai">人工智能</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/sec">安全</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/cloud">云计算/大数据</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/engineering">研发管理</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/iot">物联网</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/fund">计算机基础</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/avi">音视频开发</a></li>
+
+                                                                
+                        
+                      <li class=""><a href="/nav/other">其他</a></li>
+
+                                                  </ul>
+
+        </div>
+    </div>
+</nav>
+      <div class="fixed_content">
+                <!--头部banner广告 begin-->
+    <div class="banner-ad-box">
+        <div id="kp_box_207" data-pid="207" data-track-view='{"mod":"kp_popu_207-353","con":",,"}' data-track-click='{"mod":"kp_popu_207-353","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="325" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div><div id="kp_box_208" data-pid="208" data-track-view='{"mod":"kp_popu_208-355","con":",,"}' data-track-click='{"mod":"kp_popu_208-355","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="326" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>    </div>
+    <!--头部banner广告 end-->
+        <main>
+        <!DOCTYPE html>
+ <div class="carousel">
+    <div class="carousel-left">
+        <div id="myCarousel" class="slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+			      </ol>
+      <div class="carousel-inner" role="listbox" data-track-view='{"mod":"popu_465","con":",,"}'>
+	            	         
+          <div class="carousel-item active" data-track-click='{"mod":"popu_465","con":",https://blog.csdn.net/blogdevteam/article/details/88640303,"}'>
+			<a href="https://blog.csdn.net/blogdevteam/article/details/88640303" target="_blank">
+				<img src="https://csdnimg.cn/feed/20190319/24ce0bf35b86010bb33660a5ec0d35d5.png">
+			</a>
+			<a href="https://blog.csdn.net/blogdevteam/article/details/88640303" target="_blank">
+				<div class="carousel-caption">
+					简单爬虫：给女友定时发送睡前小故事				</div>
+			</a>
+			<a href="https://blog.csdn.net/blogdevteam/article/details/88640303" target="_blank" style="display:block;">
+				<div class='cover'></div>
+			</a>
+		</div>
+	    	         
+          <div class="carousel-item " data-track-click='{"mod":"popu_465","con":",https://h5.youzan.com/v2/feature/J1oBhdaHYn,"}'>
+			<a href="https://h5.youzan.com/v2/feature/J1oBhdaHYn" target="_blank">
+				<img src="https://csdnimg.cn/feed/20190318/680f96c92e07eddf883d3e33b85cc914.jpg">
+			</a>
+			<a href="https://h5.youzan.com/v2/feature/J1oBhdaHYn" target="_blank">
+				<div class="carousel-caption">
+					码农练级新工场				</div>
+			</a>
+			<a href="https://h5.youzan.com/v2/feature/J1oBhdaHYn" target="_blank" style="display:block;">
+				<div class='cover'></div>
+			</a>
+		</div>
+	    	         
+          <div class="carousel-item " data-track-click='{"mod":"popu_465","con":",https://blogdev.blog.csdn.net/article/details/87532947,"}'>
+			<a href="https://blogdev.blog.csdn.net/article/details/87532947" target="_blank">
+				<img src="https://csdnimg.cn/feed/20190311/d46b0b4d8de6201baefb041993d01500.jpg">
+			</a>
+			<a href="https://blogdev.blog.csdn.net/article/details/87532947" target="_blank">
+				<div class="carousel-caption">
+					点击获取CSDN博客专属域名				</div>
+			</a>
+			<a href="https://blogdev.blog.csdn.net/article/details/87532947" target="_blank" style="display:block;">
+				<div class='cover'></div>
+			</a>
+		</div>
+	    	         
+          <div class="carousel-item " data-track-click='{"mod":"popu_465","con":",http://hdg12tzyd1ot89h9.mikecrm.com/8z9C2RJ,"}'>
+			<a href="http://hdg12tzyd1ot89h9.mikecrm.com/8z9C2RJ" target="_blank">
+				<img src="https://csdnimg.cn/feed/20190319/cf388d23aef646acc7ab4c182db98148.jpg">
+			</a>
+			<a href="http://hdg12tzyd1ot89h9.mikecrm.com/8z9C2RJ" target="_blank">
+				<div class="carousel-caption">
+					2018-2019中国开发者调查报告				</div>
+			</a>
+			<a href="http://hdg12tzyd1ot89h9.mikecrm.com/8z9C2RJ" target="_blank" style="display:block;">
+				<div class='cover'></div>
+			</a>
+		</div>
+	    	      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon" aria-hidden="true">
+			<svg viewBox="0 0 19 30">
+				<path d="M18,5L7,16l11,11l-3,3L1,16L15,2L18,5z"/>
+			</svg>
+		</span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon" aria-hidden="true">
+			<svg viewBox="0 0 19 30">
+				<path d="M4,1l14,14L4,29l-3-3l11-11L1,4L4,1z"/>
+			</svg>
+		</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+    </div>
+    <div class="carousel-right">
+    				        <div class="carousel-right-u" data-track-click='{"mod":"popu_616","con":",https://blog.csdn.net/guliang21/article/details/88682277,"}'>
+	            <a href="https://blog.csdn.net/guliang21/article/details/88682277" target="_blank">
+	                <img src="https://csdnimg.cn/feed/20190320/88d0ed211c8ff13a94e2cfe0f3b157e0.jpg"/>
+	            </a>
+	            <a href="https://blog.csdn.net/guliang21/article/details/88682277" target="_blank">
+                <p class="carousel-right-caption">
+      						<span>Python：鲜为人知的功能特性</span>
+      					</p>
+	            </a>
+				<a href="https://blog.csdn.net/guliang21/article/details/88682277" target="_blank" style="display:block;">
+					<div class='cover'></div>
+				</a>
+	        </div>
+				        <div class="carousel-right-u" data-track-click='{"mod":"popu_616","con":",https://blog.csdn.net/umengplus/article/details/88698516,"}'>
+	            <a href="https://blog.csdn.net/umengplus/article/details/88698516" target="_blank">
+	                <img src="https://csdnimg.cn/feed/20190321/00f22464fd6a0163c1dc91fda578b84b.jpg"/>
+	            </a>
+	            <a href="https://blog.csdn.net/umengplus/article/details/88698516" target="_blank">
+                <p class="carousel-right-caption">
+      						<span>从鳄鱼哥尼流绘本思考，数据分析师是怎样炼成的？</span>
+      					</p>
+	            </a>
+				<a href="https://blog.csdn.net/umengplus/article/details/88698516" target="_blank" style="display:block;">
+					<div class='cover'></div>
+				</a>
+	        </div>
+			            </div>
+</div>
+                    <div class="feed-loading-box">
+    <div class="loader-inner ball-clip-rotate-pulse">
+        <div></div>
+    </div>
+    <span class="loading-txt">在奔跑中</span>
+</div>
+<div>
+    <div class="msg-tooltip">
+        <div class="update_counts"></div>
+    </div>
+</div>
+<div class="feed-fix-box">
+    <div class="scroll-fixbar clearfix csdn-tracking-statistics" data-mod="popu_463" data-dsm="post">
+        <a class="txt txt-refrash-new">您有新的推荐内容，点击查看</a>
+        <button class="btn btn-nobg-noborder btn-nobg-noborder btn-close-fixbar">
+            <i class="icon-close"></i>
+        </button>
+    </div>
+</div>
+<ul class="feedlist_mod home" id="feedlist_id" shown-offset="1553223542859314">
+                                <li class="clearfix" data-type="blog" data-id="88322644"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42233629/article/details/88322644,none,index_0"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/weixin_42233629/article/details/88322644" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42233629/article/details/88322644,none,index_0"}'>
+                            前端补充协议                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    websocket协议
+存在意义：服务端主动向客户端主动推送消息
+http无状态，无法找到对方主动发消息，只能响应对方的消息，单工。websocket不断开时双方就可以相互发send消息。双工通道。
+如：浏览器弹出广告。
+websocket本质上使用的tcp，基于tcp创建，利用http协议并加以改造。规定了发送数据的格式及是否断开连接（不断开）。
+过程：
+客户端浏览器向服务端发送websock...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/weixin_42233629" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/D/2/0/1_weixin_42233629"
+                                 alt="weixin_42233629" title="weixin_42233629">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/weixin_42233629?utm_source=feed" target="_blank">
+                            wendy587436                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        03月07日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/weixin_42233629/article/details/88322644"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42233629/article/details/88322644,none,index_0"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">2941</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/weixin_42233629/article/details/88322644#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42233629/article/details/88322644#commentBox,none,index_0"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">3</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88628687"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88628687,none,index_1"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/u010339039/article/details/88628687" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88628687,none,index_1"}'>
+                            音视频之渲染yuv图片                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    音视频之opengl绘制三角形
+音视频之opengl渲染图片
+前一篇我们讨论了如何渲染一个普通图片（rgb）
+现在我们来讨论如何渲染一个yuv图片。
+什么是yuv我们这里有一个说的不错的文章
+yuv解释链接
+我们摄像头采集到的，最后我们用来显示的都是yuv数据。所以我们必须的理解yuv格式，yuv有很多种格式，什么yuv420p,yuv422等。需要学习的就在上面的连接进行学习。
+我们先看看下面效...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/u010339039" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/B/4/A/1_u010339039"
+                                 alt="u010339039" title="u010339039">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/u010339039?utm_source=feed" target="_blank">
+                            mr_x_                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        4天前                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/u010339039/article/details/88628687"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88628687,none,index_1"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">718</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/u010339039/article/details/88628687#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88628687#commentBox,none,index_1"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+            <div id="kp_box_211" data-pid="211" data-track-view='{"mod":"kp_popu_211-361","con":",,"}' data-track-click='{"mod":"kp_popu_211-361","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="328" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>                <li class="clearfix" data-type="blog" data-id="88284049"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34025051/article/details/88284049,none,index_2"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/weixin_34025051/article/details/88284049" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34025051/article/details/88284049,none,index_2"}'>
+                            区块链小白入门016&mdash;&mdash;区块链分叉是什么？                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    作者：甜蛋学习区块链本文原创，转载备注区块链分叉是什么意思呢？是像行走的路一样，走到了叉路口了么？是的，没错，就是这样子，路都是走出来的，看下边的这张图就能很快的理解了，这里本来是有个石板路，通到对面的街道，可是偏有人要踩着草地走过去，我相信刚开始种植上草地的时候，还是没有人去踩的，也许出现这样一个场景，有人要急着赶公交车，就从草地上踩过去了，...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/weixin_34025051" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/4/A/6/1_weixin_34025051"
+                                 alt="weixin_34025051" title="weixin_34025051">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/weixin_34025051?utm_source=feed" target="_blank">
+                            ducode                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        02月25日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/weixin_34025051/article/details/88284049"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34025051/article/details/88284049,none,index_2"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">3478</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/weixin_34025051/article/details/88284049#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34025051/article/details/88284049#commentBox,none,index_2"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="50171931"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/oShunz/article/details/50171931,none,index_3"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/oShunz/article/details/50171931" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/oShunz/article/details/50171931,none,index_3"}'>
+                            Android平台Camera实时滤镜实现方法探讨(五)--GLSurfaceView实现Camera预览                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    前面有一篇探讨了如何在片段着色器中将YUV数据转换为RGB数据并显示，但采用samplerExternalOES将SurfaceTexture作为OpenGL外部纹理，需要使用GL_TEXTURE_EXTERNAL_OES作为纹理模板，通过SetPreviewTexture将Camera数据图像输出到SurfaceTexture，调用updateTexImage()时将对应纹理更新为最新的一帧，然后通知OpenGL绘制对应纹理。                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/oShunz" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/5/E/E/1_oshunz"
+                                 alt="oShunz" title="oShunz">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/oShunz?utm_source=feed" target="_blank">
+                            程序员扛把子                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        12月04日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/oShunz/article/details/50171931"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/oShunz/article/details/50171931,none,index_3"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">22295</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/oShunz/article/details/50171931#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/oShunz/article/details/50171931#commentBox,none,index_3"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">2</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88415766"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/ruanjiankaifa112/article/details/88415766,none,index_4"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/ruanjiankaifa112/article/details/88415766" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ruanjiankaifa112/article/details/88415766,none,index_4"}'>
+                            区块链软件公司：区块链是什么                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    前些年大热的各种虚拟货币，在市场上刮起一阵旋风，把一个本来不产生任何价值的东西最后估值几百亿美金。比如比特币，最开始出来的时候1美元最多可以买1300，最高时一个比特币价值10000美金，后来各国政府打击虚拟货币，又从峰值跌到5000多美金。各种虚拟货币就是区块链技术的一个应用，那么这期我们科普一下区块链究竟是什么。
+用通俗的说法，区块链就好像是一个公共的记账本，加入区块链的人都有一个一样的账本，...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/ruanjiankaifa112" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/F/3/6/1_ruanjiankaifa112"
+                                 alt="ruanjiankaifa112" title="ruanjiankaifa112">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/ruanjiankaifa112?utm_source=feed" target="_blank">
+                            ruanjiankaifa112                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        03月12日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/ruanjiankaifa112/article/details/88415766"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ruanjiankaifa112/article/details/88415766,none,index_4"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">2293</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/ruanjiankaifa112/article/details/88415766#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ruanjiankaifa112/article/details/88415766#commentBox,none,index_4"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="13287899"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,none,index_5"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,none,index_5"}'>
+                            SNMP协议详解&lt;二&gt;                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    上一篇文章讲解了SNMP的基本架构，本篇文章将重点分析SNMP报文，并对不同版本（SNMPv1、v2c、v3）进行区别！
+
+四、SNMP协议数据单元
+
+在SNMP管理中，管理站（NMS）和代理（Agent）之间交换的管理信息构成了SNMP报文，报文的基本格式如下图1：
+
+
+
+                                                              图 1
+
+SNMP主要有SNMPv1、SNMPV2c、SNMPv3几种最常用的版本。
+
+1、SNMPv1
+
+
+S                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/yu_xiaofei" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/E/4/E/1_yu_xiaofei"
+                                 alt="yu_xiaofei" title="yu_xiaofei">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/yu_xiaofei?utm_source=feed" target="_blank">
+                            SELF_IMPR小灰                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        10月29日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899,none,index_5"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">117984</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/yu_xiaofei/article/details/13287899#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/yu_xiaofei/article/details/13287899#commentBox,none,index_5"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">4</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+            <div id="kp_box_212" data-pid="212" data-track-view='{"mod":"kp_popu_212-363","con":",,"}' data-track-click='{"mod":"kp_popu_212-363","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="329" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>                <li class="clearfix" data-type="blog" data-id="88417260"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/qukuailian22/article/details/88417260,none,index_6"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/qukuailian22/article/details/88417260" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qukuailian22/article/details/88417260,none,index_6"}'>
+                            区块链软件公司：你的区块链交易真的是匿名吗?                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    区块链软件公司：你的区块链交易真的是匿名吗?
+匿名和隐私是根本的人类需求。区块链技术的呈现被自在倡议者誉爲数字隐私和网络匿名的一次飞跃。不幸的是，区块链隐私的砖墙曾经被证明仅仅是一块丝绸幕布——在某种水平上很容易穿过。关于运用bite币区块链停止买卖的人来说，他们的买卖实践上并不是匿名的，这能够会让人感到不测。但是，不关键怕，由于有变通办法、处理方案和选项。
+根本区块链构造
+要了解区块链事务提供的...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/qukuailian22" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/9/5/F/1_qukuailian22"
+                                 alt="qukuailian22" title="qukuailian22">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/qukuailian22?utm_source=feed" target="_blank">
+                            趁未老                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        9天前                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/qukuailian22/article/details/88417260"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qukuailian22/article/details/88417260,none,index_6"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">1741</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/qukuailian22/article/details/88417260#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qukuailian22/article/details/88417260#commentBox,none,index_6"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88595059"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88595059,none,index_7"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/u010339039/article/details/88595059" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88595059,none,index_7"}'>
+                            音视频之opengl渲染图片                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    音视频之opengl绘制三角形
+首先来看看渲染效果
+
+我们先来看看关于纹理的坐标：
+他是如下图：
+
+顶点着色器代码：texture_vertext_shader_java_1.glsl
+attribute vec4 a_Position;
+attribute vec2 a_TextureCoordinates;
+varying vec2 v_TextureCoordinates;
+
+void ma...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/u010339039" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/B/4/A/1_u010339039"
+                                 alt="u010339039" title="u010339039">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/u010339039?utm_source=feed" target="_blank">
+                            mr_x_                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        5天前                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/u010339039/article/details/88595059"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88595059,none,index_7"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">925</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/u010339039/article/details/88595059#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u010339039/article/details/88595059#commentBox,none,index_7"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="51871028"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/u013165110/article/details/51871028,none,index_8"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/u013165110/article/details/51871028" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013165110/article/details/51871028,none,index_8"}'>
+                            4种方法让SpringMVC接收多个对象 List&lt;user&gt; 表单提交，以BeanListModel接收                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    http://blog.csdn.net/lutinghuan/article/details/46820023                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/u013165110" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/F/3/A/1_u013165110"
+                                 alt="u013165110" title="u013165110">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/u013165110?utm_source=feed" target="_blank">
+                            jajave                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        07月10日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/u013165110/article/details/51871028"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013165110/article/details/51871028,none,index_8"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">17118</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/u013165110/article/details/51871028#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013165110/article/details/51871028#commentBox,none,index_8"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="52280189"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/u012891242/article/details/52280189,none,index_9"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/u012891242/article/details/52280189" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u012891242/article/details/52280189,none,index_9"}'>
+                            线段树从零开始                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    从零开始讲线段树，适合有一定C/C++编程基础，想学习线段树的读者。                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/u012891242" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/9/F/8/1_u012891242"
+                                 alt="u012891242" title="u012891242">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/u012891242?utm_source=feed" target="_blank">
+                            岩之痕                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        08月22日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/u012891242/article/details/52280189"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u012891242/article/details/52280189,none,index_9"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">23753</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/u012891242/article/details/52280189#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u012891242/article/details/52280189#commentBox,none,index_9"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">56</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88029308"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/guojin1234567/article/details/88029308,none,index_10"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/guojin1234567/article/details/88029308" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/guojin1234567/article/details/88029308,none,index_10"}'>
+                            区块链原理是什么？如何开发区块链程序？                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    比特币是世界上第一个分散化的货币，它在过去几年吸引了越来越多的关注。区块链技术可以帮助比特币发挥作用，区块链技术本身就是基于交易区块链的。有关这些交易的信息将同时在全球所有设备上更新。
+专家预测区块链前景广阔，尽管比特币不久之前击败所有反纪录，并且在全球交易中广泛使用它仍然是遥遥无期的事实，但区块链越来越受到大型银行，技术公司，政府和企业的关注投资者。2015年11月，区块链项目和比特币的合并投资...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/guojin1234567" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/6/7/E/1_guojin1234567"
+                                 alt="guojin1234567" title="guojin1234567">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/guojin1234567?utm_source=feed" target="_blank">
+                            guojin1234567                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        02月28日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/guojin1234567/article/details/88029308"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/guojin1234567/article/details/88029308,none,index_10"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">5246</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/guojin1234567/article/details/88029308#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/guojin1234567/article/details/88029308#commentBox,none,index_10"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">1</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+            <div id="kp_box_213" data-pid="213" data-track-view='{"mod":"kp_popu_213-365","con":",,"}' data-track-click='{"mod":"kp_popu_213-365","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="330" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>                <li class="clearfix" data-type="blog" data-id="87923139"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42966943/article/details/87923139,none,index_11"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/weixin_42966943/article/details/87923139" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42966943/article/details/87923139,none,index_11"}'>
+                            js基础学习02                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    JS流程控制----代码的执行过程
+1.顺序结构：从上到下，从左到右，顺序执行
+2.分支结构：if、if-else、switch-case、三元表达式语句
+3.循环结构：while、do-while、for、for-in循环
+
+分支语句
+1.if语句
+	if(表达式){	
+		代码
+	}
+2.if-else if-else语句
+	if(表达式){
+		代码
+	}else if{
+		代码
+	}
+	...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/weixin_42966943" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/E/3/7/1_weixin_42966943"
+                                 alt="weixin_42966943" title="weixin_42966943">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/weixin_42966943?utm_source=feed" target="_blank">
+                            雾都费                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        02月25日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/weixin_42966943/article/details/87923139"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42966943/article/details/87923139,none,index_11"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">475</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/weixin_42966943/article/details/87923139#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_42966943/article/details/87923139#commentBox,none,index_11"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="4647139"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/fengyud/article/details/4647139,none,index_12"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/fengyud/article/details/4647139" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/fengyud/article/details/4647139,none,index_12"}'>
+                            关于微软面试题：&quot;四人过桥&quot;问题的思考&mdash;&mdash;&ldquo;n人过桥&rdquo;问题的演进(Java实现)                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    前段时间，在CSDN上无意中看到有人发表了一道微软面试题——“4人过桥”问题的算法，只是一直忙于手头上的工作，没有能够在短期实现。当时就是想，如果把这个问题用计算机语言实现的话，有些多此一举，即使我们用穷举法，也只不过是18种情况。所以就没有深入思考，一直没有用Java来实现具体代码。 问题是这样的：问题：四人夜过桥，步行时间分别为 1、2、5、10 分钟，四人只有一台手电筒，一趟最多                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/fengyud" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/E/9/7/1_fengyud"
+                                 alt="fengyud" title="fengyud">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/fengyud?utm_source=feed" target="_blank">
+                            fengyud                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        10月09日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/fengyud/article/details/4647139"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/fengyud/article/details/4647139,none,index_12"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">5960</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/fengyud/article/details/4647139#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/fengyud/article/details/4647139#commentBox,none,index_12"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">2</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88327282"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/SunmoonYDM/article/details/88327282,none,index_13"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/SunmoonYDM/article/details/88327282" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/SunmoonYDM/article/details/88327282,none,index_13"}'>
+                            区块链开发公司：区块链数字资产的名词解释                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    区块链资产钱包的使用会越来越频繁和重要，因此我们在使用钱包时，有几个名词必须理解，不然就有可能造成区块链资产的损失，这几个名词为地址、密码、私钥、助记词、keystore。
+若以银行账户为类比，这 5 个词分别对应内容如下：
+地址=银行卡号
+密码=银行卡密码
+私钥=银行卡号+密码
+助记词=银行卡号+密码
+Keystore=加密私钥
+Keystore+密码=私钥
+一、地址
+地址=银行卡号
+1.生成
+...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/SunmoonYDM" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/8/B/5/1_sunmoonydm"
+                                 alt="SunmoonYDM" title="SunmoonYDM">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/SunmoonYDM?utm_source=feed" target="_blank">
+                            SunmoonYDM                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        03月08日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/SunmoonYDM/article/details/88327282"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/SunmoonYDM/article/details/88327282,none,index_13"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">3263</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/SunmoonYDM/article/details/88327282#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/SunmoonYDM/article/details/88327282#commentBox,none,index_13"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">1</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="8792475"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/lyx2007825/article/details/8792475,none,index_14"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/lyx2007825/article/details/8792475" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/lyx2007825/article/details/8792475,none,index_14"}'>
+                            OpenGL 矩阵变换（讲的太好了~！）                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    Overview
+几何数据——顶点位置，和标准向量(normal vectors),在OpenGL 管道raterization 处理过程之前可通过顶点操作(Vertex Operation)和基本组合操作改变这些数据。
+
+
+Object Coordinates
+对象的本地坐标系——任何变换之前的最初位置.为了变换(transformation)这些对象，可以调用glRotate(),g                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/lyx2007825" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/E/8/7/1_lyx2007825"
+                                 alt="lyx2007825" title="lyx2007825">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/lyx2007825?utm_source=feed" target="_blank">
+                            痕枫冷                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        04月12日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/lyx2007825/article/details/8792475"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/lyx2007825/article/details/8792475,none,index_14"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">101955</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/lyx2007825/article/details/8792475#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/lyx2007825/article/details/8792475#commentBox,none,index_14"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">20</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="87866471"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/u013862108/article/details/87866471,none,index_15"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/u013862108/article/details/87866471" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013862108/article/details/87866471,none,index_15"}'>
+                            音视频入门/音视频基础                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    直播产品的种类：
+
+泛娱乐化直播：
+
+       花椒，映客等娱乐直播， 斗鱼，熊猫，yy 等游戏直播
+
+实时互动直播
+
+音视频会议，教育直播等， 像思科，全时，声网
+
+直播架构： todo
+
+常用的工具: ffmpeg , ffplay, flashplayer,  
+
+搭建流媒体服务：
+
+准备流媒体服务器（Linux 或 Mac)
+
+编译并安装Nginx 服务
+
+配置RTMP 服务并启动 N...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/u013862108" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/6/6/E/1_u013862108"
+                                 alt="u013862108" title="u013862108">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/u013862108?utm_source=feed" target="_blank">
+                            学海无涯书山有路                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        02月21日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/u013862108/article/details/87866471"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013862108/article/details/87866471,none,index_15"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">6625</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/u013862108/article/details/87866471#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/u013862108/article/details/87866471#commentBox,none,index_15"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">1</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88107474"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34326429/article/details/88107474,none,index_16"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/weixin_34326429/article/details/88107474" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34326429/article/details/88107474,none,index_16"}'>
+                            [Susan 泛谈区块链］FLO 区块链介绍&amp;评测                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    FLO Blockchain ($FLO)是基于比特币和莱特币源代码基础上数字货币。它是一种算法工作证明，可以通过挖矿得到的数字货币，它有个全新的功能叫做floData。该功能让FLO 可以在其区块链内协调和促进各自应用程序以及各种加强功能。FLO介绍除了可以发送支付外，FLO可以让用户通过小额费用纪录数据到区块链中。那些帮助保障数据安全的参与...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/weixin_34326429" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/C/1/8/1_weixin_34326429"
+                                 alt="weixin_34326429" title="weixin_34326429">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/weixin_34326429?utm_source=feed" target="_blank">
+                            weixin_34326429                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        02月25日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/weixin_34326429/article/details/88107474"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34326429/article/details/88107474,none,index_16"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">4055</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/weixin_34326429/article/details/88107474#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/weixin_34326429/article/details/88107474#commentBox,none,index_16"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+            <div id="kp_box_214" data-pid="214" data-track-view='{"mod":"kp_popu_214-367","con":",,"}' data-track-click='{"mod":"kp_popu_214-367","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="331" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>                <li class="clearfix" data-type="blog" data-id="52770376"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/tyler_download/article/details/52770376,none,index_17"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/tyler_download/article/details/52770376" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/tyler_download/article/details/52770376,none,index_17"}'>
+                            内核键盘中断处理进阶                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    上一节，我们实现了键盘中断的响应，但响应的处理比较简单，只是向界面打印一条字符串而已，本节，我们将在屏幕上输出键盘中断更多的相关信息。当键盘上的一个按键按下时，键盘会发送一个中断信号给CPU,与此同时，键盘会在指定端口(0x60) 输出一个数值，这个数值对应按键的扫描码(make code)，当按键弹起时，键盘又给端口输出一个数值，这个数值叫断码(break code).                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/tyler_download" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/0/7/4/1_tyler_download"
+                                 alt="tyler_download" title="tyler_download">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/tyler_download?utm_source=feed" target="_blank">
+                            tyler_download                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        10月09日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/tyler_download/article/details/52770376"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/tyler_download/article/details/52770376,none,index_17"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">1879</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/tyler_download/article/details/52770376#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/tyler_download/article/details/52770376#commentBox,none,index_17"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">2</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="8811384"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/ziyuzhao123/article/details/8811384,none,index_18"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/ziyuzhao123/article/details/8811384" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ziyuzhao123/article/details/8811384,none,index_18"}'>
+                            python中os.mkdir()函数                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    创建目录
+在Python中可以使用os.mkdir()函数创建目录（创建一级目录）。
+其原型如下所示：
+os.mkdir(path)
+其参数path 为要创建目录的路径。
+例如要在D盘下创建hello的目录
+>>> import os
+>>> os.mkdir('d:\hello')
+可以使用os.makedirs（）函数创建多级目录。
+其原型如下所示：
+os.makedirs                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/ziyuzhao123" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/1/C/6/1_ziyuzhao123"
+                                 alt="ziyuzhao123" title="ziyuzhao123">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/ziyuzhao123?utm_source=feed" target="_blank">
+                            ziyuzhao123                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        04月16日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/ziyuzhao123/article/details/8811384"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ziyuzhao123/article/details/8811384,none,index_18"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">7344</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/ziyuzhao123/article/details/8811384#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/ziyuzhao123/article/details/8811384#commentBox,none,index_18"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="88321110"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/qq_42792413/article/details/88321110,none,index_19"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/qq_42792413/article/details/88321110" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq_42792413/article/details/88321110,none,index_19"}'>
+                            iOS开发&mdash;音视频入门学习必看                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    音视频学习从零到整–(2)
+音视频学习从零到整–(3)
+音视频学习从零到整–(4)
+音视频学习从零到整–(5)
+音视频学习从零到整–(6)
+音视频学习从零到整–(7)
+一.音频基础复习
+1.1 声音的产生
+相对于视频,可观察这个现象.音频在学习过程,就缺乏了想象的空间.但是如果从原理出发,就不会那么难了.
+
+声音是什么?
+声音是波,靠物体的振动产生
+
+1.2 声波的3要素
+声波的三要素,是频率,振...                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/qq_42792413" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/7/E/A/1_qq_42792413"
+                                 alt="qq_42792413" title="qq_42792413">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/qq_42792413?utm_source=feed" target="_blank">
+                            D_猿员                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        03月07日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/qq_42792413/article/details/88321110"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq_42792413/article/details/88321110,none,index_19"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">3363</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/qq_42792413/article/details/88321110#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq_42792413/article/details/88321110#commentBox,none,index_19"}'>
+                                                                    <span class="text">评论</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+                            <li class="clearfix" data-type="blog" data-id="16361033"
+            shown-time="1553223542">
+            <div class="list_con"
+                 data-track-view='{"mod":"popu_459","con":",https://blog.csdn.net/qq574857122/article/details/16361033,none,index_20"}'>
+                <div class="title">
+                    <h2>
+                        <a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank"
+                           data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq574857122/article/details/16361033,none,index_20"}'>
+                            强连通分量及缩点tarjan算法解析                        </a>
+                    </h2>
+                                            <div class="close_tag">
+                            <div class="unin_reason_dialog_wrapper">
+                                <i class="icon-close"></i>
+                                <div class="unin_reason_dialog">
+                                    <h3>选择理由，精准屏蔽</h3>
+                                    <ul>
+                                                                                    <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                                data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                                <a>推荐不准: 其它</a>
+                                            </li>
+                                            <br/>
+                                                                                <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 旧闻、重复 </a>
+                                        </li>
+                                        <br/>
+                                        <li class="unin_item csdn-tracking-statistics" data-poputype="feed"
+                                            data-feed-show="false" data-dsm="post" data-mod="popu_462">
+                                            <a> 内容质量差 </a>
+                                        </li>
+                                        <br/>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                                    </div>
+                <div class="summary oneline">
+                    强连通分量：
+简言之 就是找环（每条边只走一次，两两可达）
+孤立的一个点也是一个连通分量 
+ 
+使用tarjan算法 在嵌套的多个环中优先得到最大环( 最小环就是每个孤立点）
+ 
+定义：
+int Time, DFN[N], Low[N];
+DFN[i]表示 遍历到 i 点时是第几次dfs
+Low[u] 表示 以u点为父节点的 子树 能连接到 [栈中] 最上端的点
+ 
+int                </div>
+                <dl class="list_userbar">
+
+                    <dt>
+                        <a href="https://blog.csdn.net/qq574857122" target="_blank" class="user_img">
+                            <img src="https://profile.csdnimg.cn/8/B/0/1_qq574857122"
+                                 alt="qq574857122" title="qq574857122">
+                        </a>
+                    </dt>
+                    <dd class="name">
+                        <a href="https://blog.csdn.net/qq574857122?utm_source=feed" target="_blank">
+                            九野的博客                        </a>
+                    </dd>
+                                        <div class="interval"></div>
+                    <dd class="time">
+                        11月16日                    </dd>
+                                                            <div class="interactive floatR">
+                        <!--阅读 begin-->
+                                                <dd class="read_num">
+                            <a href="https://blog.csdn.net/qq574857122/article/details/16361033"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq574857122/article/details/16361033,none,index_20"}'>
+                                <span class="text">阅读数</span>
+                                <span class="num">548743</span>
+                            </a>
+                        </dd>
+                        <div class="interval"></div>
+                                                <!--阅读 end-->
+                        <!--新增评论数+阅读 begin-->
+                        <dd class="common_num ">
+                            <a href="https://blog.csdn.net/qq574857122/article/details/16361033#commentBox" target="_blank"
+                               data-track-click='{"mod":"popu_459","con":",https://blog.csdn.net/qq574857122/article/details/16361033#commentBox,none,index_20"}'>
+                                                                    <span class="text">评论数 </span>
+                                    <span class="num">37</span>
+                                                            </a>
+                        </dd>
+                        <!--新增评论数+阅读 end-->
+                    </div>
+                </dl>
+                            </div>
+        </li>
+        <script>
+        var countArticle = 20;
+    </script>
+        <li class="tip_box clearfix">
+        <button type="button" class="txt btn-feed-refresh">刚刚阅读在这里，点击刷新</button>
+        <div class="read-here csdn-tracking-statistics" data-mod="popu_464" data-dsm="post">
+            <a>刚刚阅读在这里，点击刷新</a>
+        </div>
+    </li>
+</ul>
+<div class="feed_loading">
+    <img src="/images/feedLoading.gif" alt="I'm loading" title="I'm loading">
+</div>
+            </main>
+        <!DOCTYPE html>
+<aside>
+    <div class="right_box">
+        <div class="official-blog-box">
+            <a href="https://blog.csdn.net/blogdevteam/" target="_blank"><img src="https://avatar.csdn.net/8/C/E/3_blogdevteam.jpg" class="avatar_pic"></a>
+            <h3><a href="https://blog.csdn.net/blogdevteam/" target="_blank">CSDN官方博客</a></h3>
+            <a href="https://blog.csdn.net/blogdevteam/" class="btn btn-link" target="_blank">点击进入</a>
+        </div>
+    </div>
+            <div class="right_box">
+            <h3 class="feed_new_tit"><span class="line"></span><span class="txt">博客专家</span><a class="apply_expert" href="http://blog.csdn.net/experts/rule.html" target="_blank">专家申请</a></h3>
+            <div class="feed_media_list clearfix csdn-tracking-statistics" data-mod="popu_472" data-dsm="post">
+                                                  <div class="mas_con con clearfix">
+                        <a href="https://blog.csdn.net/cbk861110" target="_blank">
+                            <dl class="media_left clearfix">
+                                <dt><img src="https://profile.csdnimg.cn/8/9/C/1_cbk861110" alt="cbk861110" title="cbk861110"></dt>
+                                <dd>
+                                    <p class="name">
+                                    Caobaokang                                    </p>
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#Feed-bokezhuanjia"></use>
+                                    </svg>
+                                    <p class="tit">软件开发</p>
+                                    <p class="num">308篇</p>
+                                </dd>
+                            </dl>
+                            <p class="text oneline">1. Android全栈开发，包含应用层，系统层，驱动层及平台开发；
+2. C全栈开发，包括关联设备的上层和底层开发；
+3. Android应用架构&amp;开发方面，具备较全面的知识体系；
+4. 具备Python、微信小程序等其他领域的知识储备和开发能力；</p></p>
+                        </a>
+                    </div>
+                                                    <div class="mas_con con clearfix">
+                        <a href="https://blog.csdn.net/dog250" target="_blank">
+                            <dl class="media_left clearfix">
+                                <dt><img src="https://profile.csdnimg.cn/B/A/B/1_dog250" alt="dog250" title="dog250"></dt>
+                                <dd>
+                                    <p class="name">
+                                    dog250                                    </p>
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#Feed-bokezhuanjia"></use>
+                                    </svg>
+                                    <p class="tit">高级软件工程师</p>
+                                    <p class="num">1561篇</p>
+                                </dd>
+                            </dl>
+                            <p class="text oneline">专注于VPN，精通TCP/IP协议栈的原理以及实现，平时对Linux内核特别是网络部分有浓厚的兴趣。虽专注于技术，然而每天必须抽出一个小时时间读历史。</p></p>
+                        </a>
+                    </div>
+                                                    <div class="mas_con con clearfix">
+                        <a href="https://blog.csdn.net/u010648555" target="_blank">
+                            <dl class="media_left clearfix">
+                                <dt><img src="https://profile.csdnimg.cn/A/0/4/1_u010648555" alt="u010648555" title="u010648555"></dt>
+                                <dd>
+                                    <p class="name">
+                                    阿飞云（aflyun）的技术乐园                                    </p>
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#Feed-bokezhuanjia"></use>
+                                    </svg>
+                                    <p class="tit">工程师</p>
+                                    <p class="num">268篇</p>
+                                </dd>
+                            </dl>
+                            <p class="text oneline">阳光乐观，热爱技术，热爱健身！</p></p>
+                        </a>
+                    </div>
+                            </div>
+        </div>
+        <div class="right-blog-move">
+        <a href="https://mp.csdn.net/blogmove?utm_source=blog" target="_blank"><img src="/images/blog-move.png" alt="CSDN博客搬家"></a>
+    </div>
+        <!-- 右侧轮播广告 begin -->
+    <div class="right_extension slide-outer">
+        <div id="kp_box_209" data-pid="209" data-track-view='{"mod":"kp_popu_209-357","con":",,"}' data-track-click='{"mod":"kp_popu_209-357","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="180" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>    </div>
+    <!-- 右侧轮播广告 end -->
+        <div class="right_box">
+        <h3 class="feed_new_tit">
+            <span class="line"></span><span class="txt">今日推荐</span>
+        </h3>
+        <div class="feed_company csdn-tracking-statistics" data-mod="popu_474" data-dsm="post">
+            <ul class="company_list">
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/weixin_42876465/article/details/84499161" target="_blank"><img src="https://csdnimg.cn/feed/20190308/1a7523186a798d5e6fe4a5d71df9976b.jpeg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/weixin_42876465/article/details/84499161"  target="_blank">Java工程师常见面试题集锦</a></h3>
+                                                                          <p class="txt oneline">专栏包含多篇Java面试题博客，涉及Java基础，Java高级，数据库，Java项目等常见高频面试题。</p>
+                                            </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/broadview2006/article/details/88172965" target="_blank"><img src="https://csdnimg.cn/feed/20190306/6644c3622414ad3c0fd13b387b689135.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/broadview2006/article/details/88172965"  target="_blank">每周送新书：Android软件安全、深入浅出Ist</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/Androidlushangderen/article/details/88431779" target="_blank"><img src="https://csdnimg.cn/feed/20190314/3cea31887ba69694fd72a4af5f1de52a.png?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/Androidlushangderen/article/details/88431779"  target="_blank">Dynamometer：HDFS性能扩展测试工具</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/iverson2010112228/article/details/82631554" target="_blank"><img src="https://csdnimg.cn/feed/20190314/a3890d22ad1ac8bb4cea37afe45afc44.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/iverson2010112228/article/details/82631554"  target="_blank">kafka学习总结</a></h3>
+                                                                          <p class="txt oneline">kafka学习总结kafka学习总结kafka学习总结</p>
+                                            </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/tangyang8941/article/details/88025412" target="_blank"><img src="https://csdnimg.cn/feed/20190301/eaff61f2566126f5c35284f52f7db2e8.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/tangyang8941/article/details/88025412"  target="_blank">高性能RPC框架——Dubbo一站式快速入门</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/guliang21/article/details/88632389" target="_blank"><img src="https://csdnimg.cn/feed/20190315/492263c98fe7522492076d97061cc417.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/guliang21/article/details/88632389"  target="_blank">NumPy 超详细教程（2）：数据类型</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/howgod/article/details/88565793" target="_blank"><img src="https://csdnimg.cn/feed/20190129/583fbeabd003e16f0d718d5c18634145.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/howgod/article/details/88565793"  target="_blank">深入理解JavaScript作用域和作用域链</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/hyb612/article/details/87905371" target="_blank"><img src="https://csdnimg.cn/feed/20190306/ab57296cad18a1dec3b5526643d00db2.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/hyb612/article/details/87905371"  target="_blank">快速排序深度优化详解</a></h3>
+                                                                          <p class="txt oneline">快速排序深度优化详解快速排序深度优化详解</p>
+                                            </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/handsomexiaominge/article/details/86183735" target="_blank"><img src="https://csdnimg.cn/feed/20181217/34f4e4b478b98b796a4ab9d5b7024e1d.png?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/handsomexiaominge/article/details/86183735"  target="_blank">React事务机制解析</a></h3>
+                                                                          <p class="txt oneline">react的事务机制到底是一种什么样的机制呢，为了解释事务机制的实现原理。</p>
+                                            </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/carson_ho/article/details/87685001" target="_blank"><img src="https://csdnimg.cn/feed/20190219/a52933233c357aaf91ebc17c43136c52.png?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/carson_ho/article/details/87685001"  target="_blank">操作系统：图文详解神秘的”内存映射“</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/u010904188/article/details/83150723" target="_blank"><img src="https://csdnimg.cn/feed/20190201/fa2a8713d863e722cff5234a75517907.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/u010904188/article/details/83150723"  target="_blank">高并发编程之高并发场景：秒杀（无锁、排他锁、乐观锁</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/dog250/article/details/88651885" target="_blank"><img src="https://csdnimg.cn/feed/20190319/4f6eb48a67d6c819762be8012f412a74.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/dog250/article/details/88651885"  target="_blank">闲谈IPv6系列文章集锦</a></h3>
+                                                                          <p class="txt oneline">本文总结一个目录提纲，只要是给自己看的，记录一下哪些东西已经总结过了。</p>
+                                            </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/weixin_43555803/article/details/88603252" target="_blank"><img src="https://csdnimg.cn/feed/20190318/92817388c0b853bbea0ae28bfea34c58.jpg?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/weixin_43555803/article/details/88603252"  target="_blank">详解MapReduce中的五大编程模型</a></h3>
+                                                                    </div>
+                </li>
+                            <li>
+                    <div class="img_box"><a href="https://blog.csdn.net/u012551350/article/details/88395427" target="_blank"><img src="https://csdnimg.cn/feed/20190314/12f69161ac7819b13155bde8d68d933a.png?x-oss-process=image/resize,h_64" alt=""></a></div>
+                        <div class="content">
+                        <h3 class="company_name"><a href="https://blog.csdn.net/u012551350/article/details/88395427"  target="_blank">Android控件人生第一站，小红书任意拖拽标签控</a></h3>
+                                                                    </div>
+                </li>
+                        </ul>
+            <div class="other_company clearfix">
+                        <a href="https://blog.csdn.net/hollis_chuang/article/details/88658850"  target="_blank">Java 8中处理集合的优雅姿势——Stream</a>
+                        </div>
+        </div>
+    </div>
+        <div class="right_extension slide-outer">
+        <!-- 右侧图片广告 -->
+        <div id="kp_box_210" data-pid="210" data-track-view='{"mod":"kp_popu_210-359","con":",,"}' data-track-click='{"mod":"kp_popu_210-359","con":",,"}'><!-- 广告位开始 --> <ins data-revive-zoneid="181" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> <!-- 广告位结束 -->
+<script language="javascript" type="text/javascript" src="https://ads.csdn.net/js/async_new.js"></script></div>    </div>
+        <div class="fixed24">
+        <div class="persion_article"></div>
+    </div>
+</aside>
+      </div>
+    </div>
+</body>
+<script src='/js/modernizr.js?1553161050' type='text/javascript'></script>
+<script src="//csdnimg.cn/public/common/libs/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script  src="//csdnimg.cn/asdf/async-1.0.1.js"></script>
+<script src="//g.csdnimg.cn/track/1.0.1/track.js" type="text/javascript"></script>
+<script src="//csdnimg.cn/asdf/tracking-1.0.1.js" type="text/javascript"></script>
+<script src="//g.csdnimg.cn/fixed-sidebar/1.1.1/fixed-sidebar.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+// Traffic Stats of the entire Web site By baidu
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+// Traffic Stats of the entire Web site By baidu end
+window.csdn.fixedSidebar({
+    targetBox: $('nav'), //判断到达底部的元素
+    mainBox: $("main"), //侧边栏旁边的主体元素
+    sidebar: $("nav"), //侧边栏主体元素，可与判断到达底部的元素相同
+    direction: 'left', //侧边栏浮动方向
+    position: 'fixed',//定位方式
+    top:-6,
+    bottom: 0,
+    zIndex: 99,
+    sidebarRightMargin: 13,//direction为left,侧边栏距离mainbox的右边距
+    sidebarLeftMargin: 15,//direction为right,侧边栏距离mainbox的左边距
+})
+window.csdn.fixedSidebar({
+    targetBox: $('.persion_article'),
+    mainBox: $("main"),
+    sidebar: $("aside"),
+    direction: 'right', 
+    position: 'fixed',
+    bottom: 0,
+    zIndex: 99,
+    sidebarRightMargin: 8,
+    sidebarLeftMargin: 15,
+})
+</script>
+<script src='//csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js?v201807020000' data-isfootertrack="false"></script>
+<script src='/js/csdn_feed.min.js?1553161050' type='text/javascript'></script>
+<script src='//sdk.appadhoc.com/ab.plus.js'></script>
+<script>
+    adhoc('init', {
+    appKey: 'ADHOC_3f25bcb4-f154-4b7c-8a82-f79b81816578'
+    })
+</script>
+<script src="https://g.csdnimg.cn/side-toolbar/1.2/side-toolbar.js"></script>
+<script type="text/javascript" src="//g.csdnimg.cn/asdf/1.0.1/async.js"></script>
+</html>
