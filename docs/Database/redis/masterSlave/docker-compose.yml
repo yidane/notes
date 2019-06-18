@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+  master:
+    image: redis
+    container_name: master
+    networks:
+      redisnet:
+        ipv4_address: 172.22.0.2
+  slave1:
+    image: redis
+    container_name: slave1
+    networks:
+      redisnet:
+        ipv4_address: 172.22.0.3
+  slave2:
+    image: redis
+    container_name: slave2
+    networks:
+      redisnet:
+        ipv4_address: 172.22.0.4
+  slave3:
+    image: redis
+    container_name: slave3
+    networks:
+      redisnet:
+        ipv4_address: 172.22.0.5
+networks:
+  redisnet:
+    ipam:
+      config:
+      - subnet: 172.22.0.0/16
+        gateway: 172.22.0.1
