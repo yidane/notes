@@ -2,26 +2,34 @@ version: "2"
 
 services:
   master:
-    image: redis
+    build: .
     container_name: master
+    volumes:
+      - /etc/redis/masterSlave/master.conf:/usr/local/etc/redis/redis.conf
     networks:
       redisnet:
         ipv4_address: 172.22.0.2
   slave1:
-    image: redis
+    build: .
     container_name: slave1
+    volumes:
+      - /etc/redis/masterSlave/slave1.conf:/usr/local/etc/redis/redis.conf
     networks:
       redisnet:
         ipv4_address: 172.22.0.3
   slave2:
-    image: redis
+    build: .
     container_name: slave2
+    volumes:
+      - /etc/redis/masterSlave/slave2.conf:/usr/local/etc/redis/redis.conf
     networks:
       redisnet:
         ipv4_address: 172.22.0.4
   slave3:
-    image: redis
+    build: .
     container_name: slave3
+    volumes:
+      - /etc/redis/masterSlave/slave3.conf:/usr/local/etc/redis/redis.conf
     networks:
       redisnet:
         ipv4_address: 172.22.0.5
